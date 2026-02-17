@@ -1,0 +1,60 @@
+{
+  "diagnoses": [
+    {
+      "label": "Tiny Polyps",
+      "icd10": "D12.1",
+      "confidence": "high",
+      "evidence_spans": [
+        "Tiny Polyps.",
+        "A digital rectal exam was performed and the Pentax Video Colonoscope was advanced over the examiner's finger into the rectum.",
+        "Slowly withdrawal through the colon revealed a small polyp in the transverse colon.",
+        "There was a 2 mm polyp versus lymphoid aggregate in the descending colon.",
+        "IMPRESSION: Tiny polyps."
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "Versed",
+      "dose": "3 mg",
+      "route": "IV",
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "Sedated with Versed 3 mg, Demerol 25 mg during the examination."
+      ]
+    },
+    {
+      "name": "Demetrol",
+      "dose": "25 mg",
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "Sedated with Versed 3 mg, Demerol 25 mg during the examination."
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "Primary Care Physician",
+      "when": "6 months",
+      "why": "Colonoscopy",
+      "urgency": "routine",
+      "confidence": "medium",
+      "evidence_spans": [
+        "If adenomatous, repeat exam in five years. Otherwise, repeat exam in 10 years."
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "The patient had a colonoscopy. The doctor found some small polyps in the colon and removed them. The patient will need to have another colonoscopy in 5 or 10 years, depending on the type of polyps found. The patient was given Versed and Demerol during the procedure.",
+  "missing_info": [],
+  "notes": [
+    "The note does not mention the patient's age or gender."
+  ]
+}

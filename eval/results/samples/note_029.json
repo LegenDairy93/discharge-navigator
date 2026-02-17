@@ -1,0 +1,79 @@
+{
+  "diagnoses": [
+    {
+      "label": "schizophrenia",
+      "icd10": "295.90",
+      "confidence": "high",
+      "evidence_spans": [
+        "He has a psychiatric history of schizophrenia"
+      ]
+    },
+    {
+      "label": "hyperlipidemia",
+      "icd10": "E78.5",
+      "confidence": "medium",
+      "evidence_spans": [
+        "The only identified problem in his chart is that he is being treated for hyperlipidemia with gemfibrozil"
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "Invega",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "Listed as Invega"
+      ]
+    },
+    {
+      "name": "Risperdal",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "Listed as Risperdal"
+      ]
+    },
+    {
+      "name": "gemfibrozil",
+      "dose": "600 b.i.d",
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "We will maintain his gemfibrozil 600 b.i.d.",
+        "The only identified problem in his chart is that he is being treated for hyperlipidemia with gemfibrozil"
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "case manager",
+      "when": "one week after treatment is initiated",
+      "why": "recheck on his labs and lipid levels",
+      "urgency": "routine",
+      "confidence": "medium",
+      "evidence_spans": [
+        "He does smoke.",
+        "He is in counseling service with his case manager being XYZ.",
+        "We will obtain recheck on his labs and lipid levels in one week after treatment is initiated."
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "40-year-old male admitted for 90-day revocation admission due to noncompliance with medications and agitation. He has a history of schizophrenia and was previously admitted for auditory hallucinations and confusion. He is being treated for hyperlipidemia with gemfibrozil.",
+  "missing_info": [],
+  "notes": [
+    "Extracted with strict mode \u2014 clinician should verify."
+  ]
+}

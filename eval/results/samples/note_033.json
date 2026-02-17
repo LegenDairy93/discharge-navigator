@@ -1,0 +1,68 @@
+{
+  "diagnoses": [
+    {
+      "label": "Recurrent herniation L4-5 disk with left radiculopathy",
+      "icd10": "M54.5",
+      "confidence": "high",
+      "evidence_spans": [
+        "PREOPERATIVE DIAGNOSIS (ES):, Recurrent herniation L4-5 disk with left radiculopathy.",
+        "POSTOPERATIVE DIAGNOSIS (ES):, Recurrent herniation L4-5 disk with left radiculopathy."
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "Vancomycin",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "ANTIBIOTIC (S):, Vancomycin given preoperatively."
+      ]
+    },
+    {
+      "name": "Depo-Medrol",
+      "dose": "20 mg",
+      "route": "dura",
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "After a sterile dressing was applied, the patient was turned into the supine position on the waiting recovery room stretcher, brought from under the effects of anesthesia, and taken to the recovery room."
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "physician",
+      "when": "routine",
+      "why": "routine",
+      "urgency": "routine",
+      "confidence": "medium",
+      "evidence_spans": [
+        "The patient was turned into the supine position on the waiting recovery room stretcher, brought from under the effects of anesthesia, and taken to the recovery room."
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "The patient had surgery to fix a problem with their back. They are doing okay after the surgery. They need to see a doctor for a checkup soon.",
+  "missing_info": [
+    {
+      "item": "Physical therapy",
+      "why_required": "To help the patient recover from the surgery.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Pain medication",
+      "why_required": "To help manage pain after the surgery.",
+      "severity": "nice_to_have"
+    }
+  ],
+  "notes": [
+    "The patient had a laminectomy and discectomy. The patient was given Vancomycin preoperatively. The patient was given 20mg of Depo-Medrol over the dura. The patient was turned into the supine position on the waiting recovery room stretcher, brought from under the effects of anesthesia, and taken to the recovery room."
+  ]
+}

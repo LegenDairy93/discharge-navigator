@@ -1,0 +1,20 @@
+{
+  "diagnoses": [
+    {
+      "label": "No acute abnormalities",
+      "icd10": null,
+      "confidence": "high",
+      "evidence_spans": [
+        "No acute abnormalities."
+      ]
+    }
+  ],
+  "medications": [],
+  "followups": [],
+  "red_flags": [],
+  "patient_summary": "The patient's neck X-rays showed no problems like fractures, dislocations, or slippage of the bones. The spaces between the bones in the neck are normal. The patient's neck is aligned correctly. The doctor did not mention any medications or follow-up appointments.",
+  "missing_info": [],
+  "notes": [
+    "The note does not mention any medications, follow-up appointments, or red flags. The patient's neck X-rays showed no problems like fractures, dislocations, or slippage of the bones. The spaces between the bones in the neck are normal. The patient's neck is aligned correctly. The doctor did not mention any medications or follow-up appointments."
+  ]
+}

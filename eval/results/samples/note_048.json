@@ -1,0 +1,109 @@
+{
+  "diagnoses": [
+    {
+      "label": "Angina pectoris",
+      "icd10": "I20.9",
+      "confidence": "medium",
+      "evidence_spans": [
+        "Recurrent angina.",
+        "History of coronary disease."
+      ]
+    },
+    {
+      "label": "Coronary artery disease",
+      "icd10": "I25.9",
+      "confidence": "medium",
+      "evidence_spans": [
+        "History of coronary disease."
+      ]
+    },
+    {
+      "label": "Stent placement",
+      "icd10": "Z98.1",
+      "confidence": "medium",
+      "evidence_spans": [
+        "Successful stenting of the left anterior descending diagonal.",
+        "Stent was a 275 x 13 Zeta."
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "Aspirin",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "We have stented the culprit lesion. The patient will receive a course of aspirin, Plavix, Integrilin, and statin therapy."
+      ]
+    },
+    {
+      "name": "Plavix",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "We have stented the culprit lesion. The patient will receive a course of aspirin, Plavix, Integrilin, and statin therapy."
+      ]
+    },
+    {
+      "name": "Integrilin",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "We have stented the culprit lesion. The patient will receive a course of aspirin, Plavix, Integrilin, and statin therapy."
+      ]
+    },
+    {
+      "name": "Statin",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "We have stented the culprit lesion. The patient will receive a course of aspirin, Plavix, Integrilin, and statin therapy."
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "Cardiologist",
+      "when": "1 week",
+      "why": "Follow up",
+      "urgency": "routine",
+      "confidence": "medium",
+      "evidence_spans": [
+        "We have stented the culprit lesion. The patient will receive a course of aspirin, Plavix, Integrilin, and statin therapy."
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "The patient had a heart catheterization to check their heart. They had a blockage in a blood vessel in their heart, and doctors put a stent in it to open it up. The patient will need to take aspirin, Plavix, and Integrilin to help prevent more blockages. They will also need to take a statin. The patient will need to follow up with a cardiologist in one week.",
+  "missing_info": [
+    {
+      "item": "Specific medications",
+      "why_required": "To ensure patient is taking the correct medications.",
+      "severity": "important"
+    },
+    {
+      "item": "Specific follow-up details",
+      "why_required": "To ensure patient is following up with the correct provider and at the correct time.",
+      "severity": "important"
+    }
+  ],
+  "notes": [
+    "Confidence levels are based on the information provided in the clinical note. Some information is missing, so confidence is low."
+  ]
+}

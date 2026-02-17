@@ -1,0 +1,85 @@
+{
+  "diagnoses": [
+    {
+      "label": "Complete heart block",
+      "icd10": "I43.0",
+      "confidence": "high",
+      "evidence_spans": [
+        "Complete heart block.",
+        "Complete heart block."
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "Versed",
+      "dose": "2.5 mg",
+      "route": "IV",
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "Versed 2.5 mg."
+      ]
+    },
+    {
+      "name": "Fentanyl",
+      "dose": "150 mcg",
+      "route": "IV",
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "Fentanyl 150 mcg."
+      ]
+    },
+    {
+      "name": "Benadryl",
+      "dose": "50 mg",
+      "route": "IV",
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "Benadryl 50 mg."
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "device clinic",
+      "when": "7 to 10 days",
+      "why": "wound check",
+      "urgency": "routine",
+      "confidence": "medium",
+      "evidence_spans": [
+        "Wound check in 7 to 10 days."
+      ]
+    },
+    {
+      "with_whom": "device clinic",
+      "when": "in the morning",
+      "why": "device interrogation",
+      "urgency": "routine",
+      "confidence": "medium",
+      "evidence_spans": [
+        "Device interrogation in the morning."
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "The patient is an 80-year-old woman who was admitted for a pacemaker implantation because she had complete heart block. The patient agreed to the procedure and the risks and benefits were discussed. The patient will be observed for 24 hours and will have a chest x-ray and a course of antibiotics. The patient will also be enrolled in a device clinic and will have a wound check in 7 to 10 days. The patient will also have a device interrogation in the morning.",
+  "missing_info": [
+    {
+      "item": "discharge instructions",
+      "why_required": "to ensure patient understands how to care for the pacemaker and manage any potential complications",
+      "severity": "important"
+    }
+  ],
+  "notes": [
+    "The patient was admitted for a pacemaker implantation. The procedure was successful, and the patient is stable. The patient will be discharged in 24 hours, provided there are no acute complications. The patient will have a chest x-ray to rule out pneumothorax and verified lead position. The patient will also have a course of antibiotics and will be enrolled in a device clinic. The patient will have a wound check in 7 to 10 days. The patient will also have a device interrogation in the morning. The patient will be dismissed in 24 hours provided no acute complications at the discretion of the primary service."
+  ]
+}

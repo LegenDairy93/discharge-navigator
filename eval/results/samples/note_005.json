@@ -1,0 +1,148 @@
+{
+  "diagnoses": [
+    {
+      "label": "Atrial fibrillation",
+      "icd10": "I48.9",
+      "confidence": "high",
+      "evidence_spans": [
+        "She is in today for a followup of her atrial fibrillation."
+      ]
+    },
+    {
+      "label": "Dizziness",
+      "icd10": "R42.9",
+      "confidence": "low",
+      "evidence_spans": [
+        "She does complain of feeling dizziness, some vertigo, some lightheadedness"
+      ]
+    },
+    {
+      "label": "Vertigo",
+      "icd10": "R42.9",
+      "confidence": "low",
+      "evidence_spans": [
+        "She does complain of feeling dizziness, some vertigo, some lightheadedness"
+      ]
+    },
+    {
+      "label": "Lightheadedness",
+      "icd10": "R42.9",
+      "confidence": "low",
+      "evidence_spans": [
+        "She does complain of feeling dizziness, some vertigo, some lightheadedness"
+      ]
+    },
+    {
+      "label": "Coumadin therapy",
+      "icd10": null,
+      "confidence": "low",
+      "evidence_spans": [
+        "She has attributed this to the Coumadin therapy."
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "Cardizem",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [
+        "They have misplaced the Cardizem."
+      ],
+      "confidence": "low",
+      "evidence_spans": [
+        "They have misplaced the Cardizem."
+      ]
+    },
+    {
+      "name": "Coumadin",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [
+        "She is very adamant that she wants to stop the Coumadin."
+      ],
+      "confidence": "high",
+      "evidence_spans": [
+        "She is very adamant that she wants to stop the Coumadin."
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "Unknown",
+      "when": "Unknown",
+      "why": "Atrial fibrillation",
+      "urgency": "routine",
+      "confidence": "low",
+      "evidence_spans": [
+        "S, ABC is in today for a followup of her atrial fibrillation."
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "ABC is in for a follow-up of her atrial fibrillation. She wants to stop her Coumadin. She has dizziness, vertigo, and lightheadedness. She is feeling better.",
+  "missing_info": [
+    {
+      "item": "Cardizem dose",
+      "why_required": "Patient is not on this medication",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Cardizem route",
+      "why_required": "Patient is not on this medication",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Cardizem frequency",
+      "why_required": "Patient is not on this medication",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Cardizem duration",
+      "why_required": "Patient is not on this medication",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Coumadin dose",
+      "why_required": "Patient is not on this medication",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Coumadin route",
+      "why_required": "Patient is not on this medication",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Coumadin frequency",
+      "why_required": "Patient is not on this medication",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Coumadin duration",
+      "why_required": "Patient is not on this medication",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Follow-up with whom",
+      "why_required": "Not specified",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Follow-up when",
+      "why_required": "Not specified",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Follow-up why",
+      "why_required": "Not specified",
+      "severity": "nice_to_have"
+    }
+  ],
+  "notes": [
+    "The patient is not on Cardizem and wants to stop Coumadin. The patient is feeling better."
+  ]
+}

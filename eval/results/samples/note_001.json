@@ -1,0 +1,31 @@
+{
+  "diagnoses": [
+    {
+      "label": "Cognitive linguistic impairment secondary to stroke",
+      "icd10": "F06.0",
+      "confidence": "high",
+      "evidence_spans": [
+        "Cognitive linguistic impairment secondary to stroke."
+      ]
+    }
+  ],
+  "medications": [],
+  "followups": [
+    {
+      "with_whom": "Primary care physician",
+      "when": "6 weeks",
+      "why": "Follow up with primary care physician",
+      "urgency": "routine",
+      "confidence": "medium",
+      "evidence_spans": [
+        "Follow up with primary care physician"
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "The patient is a 73-year-old woman who had trouble thinking and speaking after a stroke. She went to a speech therapy program for 5 weeks. She is now able to do things like read and remember information. She is no longer in need of speech therapy and is being discharged.",
+  "missing_info": [],
+  "notes": [
+    "The note does not mention any medications or specific follow-up instructions. The ICD-10 code is based on the diagnosis."
+  ]
+}

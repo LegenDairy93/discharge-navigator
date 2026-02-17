@@ -1,0 +1,134 @@
+{
+  "diagnoses": [
+    {
+      "label": "Malignant meningioma",
+      "icd10": "C70.0",
+      "confidence": "high",
+      "evidence_spans": [
+        "He said he has had two surgeries in 07/06 followed by radiation and then again in 08/07.",
+        "This shows that he has had progression of disease with recurrence along the surface of the brain and there is significant brain edema.",
+        "Malignant meningioma by diagnosis."
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "Keppra",
+      "dose": "1500",
+      "route": "twice a day",
+      "frequency": "twice a day",
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "Keppra 1500 twice a day"
+      ]
+    },
+    {
+      "name": "Decadron",
+      "dose": "6 mg",
+      "route": null,
+      "frequency": "four times a day",
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "Decadron 6 mg four times a day"
+      ]
+    },
+    {
+      "name": "oxycodone",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "low",
+      "evidence_spans": [
+        "oxycodone"
+      ]
+    },
+    {
+      "name": "aspirin",
+      "dose": null,
+      "route": null,
+      "frequency": "a day",
+      "duration": null,
+      "warnings": [],
+      "confidence": "low",
+      "evidence_spans": [
+        "an aspirin a day"
+      ]
+    },
+    {
+      "name": "Prilosec",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "low",
+      "evidence_spans": [
+        "Prilosec"
+      ]
+    },
+    {
+      "name": "Dilantin",
+      "dose": "300",
+      "route": null,
+      "frequency": "a day",
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "Dilantin 300 a day"
+      ]
+    },
+    {
+      "name": "Flagyl",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "low",
+      "evidence_spans": [
+        "Flagyl"
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "family",
+      "when": "both with him and his family",
+      "why": "to discuss surgery",
+      "urgency": "routine",
+      "confidence": "medium",
+      "evidence_spans": [
+        "I discussed this both with him, although it is not clear to me how much he understood, as well as his family."
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "Mr. A is a new patient who has a malignant meningioma. He has had surgeries, radiation, and seizures. He is currently in a nursing home and unable to care for himself. The doctor does not think surgery will help Mr. A's quality of life. The doctor discussed surgery with Mr. A and his family.",
+  "missing_info": [
+    {
+      "item": "discharge location",
+      "why_required": "to determine where the patient will be discharged",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "discharge disposition",
+      "why_required": "to determine if the patient will be discharged home, to a facility, or to hospice",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "specific chemotherapy options",
+      "why_required": "to determine if chemotherapy is being considered",
+      "severity": "nice_to_have"
+    }
+  ],
+  "notes": [
+    "The patient's cognitive status is unclear. The doctor did not explicitly state whether the patient understood the discussion about surgery. The patient's current condition is described as significant disability and not independent. The doctor's opinion is that surgery is not in the patient's best interest."
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "diagnoses": [
+    {
+      "label": "Bladder tumor",
+      "icd10": "Cyr.00",
+      "confidence": "high",
+      "evidence_spans": [
+        "Bladder tumor.",
+        "Bladder tumor."
+      ]
+    }
+  ],
+  "medications": [],
+  "followups": [
+    {
+      "with_whom": "Urologist",
+      "when": "6 weeks",
+      "why": "Follow up",
+      "urgency": "routine",
+      "confidence": "medium",
+      "evidence_spans": [
+        "Follow up"
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "The patient is a 74-year-old man who had a tumor removed from his bladder. He needs to see a urologist in 6 weeks to check on the tumor. The doctor used a spinal anesthetic for the surgery. The patient had microscopic and gross hematuria. The patient had an IVP which showed an enlarged prostate and normal upper tracts. Cystoscopy showed a 2.5- to 3-cm left lateral wall bladder tumor. The tumor was removed using a resectoscope. The bladder was irrigated with sterile fluid. The patient is in stable condition.",
+  "missing_info": [
+    {
+      "item": "Medications",
+      "why_required": "Patient is on medications that need to be documented.",
+      "severity": "important"
+    }
+  ],
+  "notes": [
+    "ICD-10 codes are candidate codes for clinician review."
+  ]
+}

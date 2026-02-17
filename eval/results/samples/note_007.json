@@ -1,0 +1,261 @@
+{
+  "diagnoses": [
+    {
+      "label": "Mantle cell lymphoma",
+      "icd10": "C91.0",
+      "confidence": "high",
+      "evidence_spans": [
+        "Mantle cell lymphoma, diagnosed in 2001, status post autologous transplant with BEAM regimen in 04/02 followed by relapse."
+      ]
+    },
+    {
+      "label": "Allogeneic peripheral stem cell transplant",
+      "icd10": null,
+      "confidence": "low",
+      "evidence_spans": [
+        "Allogeneic peripheral stem cell transplant from match-related brother and the patient is 53 months out from transplant."
+      ]
+    },
+    {
+      "label": "Graft versus host disease",
+      "icd10": "Z12.1",
+      "confidence": "low",
+      "evidence_spans": [
+        "Graft versus host disease involving GI tracts, skin, and liver presently off immunosuppression."
+      ]
+    },
+    {
+      "label": "Diabetes mellitus",
+      "icd10": "E11",
+      "confidence": "high",
+      "evidence_spans": [
+        "Diabetes."
+      ]
+    },
+    {
+      "label": "Bipolar disorder",
+      "icd10": "F31",
+      "confidence": "low",
+      "evidence_spans": [
+        "Bipolar disorder."
+      ]
+    },
+    {
+      "label": "Chronic muscle aches",
+      "icd10": "M54.9",
+      "confidence": "low",
+      "evidence_spans": [
+        "Chronic muscle aches."
+      ]
+    },
+    {
+      "label": "Chronic lower extremity edema",
+      "icd10": "R60.0",
+      "confidence": "low",
+      "evidence_spans": [
+        "Chronic lower extremity edema."
+      ]
+    },
+    {
+      "label": "ECOG performance status 1",
+      "icd10": null,
+      "confidence": "low",
+      "evidence_spans": [
+        "ECOG performance status 1."
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "Paxil",
+      "dose": "40 mg",
+      "route": "oral",
+      "frequency": "once daily",
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "Paxil 40 mg once daily."
+      ]
+    },
+    {
+      "name": "Cozaar",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "low",
+      "evidence_spans": [
+        "Cozaar."
+      ]
+    },
+    {
+      "name": "Xanax",
+      "dose": "1 mg",
+      "route": null,
+      "frequency": "four times a day",
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "Xanax 1 mg four times a day."
+      ]
+    },
+    {
+      "name": "Prozac",
+      "dose": "20 mg",
+      "route": "oral",
+      "frequency": "a day",
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "Prozac 20 mg a day."
+      ]
+    },
+    {
+      "name": "Lasix",
+      "dose": "40 mg",
+      "route": "oral",
+      "frequency": "a day",
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "Lasix 40 mg a day."
+      ]
+    },
+    {
+      "name": "Potassium",
+      "dose": "10 mEq",
+      "route": "oral",
+      "frequency": "a day",
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "Potassium 10 mEq a day."
+      ]
+    },
+    {
+      "name": "Mirapex",
+      "dose": "two tablets",
+      "route": "oral",
+      "frequency": "every night",
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "Mirapex two tablets every night."
+      ]
+    },
+    {
+      "name": "Allegra",
+      "dose": "60 mg",
+      "route": "oral",
+      "frequency": "twice a day",
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "Allegra 60 mg twice a day."
+      ]
+    },
+    {
+      "name": "Avandamet",
+      "dose": "4/1000 mg",
+      "route": "oral",
+      "frequency": "daily",
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "Avandamet 4/1000 mg daily."
+      ]
+    },
+    {
+      "name": "Nexium",
+      "dose": "20 mg",
+      "route": "oral",
+      "frequency": "a day",
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "Nexium 20 mg a day."
+      ]
+    },
+    {
+      "name": "NovoLog",
+      "dose": "25/50",
+      "route": "oral",
+      "frequency": "a day",
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "NovoLog 25/50."
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "clinic",
+      "when": "every 4 to 8 weeks",
+      "why": "followup",
+      "urgency": "routine",
+      "confidence": "high",
+      "evidence_spans": [
+        "The patient comes to the clinic today for followup.  I am seeing him once every 4 to 8 weeks."
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "The patient is a 61-year-old man who has been diagnosed with mantle cell lymphoma and other conditions like diabetes and bipolar disorder. He is doing well and is being followed up with his doctor every few weeks. He has some complaints like fatigue and rectal bleeding, but his doctor is monitoring him and giving him advice.",
+  "missing_info": [
+    {
+      "item": "Medications",
+      "why_required": "To ensure the patient is taking the correct medications and dosages.",
+      "severity": "important"
+    },
+    {
+      "item": "Allergies",
+      "why_required": "To prevent allergic reactions to medications or other substances.",
+      "severity": "important"
+    },
+    {
+      "item": "Social History",
+      "why_required": "To understand the patient's support system and ability to adhere to the discharge plan.",
+      "severity": "important"
+    },
+    {
+      "item": "Smoking History",
+      "why_required": "To assess the risk of respiratory problems and other health issues.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Alcohol Use",
+      "why_required": "To assess the risk of liver problems and other health issues.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Family History",
+      "why_required": "To assess the risk of certain diseases.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Vaccination Status",
+      "why_required": "To ensure the patient is up-to-date on vaccinations.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Advance Directives",
+      "why_required": "To ensure the patient's wishes are known in case of an emergency.",
+      "severity": "nice_to_have"
+    }
+  ],
+  "notes": [
+    "The patient's discharge plan is not fully detailed in the note. Further information is needed to provide a comprehensive discharge packet."
+  ]
+}

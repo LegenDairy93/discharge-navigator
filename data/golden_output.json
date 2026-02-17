@@ -1,0 +1,169 @@
+{
+  "diagnoses": [
+    {
+      "label": "Syncope",
+      "icd10": "R42",
+      "confidence": "high",
+      "evidence_spans": [
+        "ADMISSION DIAGNOSES:,1.  Syncope.",
+        "DISCHARGE DIAGNOSES:,1.  Syncope."
+      ]
+    },
+    {
+      "label": "End-stage renal disease requiring hemodialysis",
+      "icd10": "N18.9",
+      "confidence": "high",
+      "evidence_spans": [
+        "ADMISSION DIAGNOSES:,2.  End-stage renal disease requiring hemodialysis.",
+        "DISCHARGE DIAGNOSES:,2.  End-stage renal disease requiring hemodialysis."
+      ]
+    },
+    {
+      "label": "Congestive heart failure",
+      "icd10": "I50.9",
+      "confidence": "high",
+      "evidence_spans": [
+        "ADMISSION DIAGNOSES:,3.  Congestive heart failure.",
+        "DISCHARGE DIAGNOSES:,3.  Congestive heart failure."
+      ]
+    },
+    {
+      "label": "Hypertension",
+      "icd10": "I10",
+      "confidence": "high",
+      "evidence_spans": [
+        "ADMISSION DIAGNOSES:,4.  Hypertension.",
+        "DISCHARGE DIAGNOSES:,4.  Hypertension."
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "Aspirin",
+      "dose": "81 mg",
+      "route": "p.o",
+      "frequency": "daily",
+      "duration": "ongoing",
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "DISCHARGE INSTRUCTIONS/MEDICATIONS:,The patient left AMA.  No specific discharge instructions and medications were given.  At the time of the patient leaving AMA, his medications were as follows:,1.  Aspirin 81 mg p.o. daily."
+      ]
+    },
+    {
+      "name": "Multivitamin",
+      "dose": null,
+      "route": "p.o",
+      "frequency": null,
+      "duration": "ongoing",
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "DISCHARGE INSTRUCTIONS/MEDICATIONS:,The patient left AMA.  No specific discharge instructions and medications were given.  At the time of the patient leaving AMA, his medications were as follows:,2.  Multivitamin"
+      ]
+    },
+    {
+      "name": "Fosrenol",
+      "dose": "500 mg",
+      "route": "chewable",
+      "frequency": "t.i.d",
+      "duration": "ongoing",
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "DISCHARGE INSTRUCTIONS/MEDICATIONS:,The patient left AMA.  No specific discharge instructions and medications were given.  At the time of the patient leaving AMA, his medications were as follows:,3.  Fosrenol 500 mg chewable t.i.d."
+      ]
+    },
+    {
+      "name": "Lisinopril",
+      "dose": "2.5 mg",
+      "route": "daily",
+      "frequency": "daily",
+      "duration": "ongoing",
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "DISCHARGE INSTRUCTIONS/MEDICATIONS:,The patient left AMA.  No specific discharge instructions and medications were given.  At the time of the patient leaving AMA, his medications were as follows:,4.  Lisinopril 2.5 mg daily."
+      ]
+    },
+    {
+      "name": "Coreg",
+      "dose": "3.125 mg",
+      "route": "p.o",
+      "frequency": "b.i.d",
+      "duration": "ongoing",
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "DISCHARGE INSTRUCTIONS/MEDICATIONS:,The patient left AMA.  No specific discharge instructions and medications were given.  At the time of the patient leaving AMA, his medications were as follows:,6.  Coreg 3.125 mg p.o. b.i.d."
+      ]
+    },
+    {
+      "name": "Procrit",
+      "dose": "10,000 units",
+      "route": "inject",
+      "frequency": "every Tuesday, Thursday, and Saturday",
+      "duration": "ongoing",
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "DISCHARGE INSTRUCTIONS/MEDICATIONS:,The patient left AMA.  No specific discharge instructions and medications were given.  At the time of the patient leaving AMA, his medications were as follows:,7.  Procrit 10,000 units inject every Tuesday, Thursday, and Saturday."
+      ]
+    },
+    {
+      "name": "Heparin",
+      "dose": "5000 units",
+      "route": "subcutaneous",
+      "frequency": "q.8h",
+      "duration": "ongoing",
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "DISCHARGE INSTRUCTIONS/MEDICATIONS:,The patient left AMA.  No specific discharge instructions and medications were given.  At the time of the patient leaving AMA, his medications were as follows:,8.  Heparin 5000 units q.8h. subcutaneous for DVT prophylaxis."
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "unspecified",
+      "when": "unspecified",
+      "why": null,
+      "urgency": "routine",
+      "confidence": "low",
+      "evidence_spans": []
+    }
+  ],
+  "red_flags": [
+    {
+      "symptom": "lightheadedness",
+      "action": "orthostatics",
+      "confidence": "low"
+    },
+    {
+      "symptom": "confusion",
+      "action": "unspecified",
+      "confidence": "low"
+    }
+  ],
+  "patient_summary": "The patient is a 44-year-old African-American male who was diagnosed with end-stage renal disease requiring hemodialysis, congestive heart failure, and hypertension. He has been feeling lightheaded and has had syncopal episodes. He was admitted for likely orthostatic hypotension and was given medications to manage his blood pressure and heart failure. He was reluctant to proceed with a nuclear medicine stress test. The patient left AMA and did not receive any specific discharge instructions or medications.",
+  "missing_info": [
+    {
+      "item": "Specific follow-up instructions",
+      "why_required": "To ensure the patient's ongoing care and management of their conditions.",
+      "severity": "important"
+    },
+    {
+      "item": "Specific discharge instructions",
+      "why_required": "To ensure the patient's safety and well-being at home.",
+      "severity": "important"
+    },
+    {
+      "item": "Specific medications",
+      "why_required": "To ensure the patient is taking the correct medications and dosages.",
+      "severity": "important"
+    }
+  ],
+  "notes": [
+    "The patient left AMA. No specific discharge instructions and medications were given. The patient's medications were as follows: Aspirin 81 mg p.o. daily, Multivitamin, Fosrenol 500 mg chewable t.i.d, Lisinopril 2.5 mg daily, Coreg 3.125 mg p.o. b.i.d, Procrit 10,000 units inject every Tuesday, Thursday, and Saturday, Heparin 5000 units q.8h. subcutaneous for DVT prophylaxis."
+  ]
+}

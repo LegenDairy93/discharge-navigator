@@ -1,0 +1,200 @@
+{
+  "diagnoses": [
+    {
+      "label": "Left carpal tunnel syndrome",
+      "icd10": "M39.1",
+      "confidence": "high",
+      "evidence_spans": [
+        "PREOPERATIVE DIAGNOSES:,1.  Left carpal tunnel syndrome.",
+        "POSTOPERATIVE DIAGNOSES:,1.  Left carpal tunnel syndrome."
+      ]
+    },
+    {
+      "label": "Stenosing tenosynovitis of right middle finger (trigger finger)",
+      "icd10": "M25.51",
+      "confidence": "high",
+      "evidence_spans": [
+        "PREOPERATIVE DIAGNOSES:,2.  Stenosing tenosynovitis of right middle finger (trigger finger).",
+        "POSTOPERATIVE DIAGNOSES:,2.  Stenosing tenosynovitis of right middle finger (trigger finger)."
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "Celestone",
+      "dose": "1 mL",
+      "route": "intracarpal",
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "With the patient under adequate monitored anesthesia, the left upper extremity was prepped and draped in a sterile manner.  The arm was exsanguinated.  The tourniquet was elevated at 290 mmHg.  Construction lines were made on the left palm to identify the ring ray.  A transverse incision was made in the palm between FCR and FCU, one finger breadth proximal to the interval between the glabrous skin of the palm and normal forearm skin.  Blunt dissection exposed the antebrachial fascia.  Hemostasis was obtained with bipolar cautery.  A distal based window in the antebrachial fascia was then fashioned.  Care was taken to protect the underlying contents.  A synovial elevator was used to palpate the undersurface of the transverse carpal ligament, and synovium was elevated off this undersurface.,Hamate sounds were then used to palpate the Hood of Hamate.  The Agee Inside Job was then inserted into the proximal incision.  The transverse carpal ligament was easily visualized through the portal.  Using palmar pressure, transverse carpal ligament was held against the portal as the instrument was inserted down the transverse carpal ligament to the distal end.  The distal end of the transverse carpal ligament was then identified in the window.  The blade was then elevated, and the Agee Inside Job was withdrawn, dividing transverse carpal ligament under direct vision.  After complete division of transverse carpal ligament, the Agee Inside Job was reinserted.  Radial and ulnar edges of the transverse carpal ligament were identified and complete release was accomplished.  One mL of Celestone was then introduced into the carpal tunnel and irrigated free.",
+        "The wound was then closed with a running 3-0 Prolene subcuticular stitch.  Steri-strips were applied and a sterile dressing was applied over the Steri-strips."
+      ]
+    },
+    {
+      "name": "Depo-Medrol",
+      "dose": "40 mg/mL",
+      "route": "intramuscular",
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "Attention was turned to the right palm where after a sterile prep, the right middle finger flexor sheath was injected with 0.5 mL of 1% plain Xylocaine and 0.5 mL of Depo-Medrol 40 mg/mL.  A Band-Aid dressing was then applied."
+      ]
+    },
+    {
+      "name": "Xylocaine",
+      "dose": "1%",
+      "route": "intramuscular",
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "Attention was turned to the right palm where after a sterile prep, the right middle finger flexor sheath was injected with 0.5 mL of 1% plain Xylocaine and 0.5 mL of Depo-Medrol 40 mg/mL.  A Band-Aid dressing was then applied."
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "physician",
+      "when": "routine",
+      "why": "routine",
+      "urgency": "routine",
+      "confidence": "medium",
+      "evidence_spans": [
+        "The patient was then awakened from the anesthesia and returned to the recovery room in satisfactory condition having tolerated the procedure well."
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "The patient had surgery to fix problems with their hands. They had surgery on their left hand to fix a problem with the tendons in their wrist. They also had surgery on their right hand to fix a problem with the tendons in their finger. The patient was given medicine to help with pain and inflammation. The patient is doing well and will need to follow up with their doctor.",
+  "missing_info": [
+    {
+      "item": "Patient's name",
+      "why_required": "To identify the patient.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Patient's age",
+      "why_required": "To identify the patient.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Patient's gender",
+      "why_required": "To identify the patient.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Patient's address",
+      "why_required": "To identify the patient.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Patient's phone number",
+      "why_required": "To identify the patient.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Patient's insurance information",
+      "why_required": "To identify the patient.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Patient's discharge location",
+      "why_required": "To identify the patient.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Patient's discharge date",
+      "why_required": "To identify the patient.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Patient's primary care physician",
+      "why_required": "To identify the patient.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Patient's allergies",
+      "why_required": "To identify the patient.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Patient's social history",
+      "why_required": "To identify the patient.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Patient's family history",
+      "why_required": "To identify the patient.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Patient's occupation",
+      "why_required": "To identify the patient.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Patient's weight",
+      "why_required": "To identify the patient.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Patient's height",
+      "why_required": "To identify the patient.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Patient's blood pressure",
+      "why_required": "To identify the patient.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Patient's heart rate",
+      "why_required": "To identify the patient.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Patient's temperature",
+      "why_required": "To identify the patient.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Patient's oxygen saturation",
+      "why_required": "To identify the patient.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Patient's medications at discharge",
+      "why_required": "To identify the patient.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Patient's discharge instructions",
+      "why_required": "To identify the patient.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Patient's post-operative care instructions",
+      "why_required": "To identify the patient.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Patient's follow-up appointment",
+      "why_required": "To identify the patient.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Patient's contact information",
+      "why_required": "To identify the patient.",
+      "severity": "nice_to_have"
+    }
+  ],
+  "notes": [
+    "The patient was discharged in satisfactory condition."
+  ]
+}

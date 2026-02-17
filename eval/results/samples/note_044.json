@@ -1,0 +1,43 @@
+{
+  "diagnoses": [
+    {
+      "label": "Lumbar osteomyelitis",
+      "icd10": "L41.9",
+      "confidence": "high",
+      "evidence_spans": [
+        "Lumbar osteomyelitis",
+        "Lumbar osteomyelitis"
+      ]
+    },
+    {
+      "label": "Need for durable central intravenous access",
+      "icd10": "Z98.1",
+      "confidence": "high",
+      "evidence_spans": [
+        "Need for durable central intravenous access",
+        "Need for durable central intravenous access"
+      ]
+    }
+  ],
+  "medications": [],
+  "followups": [
+    {
+      "with_whom": "Pediatric Surgery Service",
+      "when": "today",
+      "why": "Broviac placement",
+      "urgency": "routine",
+      "confidence": "high",
+      "evidence_spans": [
+        "Pediatric Surgery Service",
+        "today",
+        "Broviac placement"
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "The patient is a toddler who was admitted with a limp and back pain. The patient was found to have probable osteomyelitis of the lumbar spine at disk areas. The patient needs prolonged IV antibiotic therapy, but attempt at a PICC line failed. She has exhausted most of her easy peripheral IV access routes and referral was made to the Pediatric Surgery Service for Broviac placement. The patient is fit for operation today.",
+  "missing_info": [],
+  "notes": [
+    "The patient is a toddler admitted with a limp and back pain, who was eventually found on bone scan and septic workup to have probable osteomyelitis of the lumbar spine at disk areas. The patient needs prolonged IV antibiotic therapy, but attempt at a PICC line failed. She has exhausted most of her easy peripheral IV access routes and referral was made to the Pediatric Surgery Service for Broviac placement. I met with the patient's mom. With the help of a Spanish interpreter, I explained the technique for Broviac placement. We discussed the surgical risks and alternatives, most of which have been exhausted. All their questions have been answered, and the patient is fit for operation today."
+  ]
+}

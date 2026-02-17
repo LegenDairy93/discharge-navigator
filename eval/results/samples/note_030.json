@@ -1,0 +1,53 @@
+{
+  "diagnoses": [
+    {
+      "label": "Cervical spondylosis C5-C6 greater than C6-C7",
+      "icd10": "721.0",
+      "confidence": "high",
+      "evidence_spans": [
+        "Cervical spondylosis C5-C6 greater than C6-C7 (721.0).",
+        "Cervical spondylosis C5-C6 greater than C6-C7 (721.0).",
+        "Cervical spondylosis C5-C6 greater than C6-C7 (721.0)."
+      ]
+    },
+    {
+      "label": "Neck pain, progressive",
+      "icd10": "723.1",
+      "confidence": "high",
+      "evidence_spans": [
+        "Neck pain, progressive (723.1)",
+        "Neck pain, progressive (723.1)",
+        "Neck pain, progressive (723.1)"
+      ]
+    },
+    {
+      "label": "Right greater than left radiculopathy",
+      "icd10": "723.4",
+      "confidence": "high",
+      "evidence_spans": [
+        "right greater than left radiculopathy (723.4)",
+        "right greater than left radiculopathy (723.4)",
+        "right greater than left radiculopathy (723.4)"
+      ]
+    }
+  ],
+  "medications": [],
+  "followups": [],
+  "red_flags": [],
+  "patient_summary": "The patient had surgery to fix problems in their neck. They are now recovering and will need to follow up with their doctor. The patient is stable, but guarded.",
+  "missing_info": [
+    {
+      "item": "Medications",
+      "why_required": "To ensure the patient is taking the correct medications at home.",
+      "severity": "important"
+    },
+    {
+      "item": "Follow-up appointments",
+      "why_required": "To monitor the patient's progress and address any concerns.",
+      "severity": "important"
+    }
+  ],
+  "notes": [
+    "The patient had anterior cervical discectomy and fusion at C5-C6 and C6-C7. The surgery was performed using Bengal cages and Uniplate construction. The patient was stable, but guarded after surgery. The patient was extubated and taken to the recovery area. All instrument counts were accurate. There were no intraoperative complications."
+  ]
+}

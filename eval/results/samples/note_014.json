@@ -1,0 +1,39 @@
+{
+  "diagnoses": [
+    {
+      "label": "Polycystic ovary syndrome",
+      "icd10": "Z90.0",
+      "confidence": "medium",
+      "evidence_spans": [
+        "This is a followup dietary consultation for polycystic ovarian syndrome and hyperlipidemia."
+      ]
+    },
+    {
+      "label": "Hyperlipidemia",
+      "icd10": "E78.5",
+      "confidence": "medium",
+      "evidence_spans": [
+        "This is a followup dietary consultation for polycystic ovarian syndrome and hyperlipidemia."
+      ]
+    }
+  ],
+  "medications": [],
+  "followups": [
+    {
+      "with_whom": "The patient",
+      "when": "One month",
+      "why": "Ongoing support",
+      "urgency": "routine",
+      "confidence": "medium",
+      "evidence_spans": [
+        "Will plan to follow the patient in one month for ongoing support."
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "The patient is following up for dietary advice related to polycystic ovary syndrome and high cholesterol. She is keeping track of her food intake and has lost some weight. She wants to avoid afternoon and evening sluggishness and low blood sugar. The doctor recommends she have a snack around 2:30 or 3 p.m. with protein, like nuts or cheese, and continue keeping track of her food. She should also stay active. The doctor will see her again in a month.",
+  "missing_info": [],
+  "notes": [
+    "The ICD-10 codes are candidate codes for clinician review."
+  ]
+}

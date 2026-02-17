@@ -1,0 +1,20 @@
+{
+  "diagnoses": [
+    {
+      "label": "Normal",
+      "icd10": null,
+      "confidence": "high",
+      "evidence_spans": [
+        "Normal; negative for fever, weight change, fatigue, or aching."
+      ]
+    }
+  ],
+  "medications": [],
+  "followups": [],
+  "red_flags": [],
+  "patient_summary": "The patient is doing well. They don't have any fever, weight changes, fatigue, or aches. Their eyes, ears, nose, mouth, throat, cardiovascular system, lungs, gastrointestinal system, genitourinary system, skin, musculoskeletal system, nervous system, psychiatric state, endocrine system, blood, immune system, and vascular system are all normal. The patient is doing fine.",
+  "missing_info": [],
+  "notes": [
+    "The note is very general and doesn't provide any specific information about medications, follow-up appointments, or red flags. The diagnoses are all 'Normal', which is expected given the lack of information."
+  ]
+}

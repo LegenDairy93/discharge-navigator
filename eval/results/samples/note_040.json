@@ -1,0 +1,62 @@
+{
+  "diagnoses": [
+    {
+      "label": "Lumbar stenosis",
+      "icd10": "M54.5",
+      "confidence": "high",
+      "evidence_spans": [
+        "Lumbar stenosis.",
+        "Lumbar stenosis and cerebrospinal fluid fistula."
+      ]
+    },
+    {
+      "label": "Cerebrospinal fluid fistula",
+      "icd10": "M54.5",
+      "confidence": "high",
+      "evidence_spans": [
+        "Cerebrospinal fluid fistula.",
+        "Repair of CSF fistula, microtechniques L5-S1, application of DuraSeal."
+      ]
+    },
+    {
+      "label": "Atrial fibrillation",
+      "icd10": "I50.9",
+      "confidence": "medium",
+      "evidence_spans": [
+        "The patient is an 82-year-old woman who has about a four-month history now of urinary incontinence and numbness in her legs and hands, and difficulty ambulating. She was evaluated with an MRI scan, which showed a very high-grade stenosis in her lumbar spine, and subsequent evaluation included a myelogram, which demonstrated cervical stenosis at C4-C5, C5-C6, and C6-C7 as well as a complete block of the contrast at L4-L5 and no contrast at L5-S1 either and stenosis at L3-L4 and all the way up, but worse at L3-L4, L4-L5, and L5-S1. Yesterday, she underwent an anterior cervical discectomy and fusions C4-C5, C5-C6, C6-C7 and had some improvement of her symptoms and increased strength, even in the recovery room. She was kept in the ICU because of her age and the need to bring her back to the operating room today for decompressive lumbar laminectomy. The rationale for putting the surgery is close together that she is normally on Coumadin for atrial fibrillation, though she has been cardioverted. She and her son understand the nature, indications, and risks of the surgery, and agreed to go ahead."
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "Coumadin",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "The patient is an 82-year-old woman who has about a four-month history now of urinary incontinence and numbness in her legs and hands, and difficulty ambulating. She was evaluated with an MRI scan, which showed a very high-grade stenosis in her lumbar spine, and subsequent evaluation included a myelogram, which demonstrated cervical stenosis at C4-C5, C5-C6, and C6-C7 as well as a complete block of the contrast at L4-L5 and no contrast at L5-S1 either and stenosis at L3-L4 and all the way up, but worse at L3-L4, L4-L5, and L5-S1. Yesterday, she underwent an anterior cervical discectomy and fusions C4-C5, C5-C6, C6-C7 and had some improvement of her symptoms and increased strength, even in the recovery room. She was kept in the ICU because of her age and the need to bring her back to the operating room today for decompressive lumbar laminectomy. The rationale for putting the surgery is close together that she is normally on Coumadin for atrial fibrillation, though she has been cardioverted. She and her son understand the nature, indications, and risks of the surgery, and agreed to go ahead."
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "The patient and her son",
+      "when": "Today",
+      "why": "To go ahead with the surgery",
+      "urgency": "routine",
+      "confidence": "medium",
+      "evidence_spans": [
+        "The patient and her son understand the nature, indications, and risks of the surgery, and agreed to go ahead."
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "An 82-year-old woman with a history of atrial fibrillation, urinary incontinence, and leg numbness underwent a decompressive lumbar laminectomy for high-grade lumbar stenosis and a cerebrospinal fluid fistula. She was kept in the ICU due to her age and the need for a close-together surgery.",
+  "missing_info": [],
+  "notes": [
+    "Extracted with strict mode \u2014 clinician should verify."
+  ]
+}

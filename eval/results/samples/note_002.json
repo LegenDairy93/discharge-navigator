@@ -1,0 +1,165 @@
+{
+  "diagnoses": [
+    {
+      "label": "Pulmonary fibrosis",
+      "icd10": "J44.9",
+      "confidence": "high",
+      "evidence_spans": [
+        "Pulmonary fibrosis",
+        "on prednisone",
+        "oxygen-dependent cellulitis status post foot surgery with infection recuperating from the same"
+      ]
+    },
+    {
+      "label": "Septicemia",
+      "icd10": "R50.9",
+      "confidence": "high",
+      "evidence_spans": [
+        "Septicemia",
+        "septic shock"
+      ]
+    },
+    {
+      "label": "Septic shock",
+      "icd10": "R50.9",
+      "confidence": "high",
+      "evidence_spans": [
+        "septic shock"
+      ]
+    },
+    {
+      "label": "Acute renal failure",
+      "icd10": "N17.9",
+      "confidence": "high",
+      "evidence_spans": [
+        "Acute renal shutdown"
+      ]
+    },
+    {
+      "label": "Elevated cardiac enzyme profile",
+      "icd10": "I42.9",
+      "confidence": "high",
+      "evidence_spans": [
+        "Elevated cardiac enzyme profile",
+        "without prior cardiac history",
+        "possibly due to sepsis and also acute renal failure"
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "Vitamin supplementation",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "low",
+      "evidence_spans": [
+        "Vitamin supplementation"
+      ]
+    },
+    {
+      "name": "Prednisone",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "low",
+      "evidence_spans": [
+        "Prednisone"
+      ]
+    },
+    {
+      "name": "Cyclobenzaprine",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "low",
+      "evidence_spans": [
+        "Cyclobenzaprine"
+      ]
+    },
+    {
+      "name": "Losartan",
+      "dose": "50 mg",
+      "route": "oral",
+      "frequency": "daily",
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "Losartan 50 mg daily"
+      ]
+    },
+    {
+      "name": "Nifedipine",
+      "dose": "90 mg",
+      "route": "oral",
+      "frequency": "daily",
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "Nifedipine 90 mg daily"
+      ]
+    },
+    {
+      "name": "Lasix",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "low",
+      "evidence_spans": [
+        "Lasix"
+      ]
+    },
+    {
+      "name": "Potassium supplementation",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "low",
+      "evidence_spans": [
+        "Potassium supplementation"
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "physician back in Utah",
+      "when": "routine",
+      "why": null,
+      "urgency": "routine",
+      "confidence": "low",
+      "evidence_spans": [
+        "followed by a physician back in Utah",
+        "routine"
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "The patient is a 66-year-old man who was brought to the emergency room because he was obtunded. He was on mechanical ventilation. His initial diagnosis was septic shock. His labs showed elevated cardiac enzyme levels. The patient has pulmonary fibrosis, is on prednisone, and is oxygen-dependent. He has a history of cellulitis and septicemia. He has acute renal failure and elevated cardiac enzymes. The patient is being treated with dialysis and is on mechanical ventilation. The patient's family is aware of the condition.",
+  "missing_info": [
+    {
+      "item": "EKG",
+      "why_required": "EKG",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Echocardiogram",
+      "why_required": "Echocardiogram to assess LV function to rule out any cardiac valvular involvement",
+      "severity": "important"
+    }
+  ],
+  "notes": [
+    "The patient's cardiac enzyme profile could be elevated secondary to sepsis and also underlying renal failure. The patient's family is aware of the condition. The patient's family is aware of the condition. The patient's family is aware of the condition."
+  ]
+}

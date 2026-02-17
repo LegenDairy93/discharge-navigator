@@ -1,0 +1,68 @@
+{
+  "diagnoses": [
+    {
+      "label": "First-degree and second-degree burns, right arm secondary to hot oil spill",
+      "icd10": "S45.111",
+      "confidence": "high",
+      "evidence_spans": [
+        "First-degree and second-degree burns, right arm secondary to hot oil spill."
+      ]
+    },
+    {
+      "label": "Workers' Compensation industrial injury",
+      "icd10": "99213",
+      "confidence": "medium",
+      "evidence_spans": [
+        "Workers' Compensation industrial injury."
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "Demerol",
+      "dose": "50 mg",
+      "route": "IM",
+      "frequency": "one time",
+      "duration": "one time",
+      "warnings": [
+        "patient refused pain medication"
+      ],
+      "confidence": "medium",
+      "evidence_spans": [
+        "The patient was ordered Demerol 50 mg IM for pain, but he refused and did not want pain medication."
+      ]
+    },
+    {
+      "name": "Tylenol No. 3",
+      "dose": "tabs #4",
+      "route": "oral",
+      "frequency": "one or two every four hours p.r.n.",
+      "duration": "p.r.n.",
+      "warnings": [
+        "take one or two every four hours p.r.n."
+      ],
+      "confidence": "medium",
+      "evidence_spans": [
+        "Tylenol No. 3, tabs #4, to take home with him and take one or two every four hours p.r.n. for pain."
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "tomorrow",
+      "when": "tomorrow",
+      "why": "dressing change",
+      "urgency": "soon",
+      "confidence": "medium",
+      "evidence_spans": [
+        "He is to return tomorrow for a dressing change."
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "The patient has burns on his arm from hot oil. He needs a dressing change and pain medication. He is going home.",
+  "missing_info": [],
+  "notes": [
+    "The patient refused Demerol. The ICD-10 codes are candidate codes for clinician review."
+  ]
+}

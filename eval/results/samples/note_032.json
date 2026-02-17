@@ -1,0 +1,70 @@
+{
+  "diagnoses": [
+    {
+      "label": "Left elbow fracture dislocation with incarceration of the medial epicondyle with ulnar nerve paresthesias",
+      "icd10": "S82.211Z",
+      "confidence": "high",
+      "evidence_spans": [
+        "Left elbow fracture dislocation with incarceration of the medial epicondyle with ulnar nerve paresthesias status post closed reduction, attempts 2"
+      ]
+    },
+    {
+      "label": "Right radial shaft fracture with volar apex angulation",
+      "icd10": "S52.511Z",
+      "confidence": "high",
+      "evidence_spans": [
+        "right radial shaft fracture with volar apex angulation."
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "Marcaine",
+      "dose": "10 mL",
+      "route": "local",
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "Local anesthetic was 10 mL of 0.5% Marcaine."
+      ]
+    },
+    {
+      "name": "Ancef",
+      "dose": null,
+      "route": "IV",
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "The patient received Ancef preoperatively."
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "father",
+      "when": "1 to 2 days",
+      "why": "pain control and neurovascular testing",
+      "urgency": "routine",
+      "confidence": "medium",
+      "evidence_spans": [
+        "The patient will be hospitalized for pain control and neurovascular testing for the next 1 to 2 days."
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "A 13-year-old girl fell off a swing and needed surgery to fix a broken elbow and a broken wrist. She had some numbness in her arm, but the doctors were able to fix it. She will stay in the hospital for a few days to get better.",
+  "missing_info": [
+    {
+      "item": "Ancef",
+      "why_required": "Antibiotic",
+      "severity": "important"
+    }
+  ],
+  "notes": [
+    "The patient was a right-hand dominant girl. The patient was seen at an outside facility. The patient was brought here by her father. The patient had an incarcerated medial epicondyle fracture as well as increasing ulnar paresthesias that were not present prior to the procedure. The patient needed urgent open reduction and internal fixation to relieve the pressure on the ulnar nerve. The patient's mildly angulated radial shaft fracture will be reduced. The risks of surgery included the risk of anesthesia, infection, bleeding, changes in sensation and motion of the extremity, hardware failure, need for later hardware removal, and possible continuous nerve symptoms. The father agreed to the above plan. The patient was taken to the operating room and placed supine on the operating room table. General anesthesia was then administered. The patient received Ancef preoperatively. The left upper extremity was then prepped and draped in the standard surgical fashion. Attempts to remove the incarcerated medial epicondyle with supination, valgus stress, and with extension were unsuccessful. It was decided at this time that she would need open reduction. The arm was wrapped in Esmarch prior to inflation of the tourniquet to 250 mmHg. The Esmarch was then removed. An incision was then made. Care was taken to avoid any injury to the ulnar nerve. The medial epicondyle fracture was found incarcerated into the anterior aspect of the joint. This was easily removed. The ulnar nerve was also identified, and appeared to be intact. The medial epicondyle was then transfixed using a guidewire into its anatomic position with the outer cortex over drilled with a 3.2 drill bit, and subsequently a 44-mm 4.5 partially threaded cannulated screw was then placed with a washer to hold the medial epicondyle in place. After fixation of the fragment, the ulnar nerve was visualized as it traveled around the medial epicondyle fracture with no signs of impingement. The wound was then irrigated with normal saline and closed using 2-0 Vicryl and 4-0 Monocryl. The wound was clean and dry, dressed with Steri-Strips and Xeroform. The area was infiltrated with 0.5% Marcaine. The patient was then placed in a long-arm posterior well-molded splint with 90 degrees of flexion and neutral rotation. The tourniquet was released at 30 minutes prior to placement of the dressing, showed no significant bleeding. Attention was then turned to right side, the arm was then manipulated and a well-molded long-arm cast placed. The final position in the cast revealed a very small residual volar apex angulation, which is quite acceptable in this age. The patient tolerated the procedure well, was subsequently extubated and taken to recovery in a stable condition. The patient will be hospitalized for pain control and neurovascular testing for the next 1 to 2 days. The father was made aware of the intraoperative findings. All questions answered."
+  ]
+}

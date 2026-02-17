@@ -1,0 +1,21 @@
+{
+  "diagnoses": [
+    {
+      "label": "Carpal tunnel syndrome",
+      "icd10": "M31.1",
+      "confidence": "high",
+      "evidence_spans": [
+        "PREOPERATIVE DIAGNOSIS: , Carpal tunnel syndrome.",
+        "POSTOPERATIVE DIAGNOSIS: , Carpal tunnel syndrome."
+      ]
+    }
+  ],
+  "medications": [],
+  "followups": [],
+  "red_flags": [],
+  "patient_summary": "The patient had surgery to release a pinched nerve in their wrist. They are doing well and will need to follow up with their doctor. They are not currently taking any medications.",
+  "missing_info": [],
+  "notes": [
+    "The note mentions a left upper extremity procedure, but doesn't specify the exact location or the patient's name. The ICD-10 code for carpal tunnel syndrome is M31.1. The patient was sent to the recovery room in good condition. The note does not mention any specific medications or follow-up appointments."
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "diagnoses": [
+    {
+      "label": "Acute gastroenteritis",
+      "icd10": "K92.1",
+      "confidence": "high",
+      "evidence_spans": [
+        "ADMITTING DIAGNOSES,1.  Acute gastroenteritis.",
+        "DISCHARGE DIAGNOSES,1.  Acute gastroenteritis, resolved."
+      ]
+    },
+    {
+      "label": "Gastrointestinal bleed",
+      "icd10": "K92.5",
+      "confidence": "high",
+      "evidence_spans": [
+        "DISCHARGE DIAGNOSES,2.  Gastrointestinal bleed and chronic inflammation of the mesentery of unknown etiology.",
+        "stool guaiac positive blood",
+        "stool study was done which showed few white blood cells, negative for Clostridium difficile and moderate amount of occult blood and moderate amount of RBCs"
+      ]
+    },
+    {
+      "label": "Dehydration",
+      "icd10": "R65.9",
+      "confidence": "low",
+      "evidence_spans": [
+        "ADMITTING DIAGNOSES,6.  Dehydration."
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "Prandin",
+      "dose": null,
+      "route": "p.o.",
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "PLAN: , The plan is to discharge the patient home.  He can resume his home medications of Prandin, Actos, Lipitor, Glucophage, Benicar, and Advair."
+      ]
+    },
+    {
+      "name": "Actos",
+      "dose": null,
+      "route": "p.o.",
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "PLAN: , The plan is to discharge the patient home.  He can resume his home medications of Prandin, Actos, Lipitor, Glucophage, Benicar, and Advair."
+      ]
+    },
+    {
+      "name": "Lipitor",
+      "dose": null,
+      "route": "p.o.",
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "PLAN: , The plan is to discharge the patient home.  He can resume his home medications of Prandin, Actos, Lipitor, Glucophage, Benicar, and Advair."
+      ]
+    },
+    {
+      "name": "Glucophage",
+      "dose": null,
+      "route": "p.o.",
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "PLAN: , The plan is to discharge the patient home.  He can resume his home medications of Prandin, Actos, Lipitor, Glucophage, Benicar, and Advair."
+      ]
+    },
+    {
+      "name": "Benicar",
+      "dose": null,
+      "route": "p.o.",
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "PLAN: , The plan is to discharge the patient home.  He can resume his home medications of Prandin, Actos, Lipitor, Glucophage, Benicar, and Advair."
+      ]
+    },
+    {
+      "name": "Advair",
+      "dose": null,
+      "route": "p.o.",
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "PLAN: , The plan is to discharge the patient home.  He can resume his home medications of Prandin, Actos, Lipitor, Glucophage, Benicar, and Advair."
+      ]
+    },
+    {
+      "name": "Prednisone",
+      "dose": "15 mg",
+      "route": "p.o.",
+      "frequency": "7 days",
+      "duration": "4 weeks",
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "PLAN: , The plan is to discharge the patient home.  He was started on a tapered dose of prednisone for 4 weeks.",
+        "He was started on 15 mg p.o. for seven days.",
+        "Then, week #2, we will start him on 40 mg for 1 week.",
+        "Then, week #3, we will start him on 30 mg for 1 week, and then, 20 mg for 1 week, and then finally we will stop."
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "GI",
+      "when": "4 weeks",
+      "why": "tapered dose of prednisone",
+      "urgency": "routine",
+      "confidence": "medium",
+      "evidence_spans": [
+        "PLAN: , The plan is to discharge the patient home.  He was instructed to take tapered dose of prednisone for 4 weeks as per the GI recommendations."
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "This patient is a 56-year-old man who was admitted to the hospital for nausea, vomiting, and diarrhea. He was diagnosed with acute gastroenteritis and gastrointestinal bleed. He was treated with IV fluids and then a clear liquid diet, which he tolerated well. He was also started on prednisone. He is now being discharged home with instructions to take a tapered dose of prednisone for four weeks and to follow up with his GI doctor in four weeks.",
+  "missing_info": [
+    {
+      "item": "Medications at home",
+      "why_required": "To ensure continuity of care.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Contact information for follow-up",
+      "why_required": "To ensure follow-up care.",
+      "severity": "nice_to_have"
+    }
+  ],
+  "notes": [
+    "Confidence levels: \"low\", \"medium\", \"high\"",
+    "Urgency levels: \"routine\", \"soon\", \"urgent\"",
+    "Severity levels: \"nice_to_have\", \"important\", \"critical\"",
+    "If a field has no value, use null. If a list has no items, use [].",
+    "evidence_spans must be EXACT substrings copied from the note, max 20 words each."
+  ]
+}

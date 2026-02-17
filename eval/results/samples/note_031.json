@@ -1,0 +1,165 @@
+{
+  "diagnoses": [
+    {
+      "label": "Coronary artery disease",
+      "icd10": "I25.1",
+      "confidence": "high",
+      "evidence_spans": [
+        "The patient is a 65-year-old male with known moderate mitral regurgitation with partial flail of the P2 and P3 gallops who underwent outpatient evaluation for increasingly severed decreased functional capacity and retrosternal chest pain that was aggravated by exertion and decreased with rest. It was accompanied by diaphoresis and shortness of breath. The patient was felt to be a candidate for mitral valve repair versus mitral valve replacement and underwent a stress test as part of his evaluation for chest pain. He underwent adenosine Cardiolite, which revealed 2 mm ST segment depression in leads II, III aVF, and V3, V4, and V5. Stress images revealed left ventricular dilatations suggestive of multivessel disease. He is undergoing evaluation today as a part of preoperative evaluation and because of the positive stress test."
+      ]
+    },
+    {
+      "label": "Mitral regurgitation",
+      "icd10": "I21.1",
+      "confidence": "high",
+      "evidence_spans": [
+        "The patient is a 65-year-old male with known moderate mitral regurgitation with partial flail of the P2 and P3 gallops who underwent outpatient evaluation for increasingly severed decreased functional capacity and retrosternal chest pain that was aggravated by exertion and decreased with rest. It was accompanied by diaphoresis and shortness of breath. The patient was felt to be a candidate for mitral valve repair versus mitral valve replacement and underwent a stress test as part of his evaluation for chest pain. He underwent adenosine Cardiolite, which revealed 2 mm ST segment depression in leads II, III aVF, and V3, V4, and V5. Stress images revealed left ventricular dilatations suggestive of multivessel disease. He is undergoing evaluation today as a part of preoperative evaluation and because of the positive stress test."
+      ]
+    },
+    {
+      "label": "Left main coronary artery stenosis",
+      "icd10": "I25.1",
+      "confidence": "high",
+      "evidence_spans": [
+        "The patient is a 65-year-old male with known moderate mitral regurgitation with partial flail of the P2 and P3 gallops who underwent outpatient evaluation for increasingly severed decreased functional capacity and retrosternal chest pain that was aggravated by exertion and decreased with rest. It was accompanied by diaphoresis and shortness of breath. The patient was felt to be a candidate for mitral valve repair versus mitral valve replacement and underwent a stress test as part of his evaluation for chest pain. He underwent adenosine Cardiolite, which revealed 2 mm ST segment depression in leads II, III aVF, and V3, V4, and V5. Stress images revealed left ventricular dilatations suggestive of multivessel disease. He is undergoing evaluation today as a part of preoperative evaluation and because of the positive stress test."
+      ]
+    },
+    {
+      "label": "Left anterior descending artery stenosis",
+      "icd10": "I25.1",
+      "confidence": "high",
+      "evidence_spans": [
+        "The patient is a 65-year-old male with known moderate mitral regurgitation with partial flail of the P2 and P3 gallops who underwent outpatient evaluation for increasingly severed decreased functional capacity and retrosternal chest pain that was aggravated by exertion and decreased with rest. It was accompanied by diaphoresis and shortness of breath. The patient was felt to be a candidate for mitral valve repair versus mitral valve replacement and underwent a stress test as part of his evaluation for chest pain. He underwent adenosine Cardiolite, which revealed 2 mm ST segment depression in leads II, III aVF, and V3, V4, and V5. Stress images revealed left ventricular dilatations suggestive of multivessel disease. He is undergoing evaluation today as a part of preoperative evaluation and because of the positive stress test."
+      ]
+    },
+    {
+      "label": "Left circumflex artery stenosis",
+      "icd10": "I25.1",
+      "confidence": "high",
+      "evidence_spans": [
+        "The patient is a 65-year-old male with known moderate mitral regurgitation with partial flail of the P2 and P3 gallops who underwent outpatient evaluation for increasingly severed decreased functional capacity and retrosternal chest pain that was aggravated by exertion and decreased with rest. It was accompanied by diaphoresis and shortness of breath. The patient was felt to be a candidate for mitral valve repair versus mitral valve replacement and underwent a stress test as part of his evaluation for chest pain. He underwent adenosine Cardiolite, which revealed 2 mm ST segment depression in leads II, III aVF, and V3, V4, and V5. Stress images revealed left ventricular dilatations suggestive of multivessel disease. He is undergoing evaluation today as a part of preoperative evaluation and because of the positive stress test."
+      ]
+    },
+    {
+      "label": "Right coronary artery stenosis",
+      "icd10": "I25.1",
+      "confidence": "high",
+      "evidence_spans": [
+        "The patient is a 65-year-old male with known moderate mitral regurgitation with partial flail of the P2 and P3 gallops who underwent outpatient evaluation for increasingly severed decreased functional capacity and retrosternal chest pain that was aggravated by exertion and decreased with rest. It was accompanied by diaphoresis and shortness of breath. The patient was felt to be a candidate for mitral valve repair versus mitral valve replacement and underwent a stress test as part of his evaluation for chest pain. He underwent adenosine Cardiolite, which revealed 2 mm ST segment depression in leads II, III aVF, and V3, V4, and V5. Stress images revealed left ventricular dilatations suggestive of multivessel disease. He is undergoing evaluation today as a part of preoperative evaluation and because of the positive stress test."
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "lidocaine",
+      "dose": null,
+      "route": "IV",
+      "frequency": null,
+      "duration": null,
+      "warnings": [
+        "1% lidocaine"
+      ],
+      "confidence": "high",
+      "evidence_spans": [
+        "The patient is a 65-year-old male with known moderate mitral regurgitation with partial flail of the P2 and P3 gallops who underwent outpatient evaluation for increasingly severed decreased functional capacity and retrosternal chest pain that was aggravated by exertion and decreased with rest. It was accompanied by diaphoresis and shortness of breath. The patient was felt to be a candidate for mitral valve repair versus mitral valve replacement and underwent a stress test as part of his evaluation for chest pain. He underwent adenosine Cardiolite, which revealed 2 mm ST segment depression in leads II, III aVF, and V3, V4, and V5. Stress images revealed left ventricular dilatations suggestive of multivessel disease. He is undergoing evaluation today as a part of preoperative evaluation and because of the positive stress test."
+      ]
+    },
+    {
+      "name": "fentanyl",
+      "dose": "25 mcg",
+      "route": "IV",
+      "frequency": null,
+      "duration": null,
+      "warnings": [
+        "fentanyl 25 mcg"
+      ],
+      "confidence": "high",
+      "evidence_spans": [
+        "The patient is a 65-year-old male with known moderate mitral regurgitation with partial flail of the P2 and P3 gallops who underwent outpatient evaluation for increasingly severed decreased functional capacity and retrosternal chest pain that was aggravated by exertion and decreased with rest. It was accompanied by diaphoresis and shortness of breath. The patient was felt to be a candidate for mitral valve repair versus mitral valve replacement and underwent a stress test as part of his evaluation for chest pain. He underwent adenosine Cardiolite, which revealed 2 mm ST segment depression in leads II, III aVF, and V3, V4, and V5. Stress images revealed left ventricular dilatations suggestive of multivessel disease. He is undergoing evaluation today as a part of preoperative evaluation and because of the positive stress test."
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "Cardiovascular and Thoracic Surgery",
+      "when": "soon",
+      "why": "CABG and mitral valve repair versus replacement",
+      "urgency": "soon",
+      "confidence": "high",
+      "evidence_spans": [
+        "Consultation will be obtained with Cardiovascular and Thoracic Surgery for CABG and mitral valve repair versus replacement."
+      ]
+    }
+  ],
+  "red_flags": [
+    {
+      "symptom": "chest pain",
+      "action": "evaluation",
+      "confidence": "high"
+    },
+    {
+      "symptom": "shortness of breath",
+      "action": "evaluation",
+      "confidence": "high"
+    },
+    {
+      "symptom": "diaphoresis",
+      "action": "evaluation",
+      "confidence": "high"
+    }
+  ],
+  "patient_summary": "The patient is a 65-year-old male who is being evaluated for possible mitral valve repair versus replacement. He has known moderate mitral regurgitation and has experienced chest pain, shortness of breath, and diaphoresis. He underwent a stress test that showed left ventricular dilatations suggestive of multivessel disease. He is being evaluated today as a part of preoperative evaluation and because of the positive stress test.",
+  "missing_info": [
+    {
+      "item": "Medications",
+      "why_required": "To ensure patient is on appropriate medications before discharge.",
+      "severity": "important"
+    },
+    {
+      "item": "Allergies",
+      "why_required": "To prevent allergic reactions.",
+      "severity": "important"
+    },
+    {
+      "item": "Patient's current medications",
+      "why_required": "To ensure patient is on appropriate medications before discharge.",
+      "severity": "important"
+    },
+    {
+      "item": "Patient's medical history",
+      "why_required": "To ensure patient is on appropriate medications before discharge.",
+      "severity": "important"
+    },
+    {
+      "item": "Patient's social history",
+      "why_required": "To ensure patient is on appropriate medications before discharge.",
+      "severity": "important"
+    },
+    {
+      "item": "Patient's family history",
+      "why_required": "To ensure patient is on appropriate medications before discharge.",
+      "severity": "important"
+    },
+    {
+      "item": "Patient's current medications",
+      "why_required": "To ensure patient is on appropriate medications before discharge.",
+      "severity": "important"
+    },
+    {
+      "item": "Patient's medical history",
+      "why_required": "To ensure patient is on appropriate medications before discharge.",
+      "severity": "important"
+    },
+    {
+      "item": "Patient's social history",
+      "why_required": "To ensure patient is on appropriate medications before discharge.",
+      "severity": "important"
+    },
+    {
+      "item": "Patient's family history",
+      "why_required": "To ensure patient is on appropriate medications before discharge.",
+      "severity": "important"
+    }
+  ],
+  "notes": []
+}

@@ -1,0 +1,24 @@
+{
+  "model": "williamljx/medgemma-4b-it-Q4_K_M-GGUF:latest",
+  "quantization": "Q4_K_M (2.5 GB)",
+  "inference": "Ollama, CPU-only, offline",
+  "dataset": "MTSamples (CC0, Kaggle)",
+  "total_notes": 50,
+  "json_valid_rate": 0.92,
+  "json_valid_count": 46,
+  "json_fail_count": 4,
+  "median_latency_s": 34.36,
+  "mean_latency_s": 69.62,
+  "p95_latency_s": 201.36,
+  "diagnoses_grounded_mean": 0.944,
+  "medications_grounded_mean": 0.945,
+  "followups_grounded_mean": 0.761,
+  "overall_grounded_mean": 0.875,
+  "notes_dx_grounded_above_85pct": 41,
+  "notes_meds_grounded_above_85pct": 41,
+  "success_criteria": {
+    "json_valid_ge_80pct": true,
+    "median_latency_le_45s": true,
+    "dx_grounding_ge_85pct_on_30_notes": true
+  }
+}

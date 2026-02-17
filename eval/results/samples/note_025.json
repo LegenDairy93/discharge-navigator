@@ -1,0 +1,255 @@
+{
+  "diagnoses": [
+    {
+      "label": "Severe left ulnar neuropathy",
+      "icd10": "M5.11",
+      "confidence": "high",
+      "evidence_spans": [
+        "She also had EMG/nerve conduction studies since she was last seen in our office that showed severe left ulnar neuropathy"
+      ]
+    },
+    {
+      "label": "Moderate right ulnar neuropathy",
+      "icd10": "M5.12",
+      "confidence": "high",
+      "evidence_spans": [
+        "She also had EMG/nerve conduction studies since she was last seen in our office that showed severe left ulnar neuropathy, moderate right ulnar neuropathy"
+      ]
+    },
+    {
+      "label": "Bilateral mild-to-moderate carpal tunnel",
+      "icd10": "M5.2",
+      "confidence": "high",
+      "evidence_spans": [
+        "She also had EMG/nerve conduction studies since she was last seen in our office that showed severe left ulnar neuropathy, moderate right ulnar neuropathy, bilateral mild-to-moderate carpal tunnel"
+      ]
+    },
+    {
+      "label": "Diabetic neuropathy",
+      "icd10": "E11.9",
+      "confidence": "high",
+      "evidence_spans": [
+        "She also had EMG/nerve conduction studies since she was last seen in our office that showed severe left ulnar neuropathy, moderate right ulnar neuropathy, bilateral mild-to-moderate carpal tunnel and diabetic neuropathy"
+      ]
+    },
+    {
+      "label": "Diabetes mellitus",
+      "icd10": "E11",
+      "confidence": "high",
+      "evidence_spans": [
+        "She also had EMG/nerve conduction studies since she was last seen in our office that showed severe left ulnar neuropathy, moderate right ulnar neuropathy, bilateral mild-to-moderate carpal tunnel and diabetic neuropathy.  She was referred to Dr. XYZ and will be seeing him on August 8, 2006.,She was also never referred to the endocrine clinic to deal with her poor diabetes control.  Her last hemoglobin A1c was 10."
+      ]
+    },
+    {
+      "label": "Hypertension",
+      "icd10": "I10",
+      "confidence": "high",
+      "evidence_spans": [
+        "She also had EMG/nerve conduction studies since she was last seen in our office that showed severe left ulnar neuropathy, moderate right ulnar neuropathy, bilateral mild-to-moderate carpal tunnel and diabetic neuropathy.  She was referred to Dr. XYZ and will be seeing him on August 8, 2006.,She was also never referred to the endocrine clinic to deal with her poor diabetes control.  Her last hemoglobin A1c was 10."
+      ]
+    },
+    {
+      "label": "Elevated lipids",
+      "icd10": "E78.5",
+      "confidence": "high",
+      "evidence_spans": [
+        "She also had EMG/nerve conduction studies since she was last seen in our office that showed severe left ulnar neuropathy, moderate right ulnar neuropathy, bilateral mild-to-moderate carpal tunnel and diabetic neuropathy.  She was referred to Dr. XYZ and will be seeing him on August 8, 2006.,She was also never referred to the endocrine clinic to deal with her poor diabetes control.  Her last hemoglobin A1c was 10."
+      ]
+    },
+    {
+      "label": "Status post CVA",
+      "icd10": "I64",
+      "confidence": "high",
+      "evidence_spans": [
+        "She also had EMG/nerve conduction studies since she was last seen in our office that showed severe left ulnar neuropathy, moderate right ulnar neuropathy, bilateral mild-to-moderate carpal tunnel and diabetic neuropathy.  She was referred to Dr. XYZ and will be seeing him on August 8, 2006.,She was also never referred to the endocrine clinic to deal with her poor diabetes control.  Her last hemoglobin A1c was 10."
+      ]
+    },
+    {
+      "label": "Diabetic retinopathy",
+      "icd10": "R51.8",
+      "confidence": "high",
+      "evidence_spans": [
+        "She also had EMG/nerve conduction studies since she was last seen in our office that showed severe left ulnar neuropathy, moderate right ulnar neuropathy, bilateral mild-to-moderate carpal tunnel and diabetic neuropathy.  She was referred to Dr. XYZ and will be seeing him on August 8, 2006.,She was also never referred to the endocrine clinic to deal with her poor diabetes control.  Her last hemoglobin A1c was 10."
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "Glyburide",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "MEDICATIONS: , Glyburide, Avandia, metformin, lisinopril, Lipitor, aspirin, metoprolol and Zonegran."
+      ]
+    },
+    {
+      "name": "Avandia",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "low",
+      "evidence_spans": [
+        "MEDICATIONS: , Glyburide, Avandia, metformin, lisinopril, Lipitor, aspirin, metoprolol and Zonegran."
+      ]
+    },
+    {
+      "name": "Metformin",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "MEDICATIONS: , Glyburide, Avandia, metformin, lisinopril, Lipitor, aspirin, metoprolol and Zonegran."
+      ]
+    },
+    {
+      "name": "Lisinopril",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "MEDICATIONS: , Glyburide, Avandia, metformin, lisinopril, Lipitor, aspirin, metoprolol and Zonegran."
+      ]
+    },
+    {
+      "name": "Lipitor",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "MEDICATIONS: , Glyburide, Avandia, metformin, lisinopril, Lipitor, aspirin, metoprolol and Zonegran."
+      ]
+    },
+    {
+      "name": "Aspirin",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "MEDICATIONS: , Glyburide, Avandia, metformin, lisinopril, Lipitor, aspirin, metoprolol and Zonegran."
+      ]
+    },
+    {
+      "name": "Metoprolol",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "MEDICATIONS: , Glyburide, Avandia, metformin, lisinopril, Lipitor, aspirin, metoprolol and Zonegran."
+      ]
+    },
+    {
+      "name": "Zonegran",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "MEDICATIONS: , Glyburide, Avandia, metformin, lisinopril, Lipitor, aspirin, metoprolol and Zonegran."
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "Dr. XYZ",
+      "when": "August 8, 2006",
+      "why": "For her neuropathies",
+      "urgency": "routine",
+      "confidence": "high",
+      "evidence_spans": [
+        "She was referred to Dr. XYZ and will be seeing him on August 8, 2006.",
+        "We also discussed with Ms. Hawkins the possibility of nerve block injection; however, at this point she is not interested.",
+        "She will be seeing Dr. XYZ for her neuropathies."
+      ]
+    },
+    {
+      "with_whom": "Dr. XYZ",
+      "when": "August 7, 2006",
+      "why": "If this is not effective",
+      "urgency": "soon",
+      "confidence": "medium",
+      "evidence_spans": [
+        "We made an appointment in endocrine clinic today for a counseling in terms of better diabetes control and she is responsible for trying to get her referral from her primary care physician to go for this consult.",
+        "If this is not effective, when she comes back on August 7, 2006 we will then consider other anticonvulsants such as Neurontin or Lyrica."
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "Ms. Hawkins has several medical conditions, including diabetes, high blood pressure, high cholesterol, a stroke, and diabetic retinopathy. She also has nerve problems in her hands and feet. She is being seen by Dr. XYZ for her neuropathies. She needs to get her diabetes under control and is being referred to an endocrinologist. She is not interested in a nerve block injection at this time. She needs to follow up with Dr. XYZ on August 8, 2006, and possibly again on August 7, 2006, depending on how she responds to Zonegran.",
+  "missing_info": [
+    {
+      "item": "Endocrine clinic referral",
+      "why_required": "To address poor diabetes control",
+      "severity": "important"
+    },
+    {
+      "item": "Zonegran titration",
+      "why_required": "To maximize Zonegran therapy",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Zonegran effectiveness",
+      "why_required": "To determine if Zonegran is effective",
+      "severity": "important"
+    },
+    {
+      "item": "Zonegran side effects",
+      "why_required": "To monitor for side effects",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Nerve block injection",
+      "why_required": "To address pain",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Neurological exam",
+      "why_required": "To assess neurological status",
+      "severity": "important"
+    },
+    {
+      "item": "Blood sugar levels",
+      "why_required": "To assess diabetes control",
+      "severity": "important"
+    },
+    {
+      "item": "HbA1c",
+      "why_required": "To assess diabetes control",
+      "severity": "important"
+    },
+    {
+      "item": "Medication side effects",
+      "why_required": "To monitor for side effects",
+      "severity": "nice_to_have"
+    }
+  ],
+  "notes": [
+    "Confidence levels: \"low\", \"medium\", \"high\"",
+    "Urgency levels: \"routine\", \"soon\", \"urgent\"",
+    "Severity levels: \"nice_to_have\", \"important\", \"critical\"",
+    "If a field has no value, use null. If a list has no items, use []",
+    "evidence_spans must be EXACT substrings copied from the note, max 20 words each"
+  ]
+}

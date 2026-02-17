@@ -1,0 +1,94 @@
+{
+  "diagnoses": [
+    {
+      "label": "Obesity",
+      "icd10": "E66.9",
+      "confidence": "high",
+      "evidence_spans": [
+        "She is a 33-year-old lady with a BMI of 43, otherwise healthy with unsuccessful nonsurgical methods of weight loss."
+      ]
+    },
+    {
+      "label": "Morbid Obesity",
+      "icd10": "E66.0",
+      "confidence": "high",
+      "evidence_spans": [
+        "Abdomen is soft, nontender. There is stigmata for morbid obesity."
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "Medifast",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "In preparation of surgery, she will undergo very low-calorie diet through Medifast to decrease the size of the liver to make laparoscopic approach more successful and also to optimize her cardiopulmonary and metabolic comorbidities."
+      ]
+    },
+    {
+      "name": "Ursodiol",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "How to avoid it by taking ursodiol were also discussed."
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "Psychologist",
+      "when": "Soon",
+      "why": "Multidisciplinary effort for short and long-term success for weight loss surgery",
+      "urgency": "soon",
+      "confidence": "high",
+      "evidence_spans": [
+        "She will also see a psychologist, nutritionist, and exercise physiologist for a multidisciplinary effort for short and long-term success for weight loss surgery."
+      ]
+    },
+    {
+      "with_whom": "Nutritionist",
+      "when": "Soon",
+      "why": "Multidisciplinary effort for short and long-term success for weight loss surgery",
+      "urgency": "soon",
+      "confidence": "high",
+      "evidence_spans": [
+        "She will also see a psychologist, nutritionist, and exercise physiologist for a multidisciplinary effort for short and long-term success for weight loss surgery."
+      ]
+    },
+    {
+      "with_whom": "Exercise Physiologist",
+      "when": "Soon",
+      "why": "Multidisciplinary effort for short and long-term success for weight loss surgery",
+      "urgency": "soon",
+      "confidence": "high",
+      "evidence_spans": [
+        "She will also see a psychologist, nutritionist, and exercise physiologist for a multidisciplinary effort for short and long-term success for weight loss surgery."
+      ]
+    },
+    {
+      "with_whom": "Physician",
+      "when": "Two weeks before surgery",
+      "why": "Further discussion and any other questions at that point of time",
+      "urgency": "routine",
+      "confidence": "high",
+      "evidence_spans": [
+        "I will see her two weeks before the plan of surgery for further discussion and any other questions at that point of time."
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "The patient is a 33-year-old woman with a BMI of 43 who wants to have laparoscopic gastric bypass surgery. She understands the risks and benefits of the surgery and is motivated to lose weight. She will follow up with a psychologist, nutritionist, and exercise physiologist to help her succeed with her weight loss surgery. She will also see her doctor again two weeks before surgery to discuss any further questions.",
+  "missing_info": [],
+  "notes": [
+    "The patient is scheduled for laparoscopic gastric bypass. The patient has been earlier seen by Dr. X, her physician. She has been referred to us from Family Practice. In short, she is a 33-year-old lady with a BMI of 43, otherwise healthy with unsuccessful nonsurgical methods of weight loss. She was on laparoscopic gastric bypass for weight loss. She meets the National Institute of Health Criteria. She is very well educated and motivated and has no major medical contraindications for the procedure. The patient will undergo very low-calorie diet through Medifast to decrease the size of the liver to make laparoscopic approach more successful and also to optimize her cardiopulmonary and metabolic comorbidities. She will also see a psychologist, nutritionist, and exercise physiologist for a multidisciplinary effort for short and long-term success for weight loss surgery. I will see her two weeks before the plan of surgery for further discussion and any other questions at that point of time."
+  ]
+}

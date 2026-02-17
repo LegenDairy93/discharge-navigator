@@ -1,0 +1,41 @@
+{
+  "diagnoses": [
+    {
+      "label": "Aortoiliac occlusive disease bilaterally",
+      "icd10": "I76.1",
+      "confidence": "high",
+      "evidence_spans": [
+        "Aortoiliac occlusive disease bilaterally.",
+        "Aortoiliac occlusive disease bilaterally."
+      ]
+    },
+    {
+      "label": "Dementia",
+      "icd10": "F00.0",
+      "confidence": "high",
+      "evidence_spans": [
+        "Dementia.",
+        "Dementia."
+      ]
+    }
+  ],
+  "medications": [],
+  "followups": [],
+  "red_flags": [],
+  "patient_summary": "The patient had a bypass surgery on both legs. The patient has dementia. The patient is going to need follow up with the vascular team and the neurology team.",
+  "missing_info": [
+    {
+      "item": "Medications",
+      "why_required": "To ensure the patient is taking the correct medications post-operatively.",
+      "severity": "important"
+    },
+    {
+      "item": "Follow-up details",
+      "why_required": "To ensure the patient is following up with the appropriate specialists.",
+      "severity": "important"
+    }
+  ],
+  "notes": [
+    "The patient had a history of dementia. The patient was found to have some baseline dementia, although slight. The patient tolerated the procedure well and was transferred to the intensive care unit in good condition. The patient was seen and evaluated by the neurology team, who cleared the patient for surgery."
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "diagnoses": [
+    {
+      "label": "Right axillary adenopathy",
+      "icd10": "D69.0",
+      "confidence": "high",
+      "evidence_spans": [
+        "Right axillary adenopathy.",
+        "Right axillary adenopathy."
+      ]
+    },
+    {
+      "label": "Thrombocytopenia",
+      "icd10": "D69.2",
+      "confidence": "high",
+      "evidence_spans": [
+        "Thrombocytopenia.",
+        "Thrombocytopenia."
+      ]
+    },
+    {
+      "label": "Hepatosplenomegaly",
+      "icd10": "R79.8",
+      "confidence": "high",
+      "evidence_spans": [
+        "Hepatosplenomegaly.",
+        "Hepatosplenomegaly."
+      ]
+    }
+  ],
+  "medications": [],
+  "followups": [
+    {
+      "with_whom": "Hematology and Oncology Departments",
+      "when": "pending",
+      "why": "to confirm the diagnosis as well as prognosis",
+      "urgency": "routine",
+      "confidence": "medium",
+      "evidence_spans": [
+        "Hematology and Oncology Departments",
+        "Hematology and Oncology Departments"
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "The patient is a 37-year-old male who was found to have a right axillary mass and was severely thrombocytopenic with a platelet count of 2000 as well as having hepatosplenomegaly. The working diagnosis is lymphoma, however, the Hematology and Oncology Departments were requesting a lymph node biopsy in order to confirm the diagnosis as well as prognosis. Thus, the patient was scheduled for a lymph node biopsy with platelets running secondary to thrombocytopenia at the time of surgery.",
+  "missing_info": [
+    {
+      "item": "Medications",
+      "why_required": "To determine current medications and potential drug interactions.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Allergies",
+      "why_required": "To identify potential allergic reactions to medications or other substances.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Social History",
+      "why_required": "To understand the patient's lifestyle and potential risk factors.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Family History",
+      "why_required": "To identify any family history of relevant medical conditions.",
+      "severity": "nice_to_have"
+    }
+  ],
+  "notes": [
+    "The patient was found to have a large right axillary lymphadenopathy, one of the lymph node was sent down as a fresh specimen. The patient tolerated the procedure well. The patient was transferred to the Recovery in stable condition."
+  ]
+}

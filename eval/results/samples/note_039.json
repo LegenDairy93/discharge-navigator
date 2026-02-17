@@ -1,0 +1,42 @@
+{
+  "diagnoses": [
+    {
+      "label": "History of perforated sigmoid diverticuli with Hartmann's procedure",
+      "icd10": "K37.2",
+      "confidence": "high",
+      "evidence_spans": [
+        "History of perforated sigmoid diverticuli with Hartmann's procedure.",
+        "History of perforated sigmoid diverticuli with Hartmann's procedure."
+      ]
+    },
+    {
+      "label": "Massive adhesions",
+      "icd10": null,
+      "confidence": "high",
+      "evidence_spans": [
+        "Massive adhesions.",
+        "Massive adhesions."
+      ]
+    }
+  ],
+  "medications": [],
+  "followups": [
+    {
+      "with_whom": "During the hospitalization",
+      "when": "During the hospitalization",
+      "why": "Follow-up",
+      "urgency": "routine",
+      "confidence": "high",
+      "evidence_spans": [
+        "The patient did tolerate the procedure well and will be followed during the hospitalization.",
+        "The patient did tolerate the procedure well and will be followed during the hospitalization."
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "The patient is a 55-year-old gentleman who underwent exploratory laparotomy, lysis of adhesions, reversal of Hartmann's colostomy, and EEA anastomosis for perforated sigmoid diverticuli with Hartmann's procedure. The patient tolerated the procedure well and will be followed during the hospitalization.",
+  "missing_info": [],
+  "notes": [
+    "Extracted with strict mode \u2014 clinician should verify."
+  ]
+}

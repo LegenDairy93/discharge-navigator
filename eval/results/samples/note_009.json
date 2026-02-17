@@ -1,0 +1,21 @@
+{
+  "diagnoses": [
+    {
+      "label": "Wrist ganglion",
+      "icd10": "M26.51",
+      "confidence": "high",
+      "evidence_spans": [
+        "PREOPERATIVE DIAGNOSIS: , Wrist ganglion.",
+        "POSTOPERATIVE DIAGNOSIS: , Wrist ganglion."
+      ]
+    }
+  ],
+  "medications": [],
+  "followups": [],
+  "red_flags": [],
+  "patient_summary": "The patient had a ganglion removed from their wrist. They are doing well after the surgery. The patient will need to follow up with their doctor.",
+  "missing_info": [],
+  "notes": [
+    "The patient had a ganglion removed from their wrist. They are doing well after the surgery. The patient will need to follow up with their doctor."
+  ]
+}

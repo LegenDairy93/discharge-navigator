@@ -1,0 +1,143 @@
+{
+  "diagnoses": [
+    {
+      "label": "Asthma",
+      "icd10": "J45.90",
+      "confidence": "high",
+      "evidence_spans": [
+        "Asthma",
+        "Asthma has been worse over the last three months",
+        "She is just using her Proventil inhaler but is using it daily",
+        "We will add Flovent 44 mcg two puffs p.o. b.i.d. May need to increase the dose",
+        "She did get some vaginal irritation with Advair in the past but she is willing to retry that if it is necessary",
+        "May also need to consider Singulair",
+        "She is to call me if she is not improving",
+        "If her shortness of breath worsens she is to call me or go into the emergency department",
+        "We will plan on following up for reevaluation in one month"
+      ]
+    },
+    {
+      "label": "Allergic rhinitis",
+      "icd10": "J30.9",
+      "confidence": "high",
+      "evidence_spans": [
+        "Allergic rhinitis",
+        "We will plan on restarting Allegra and Flonase daily for the time being"
+      ]
+    },
+    {
+      "label": "Premenstrual dysphoric disorder",
+      "icd10": "605.4",
+      "confidence": "medium",
+      "evidence_spans": [
+        "Premenstrual dysphoric disorder",
+        "She may have some perimenopausal symptoms",
+        "We will start her on fluoxetine 20 mg one tablet p.o. q.d."
+      ]
+    },
+    {
+      "label": "Hematuria",
+      "icd10": "R90.0",
+      "confidence": "medium",
+      "evidence_spans": [
+        "Hematuria",
+        "Likely this is secondary to urinary tract infection but we will repeat a UA to document clearing",
+        "She does have some frequent dysuria but is not having it currently"
+      ]
+    },
+    {
+      "label": "Cervical dysplasia",
+      "icd10": "C50.9",
+      "confidence": "medium",
+      "evidence_spans": [
+        "Cervical dysplasia",
+        "Pap smear is taken",
+        "We will notify the patient of results",
+        "If normal we will go back to yearly Pap smear",
+        "She is scheduled for screening mammogram and instructed on monthly self-breast exam techniques",
+        "Recommend she get 1200 mg of calcium and 400 U of vitamin D a day"
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "Proventil",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "Proventil",
+        "She is just using her Proventil inhaler but is using it daily"
+      ]
+    },
+    {
+      "name": "Allegra",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "Allegra",
+        "We will plan on restarting Allegra and Flonase daily for the time being"
+      ]
+    },
+    {
+      "name": "Flovent",
+      "dose": "44 mcg",
+      "route": "p.o",
+      "frequency": "b.i.d",
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "We will add Flovent 44 mcg two puffs p.o. b.i.d.",
+        "May need to increase the dose"
+      ]
+    },
+    {
+      "name": "Fluoxetine",
+      "dose": "20 mg",
+      "route": "p.o",
+      "frequency": "q.d",
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "We will start her on fluoxetine 20 mg one tablet p.o. q.d."
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "self",
+      "when": "one month",
+      "why": "reevaluation",
+      "urgency": "routine",
+      "confidence": "high",
+      "evidence_spans": [
+        "We will plan on following up for reevaluation in one month"
+      ]
+    },
+    {
+      "with_whom": "self",
+      "when": "monthly",
+      "why": "self-breast exam",
+      "urgency": "routine",
+      "confidence": "high",
+      "evidence_spans": [
+        "She is scheduled for screening mammogram and instructed on monthly self-breast exam techniques"
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "A 42-year-old female presents for a physical and follow-up on asthma. She reports worsening asthma symptoms, allergic rhinitis, and perimenopausal symptoms. She is being started on fluoxetine for PMDD and will be prescribed Flovent and Allegra. Follow-up is scheduled in one month.",
+  "missing_info": [],
+  "notes": [
+    "Extracted with strict mode \u2014 clinician should verify."
+  ]
+}

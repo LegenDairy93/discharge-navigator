@@ -1,0 +1,72 @@
+{
+  "diagnoses": [
+    {
+      "label": "Iron deficiency anemia",
+      "icd10": "D58.2",
+      "confidence": "high",
+      "evidence_spans": [
+        "This is a very pleasant 19-year-old woman, who was recently hospitalized with iron deficiency anemia.",
+        "She underwent a bone marrow biopsy on 07/21/10, which showed a normal cellular marrow with trilineage hematopoiesis.",
+        "On 07/22/10, her hemoglobin was 6.5 and therefore she was transfused 2 units of packed red blood cells.",
+        "Her iron levels were 5 and her percent transferrin was 2.",
+        "She was discharged from the hospital on iron supplements."
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "Iron supplements",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "She was discharged from the hospital on iron supplements."
+      ]
+    },
+    {
+      "name": "Levaquin",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "She currently has an IUD, so she is not menstruating.",
+        "She denies any fevers, chills, or night sweats.",
+        "No lymphadenopathy.",
+        "No nausea or vomiting.",
+        "No change in bowel or bladder habits.",
+        "She specifically denies melena or hematochezia.",
+        "She currently takes Levaquin."
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "Dr. X",
+      "when": "routine",
+      "why": "follow up",
+      "urgency": "routine",
+      "confidence": "medium",
+      "evidence_spans": [
+        "She was seen in consultation by Dr. X."
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "This is a 19-year-old woman who was recently hospitalized for iron deficiency anemia. She had a bone marrow biopsy that showed normal cells. She was given iron supplements and Levaquin. She is not menstruating because she has an IUD. She needs to follow up with Dr. X.",
+  "missing_info": [
+    {
+      "item": "Follow up with primary care physician",
+      "why_required": "To monitor iron levels and anemia",
+      "severity": "important"
+    }
+  ],
+  "notes": [
+    "The patient was discharged with iron supplements and Levaquin. The patient is not menstruating due to the IUD. The patient needs to follow up with Dr. X. The patient denies any red flags."
+  ]
+}

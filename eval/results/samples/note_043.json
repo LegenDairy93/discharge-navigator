@@ -1,0 +1,21 @@
+{
+  "diagnoses": [
+    {
+      "label": "Coronal hypospadias with chordee",
+      "icd10": "Z19.1",
+      "confidence": "high",
+      "evidence_spans": [
+        "Coronal hypospadias with chordee.",
+        "Coronal hypospadias with chordee."
+      ]
+    }
+  ],
+  "medications": [],
+  "followups": [],
+  "red_flags": [],
+  "patient_summary": "The patient is a 6-month-old boy who had surgery to repair his hypospadias. The surgery involved removing chordee tissue and relocating tissue flaps to repair the urethra. The patient tolerated the procedure well.",
+  "missing_info": [],
+  "notes": [
+    "The ICD-10 code for coronal hypospadias with chordee is Z19.1. The patient was given IV antibiotics and Toradol during the procedure. The patient tolerated the procedure well and was in stable condition upon transfer to recovery room. The patient was given a Zaontz catheter."
+  ]
+}

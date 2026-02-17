@@ -1,0 +1,50 @@
+{
+  "diagnoses": [
+    {
+      "label": "Migraine without aura",
+      "icd10": "346.91",
+      "confidence": "high",
+      "evidence_spans": [
+        "Migraine without aura (346.91)"
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "Inderal",
+      "dose": "40mg",
+      "route": "oral",
+      "frequency": "b.i.d",
+      "duration": "1 week",
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "Therapeutic trial of Inderal 40mg - 1/2 tab b.i.d. x 1 week, then 1 tab. b.i.d. x 1 week then 1 tab t.i.d"
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "physician",
+      "when": "follow up in 1 week",
+      "why": "follow up in 1 week",
+      "urgency": "routine",
+      "confidence": "high",
+      "evidence_spans": [
+        "follow up in 1 week"
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "The patient is a male who is experiencing headaches. He has a history of migraines and has tried over-the-counter medications without success. He is currently taking Inderal and is scheduled for a follow-up appointment in one week. The doctor wants to see the patient again in one week to see how he is doing.",
+  "missing_info": [
+    {
+      "item": "alcohol use",
+      "why_required": "alcohol use",
+      "severity": "nice_to_have"
+    }
+  ],
+  "notes": [
+    "The patient has a chronic progressive course of migraines. The doctor is trying to find the best medication for the patient. The patient is not using alcohol."
+  ]
+}

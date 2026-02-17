@@ -1,0 +1,37 @@
+{
+  "diagnoses": [
+    {
+      "label": "Convulsions",
+      "icd10": "R41.8",
+      "confidence": "medium",
+      "evidence_spans": [
+        "Arm and leg jerking."
+      ]
+    }
+  ],
+  "medications": [],
+  "followups": [
+    {
+      "with_whom": "Pediatrician",
+      "when": "1 week",
+      "why": "Follow up on jerking",
+      "urgency": "routine",
+      "confidence": "medium",
+      "evidence_spans": [
+        "Follow up on jerking"
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "The patient is a 10-day-old baby who has been jerking in her arms and legs. The jerking started at day of life 1 and has occurred 6 times since then. The jerking happens during sleep and mom is able to wake the patient up and stop the jerking. The patient is breast-feeding well and has increased diapers and stools. The patient was born at 8 pounds 11 ounces and was jaundiced after birth. The patient's mom is sick with cold, cough, runny nose, except for mom. The patient's dad has seizures and a brother has ventricular tachycardia. The patient's mom is GBS positive and maternal grandmother has hypertension and diabetes. The patient was born at 41 weeks and received inadequate intrapartum antibiotics prophylaxis. The patient was not given antibiotics after delivery because of borderline labs. The patient's mom was notified by the nurses at birth that her temperature may be low of approximately 97.5 degrees Fahrenheit. The patient has no known drug allergies.",
+  "missing_info": [
+    {
+      "item": "Medications",
+      "why_required": "To ensure patient is taking appropriate medications",
+      "severity": "important"
+    }
+  ],
+  "notes": [
+    "The patient's jerking is benign and not associated with any other symptoms. The patient is being followed up with a pediatrician to monitor the jerking. The patient was not given antibiotics after delivery because of borderline labs. The patient's mom was notified by the nurses at birth that her temperature may be low of approximately 97.5 degrees Fahrenheit."
+  ]
+}

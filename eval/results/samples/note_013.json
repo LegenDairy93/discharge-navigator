@@ -1,0 +1,49 @@
+{
+  "diagnoses": [
+    {
+      "label": "Hemangioblastoma",
+      "icd10": "D44.9",
+      "confidence": "high",
+      "evidence_spans": [
+        "He then underwent suboccipital craniotomy with tumor excision, decompression, and biopsy which was consistent with hemangioblastoma.",
+        "MRI Brain, 2/19/96, revealed several lesions (hemangioblastoma) in the cerebellum and brain stem.",
+        "The lesions were felt to be consistent with hemangioblastoma."
+      ]
+    },
+    {
+      "label": "Cervicothoracic syrinx",
+      "icd10": "M19.9",
+      "confidence": "high",
+      "evidence_spans": [
+        "An MRI of the C-T spine, 10/26/96, revealed a prominent cervicothoracic syrinx extending down to T10.",
+        "There was evidence of prior cervical laminectomy of C6-T1 with expansion of the cord in the thecalsac at that region."
+      ]
+    },
+    {
+      "label": "Intradural extra spinal nodular lesions",
+      "icd10": "M19.9",
+      "confidence": "high",
+      "evidence_spans": [
+        "Multiple intradural extra spinal nodular lesions (hyperintense on T2, isointense on T1, enhanced gadolinium) were seen in the cervical spine and cisterna magna.",
+        "The largest of which measures 1.1 x 1.0 x 2.0cm."
+      ]
+    }
+  ],
+  "medications": [],
+  "followups": [
+    {
+      "with_whom": "local physician",
+      "when": "since",
+      "why": null,
+      "urgency": "routine",
+      "confidence": "low",
+      "evidence_spans": []
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "The patient is a 30-year-old male with a history of hemangioblastoma and cervicothoracic syrinx, presenting with progressive weakness, dysphagia, and sensory loss. He was admitted for management of complications related to his underlying condition.",
+  "missing_info": [],
+  "notes": [
+    "Extracted with strict mode \u2014 clinician should verify."
+  ]
+}

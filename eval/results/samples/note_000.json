@@ -1,0 +1,20 @@
+{
+  "diagnoses": [
+    {
+      "label": "discharge",
+      "icd10": null,
+      "confidence": "high",
+      "evidence_spans": [
+        "discharge"
+      ]
+    }
+  ],
+  "medications": [],
+  "followups": [],
+  "red_flags": [],
+  "patient_summary": "The patient was discharged. The patient's vital signs were stable. The patient had no problems with their head, eyes, ears, nose, throat, skin, neck, heart, lungs, abdomen, extremities, or musculoskeletal system. The patient's neurological exam was normal. The patient's genitourinary exam was deferred.",
+  "missing_info": [],
+  "notes": [
+    "No medications or follow-up information were provided in the note. The patient was discharged, so a discharge diagnosis is included."
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "diagnoses": [
+    {
+      "label": "Major neurocognitive disorder, unspecified",
+      "icd10": "F02.9",
+      "confidence": "high",
+      "evidence_spans": [
+        "The findings indicated multiple areas of cerebral dysfunction.",
+        "The clinical picture is consistent with a progressive dementia syndrome such as Alzheimer's disease.",
+        "significant deficits in verbal and visual memory, proper naming, category fluency and working memory",
+        "performances which were below expectations on tests of speed of reading, visual scanning, visual construction and clock drawing",
+        "well preserved intellectual functioning and orientation",
+        "significant deficits in verbal and visual memory",
+        "limited insight into the scope and magnitude of cognitive dysfunction",
+        "progressive dementia syndrome such as Alzheimer's disease"
+      ]
+    },
+    {
+      "label": "Mild cognitive impairment",
+      "icd10": "F03.8",
+      "confidence": "medium",
+      "evidence_spans": [
+        "The findings indicated multiple areas of cerebral dysfunction.",
+        "The clinical picture is consistent with a progressive dementia syndrome such as Alzheimer's disease.",
+        "significant deficits in verbal and visual memory, proper naming, category fluency and working memory",
+        "performances which were below expectations on tests of speed of reading, visual scanning, visual construction and clock drawing",
+        "well preserved intellectual functioning and orientation",
+        "significant deficits in verbal and visual memory",
+        "limited insight into the scope and magnitude of cognitive dysfunction",
+        "progressive dementia syndrome such as Alzheimer's disease"
+      ]
+    }
+  ],
+  "medications": [],
+  "followups": [],
+  "red_flags": [],
+  "patient_summary": "This 64 year old man has memory problems. He has had trouble remembering names, phone numbers, and events for a long time. He has had a neurological evaluation and an MRI of his brain. The evaluation showed that he has mild cognitive impairment. He has had some spells of lightheadedness and anxiety. He is Catholic priest.",
+  "missing_info": [
+    {
+      "item": "Medications",
+      "why_required": "To document current medications.",
+      "severity": "important"
+    },
+    {
+      "item": "Allergies",
+      "why_required": "To document allergies.",
+      "severity": "important"
+    },
+    {
+      "item": "Social History",
+      "why_required": "To document social history.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Family History",
+      "why_required": "To document family history.",
+      "severity": "nice_to_have"
+    }
+  ],
+  "notes": [
+    "The patient has a history of memory problems. The patient has had a neurological evaluation and an MRI of his brain. The evaluation showed that he has mild cognitive impairment. The patient has had some spells of lightheadedness and anxiety. The patient is Catholic priest. The patient's MMSE score is 29/30. The patient's MMSE score is 2/3 recall at 5 minutes. The patient's MMSE score is 2/10 word recall at 10 minutes. The patient's MMSE score is 23words/60 sec on Category fluency testing (normal). The patient's MMSE score is 25/30 (with deficits in visual construction, orientation, and 2/3 recall at 1 minute). The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 18items/60 sec. The patient's MMSE score is 25/30. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is 23 items/60 sec. The patient's MMSE score is <unused3978>"
+  ]
+}

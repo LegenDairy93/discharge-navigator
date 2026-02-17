@@ -1,0 +1,32 @@
+{
+  "diagnoses": [
+    {
+      "label": "Varicose veins",
+      "icd10": "I40.0",
+      "confidence": "high",
+      "evidence_spans": [
+        "Varicose veins.",
+        "Varicose veins."
+      ]
+    }
+  ],
+  "medications": [],
+  "followups": [
+    {
+      "with_whom": "postanesthesia care unit",
+      "when": "shortly",
+      "why": "evaluation postoperatively",
+      "urgency": "routine",
+      "confidence": "high",
+      "evidence_spans": [
+        "The patient will undergo evaluation postoperatively and will be seen shortly in the postanesthesia care unit."
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "This 30-year-old man had painful varicose veins in his left leg. He had surgery to remove the varicose veins. He will be seen in the postanesthesia care unit soon to check on his recovery.",
+  "missing_info": [],
+  "notes": [
+    "The patient had intractable pain from the left lower extremity. The patient underwent a saphenous vein ligation and stripping. The patient tolerated the procedure well and was transferred to Postanesthesia Care Unit extubated in stable condition. He will undergo evaluation postoperatively and will be seen shortly in the postanesthesia care unit."
+  ]
+}

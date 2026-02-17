@@ -1,0 +1,54 @@
+{
+  "diagnoses": [
+    {
+      "label": "Carpal Tunnel Syndrome",
+      "icd10": "M51.1",
+      "confidence": "high",
+      "evidence_spans": [
+        "Left Carpal Tunnel Syndrome"
+      ]
+    },
+    {
+      "label": "Spinal Stenosis",
+      "icd10": "M54.5",
+      "confidence": "low",
+      "evidence_spans": [
+        "Superimposed on this is mild spondylosis and disc bulge at C6-7, C5-6, C4-5, and C3-4. There is moderate central spinal stenosis at C3-4."
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "Elavil",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [
+        "The patient was placed on Elavil and was subsequently lost to follow-up."
+      ],
+      "confidence": "low",
+      "evidence_spans": [
+        "The patient was placed on Elavil and was subsequently lost to follow-up."
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "lost to follow-up",
+      "when": "subsequently",
+      "why": "lost to follow-up",
+      "urgency": "routine",
+      "confidence": "low",
+      "evidence_spans": [
+        "The patient was placed on Elavil and was subsequently lost to follow-up."
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "The patient is a 44-year-old man who had numbness and pain in his left hand and wrist. He was diagnosed with carpal tunnel syndrome and put on a medicine called Elavil. The patient lost contact with his doctor and did not follow up.",
+  "missing_info": [],
+  "notes": [
+    "The MRI findings did not correlate with the clinical findings and history. The patient was placed on Elavil and was subsequently lost to follow-up."
+  ]
+}

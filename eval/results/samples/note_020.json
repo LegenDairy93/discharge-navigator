@@ -1,0 +1,101 @@
+{
+  "diagnoses": [
+    {
+      "label": "Chronic abdominal pain",
+      "icd10": "R10.9",
+      "confidence": "low",
+      "evidence_spans": [
+        "Chronic abdominal pain"
+      ]
+    },
+    {
+      "label": "Heme positive stool",
+      "icd10": "R10.9",
+      "confidence": "low",
+      "evidence_spans": [
+        "heme positive stool"
+      ]
+    },
+    {
+      "label": "Antral gastritis",
+      "icd10": "K24.9",
+      "confidence": "medium",
+      "evidence_spans": [
+        "Antral gastritis"
+      ]
+    },
+    {
+      "label": "Duodenal polyp",
+      "icd10": "K26.9",
+      "confidence": "medium",
+      "evidence_spans": [
+        "Duodenal polyp"
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "H2 blocker",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [
+        "Recommend the patient be on some type of a H2 blocker"
+      ],
+      "confidence": "medium",
+      "evidence_spans": [
+        "Recommend the patient be on some type of a H2 blocker"
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "Further recommendations to follow",
+      "when": "Further recommendations to follow",
+      "why": null,
+      "urgency": "routine",
+      "confidence": "low",
+      "evidence_spans": [
+        "Further recommendations to follow"
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "The patient had some pain in their belly and their stool was a little bit bloody. The doctor did an exam of their stomach and found a polyp. The patient is going to need to take a medicine to help with their stomach. The doctor will give the patient more instructions later.",
+  "missing_info": [
+    {
+      "item": "Patient's name",
+      "why_required": "To identify the patient",
+      "severity": "important"
+    },
+    {
+      "item": "Patient's age",
+      "why_required": "To assess risk and tailor treatment",
+      "severity": "important"
+    },
+    {
+      "item": "Patient's gender",
+      "why_required": "To assess risk and tailor treatment",
+      "severity": "important"
+    },
+    {
+      "item": "Patient's allergies",
+      "why_required": "To avoid allergic reactions",
+      "severity": "important"
+    },
+    {
+      "item": "Patient's discharge location",
+      "why_required": "To ensure safe discharge",
+      "severity": "important"
+    },
+    {
+      "item": "Patient's post-op instructions",
+      "why_required": "To ensure patient understands post-op care",
+      "severity": "important"
+    }
+  ],
+  "notes": [
+    "The note mentions the patient had heme positive stool and chronic abdominal pain. The doctor performed an endoscopy and found a duodenal polyp and antral gastritis. The patient will need to take an H2 blocker. The note does not include the patient's name, age, gender, allergies, discharge location, or post-op instructions. The confidence level is low for some of the diagnoses and medications due to the limited information provided in the note. The patient tolerated the procedure well."
+  ]
+}

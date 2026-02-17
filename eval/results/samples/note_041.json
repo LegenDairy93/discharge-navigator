@@ -1,0 +1,58 @@
+{
+  "diagnoses": [
+    {
+      "label": "T12 compression fracture with cauda equina syndrome and spinal cord compression",
+      "icd10": "M47.11",
+      "confidence": "high",
+      "evidence_spans": [
+        "T12 compression fracture with cauda equina syndrome and spinal cord compression.",
+        "T12 compression fracture with cauda equina syndrome and spinal cord compression."
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "packed cells",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "low",
+      "evidence_spans": [
+        "replaced 2 units of packed cells.",
+        "Preoperative hemoglobin was less than 10."
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "physician",
+      "when": "6 weeks",
+      "why": "follow up",
+      "urgency": "routine",
+      "confidence": "low",
+      "evidence_spans": [
+        "follow up"
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "The patient had a T12 compression fracture with cauda equina syndrome and spinal cord compression. The patient had a decompressive laminectomy at T12 with bilateral facetectomies, decompression of T11 and T12 nerve roots bilaterally with posterolateral fusion supplemented with allograft bone chips and pedicle screws and rods with crosslink Synthes Click'X System using 6.5 mm diameter x 40 mm length T11 screws and L1 screws, 7 mm diameter x 45 mm length. The patient had a blood loss of 400 mL and received 2 units of packed cells. The patient had no complications. The patient will have a follow up with the physician in 6 weeks.",
+  "missing_info": [
+    {
+      "item": "medications",
+      "why_required": "patient is on multiple medications",
+      "severity": "important"
+    },
+    {
+      "item": "physical therapy",
+      "why_required": "patient will need physical therapy",
+      "severity": "important"
+    }
+  ],
+  "notes": [
+    "The patient had a decompressive laminectomy at T12 with bilateral facetectomies, decompression of T11 and T12 nerve roots bilaterally with posterolateral fusion supplemented with allograft bone chips and pedicle screws and rods with crosslink Synthes Click'X System using 6.5 mm diameter x 40 mm length T11 screws and L1 screws, 7 mm diameter x 45 mm length. The patient had a blood loss of 400 mL and received 2 units of packed cells. The patient had no complications. The patient will have a follow up with the physician in 6 weeks.",
+    "Input truncated for edge inference; clinician should verify completeness."
+  ]
+}

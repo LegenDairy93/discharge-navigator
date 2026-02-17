@@ -1,0 +1,331 @@
+{
+  "diagnoses": [
+    {
+      "label": "Stroke",
+      "icd10": "G45.9",
+      "confidence": "high",
+      "evidence_spans": [
+        "Status post multiple cerebrovascular accidents and significant left-sided upper extremity paresis in 2006."
+      ]
+    },
+    {
+      "label": "Dementia",
+      "icd10": "F00.0",
+      "confidence": "medium",
+      "evidence_spans": [
+        "Dementia and depression."
+      ]
+    },
+    {
+      "label": "Hypertension",
+      "icd10": "I10",
+      "confidence": "high",
+      "evidence_spans": [
+        "Hypertension."
+      ]
+    },
+    {
+      "label": "Atrial Fibrillation",
+      "icd10": "Rhythm disorder",
+      "confidence": "medium",
+      "evidence_spans": [
+        "History of atrial fibrillation. The patient has been in sinus rhythm as of late. The patient is not anticoagulated due to fall risk."
+      ]
+    },
+    {
+      "label": "Glaucoma",
+      "icd10": "H27.1",
+      "confidence": "medium",
+      "evidence_spans": [
+        "Glaucoma."
+      ]
+    },
+    {
+      "label": "Degenerative Arthritis",
+      "icd10": "M17.9",
+      "confidence": "medium",
+      "evidence_spans": [
+        "Degenerative arthritis of her spine."
+      ]
+    },
+    {
+      "label": "GERD",
+      "icd10": "K20.9",
+      "confidence": "medium",
+      "evidence_spans": [
+        "GERD."
+      ]
+    },
+    {
+      "label": "Hypothyroidism",
+      "icd10": "E03.9",
+      "confidence": "medium",
+      "evidence_spans": [
+        "Hypothyroidism."
+      ]
+    },
+    {
+      "label": "Chronic Rhinitis",
+      "icd10": "R05.0",
+      "confidence": "medium",
+      "evidence_spans": [
+        "Chronic rhinitis (the patient declines nasal steroids)."
+      ]
+    },
+    {
+      "label": "Urinary Urge Incontinence",
+      "icd10": "R23.8",
+      "confidence": "medium",
+      "evidence_spans": [
+        "Urinary urge incontinence."
+      ]
+    },
+    {
+      "label": "Chronic Constipation",
+      "icd10": "R12.9",
+      "confidence": "medium",
+      "evidence_spans": [
+        "Chronic constipation."
+      ]
+    },
+    {
+      "label": "Type 2 Diabetes",
+      "icd10": "E11.9",
+      "confidence": "medium",
+      "evidence_spans": [
+        "Diabetes type II, 2006."
+      ]
+    },
+    {
+      "label": "Painful Bunions",
+      "icd10": "M25.5",
+      "confidence": "medium",
+      "evidence_spans": [
+        "Painful bunions on feet bilaterally."
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "Aspirin",
+      "dose": "81 mg",
+      "route": "p.o",
+      "frequency": "daily",
+      "duration": null,
+      "warnings": [
+        "ACE inhibitor may have caused a cough."
+      ],
+      "confidence": "medium",
+      "evidence_spans": [
+        "Aspirin 81 mg p.o. daily"
+      ]
+    },
+    {
+      "name": "Cymbalta",
+      "dose": "60 mg",
+      "route": "p.o",
+      "frequency": "daily",
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "Cymbalta 60 mg p.o. daily"
+      ]
+    },
+    {
+      "name": "Diovan",
+      "dose": "80 mg",
+      "route": "p.o",
+      "frequency": "daily",
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "Diovan 80 mg p.o. daily"
+      ]
+    },
+    {
+      "name": "Felodipine",
+      "dose": "5 mg",
+      "route": "p.o",
+      "frequency": "daily",
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "felodipine 5 mg p.o. daily"
+      ]
+    },
+    {
+      "name": "Omeprazole",
+      "dose": "20 mg",
+      "route": "p.o",
+      "frequency": "daily",
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "omeprazole 20 mg daily"
+      ]
+    },
+    {
+      "name": "Toprol-XL",
+      "dose": "100 mg",
+      "route": "p.o",
+      "frequency": "daily",
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "Toprol-XL 100 mg daily"
+      ]
+    },
+    {
+      "name": "Levoxyl",
+      "dose": "50 mcg",
+      "route": "subcutaneously",
+      "frequency": "daily",
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "Levoxyl 50 mcg daily"
+      ]
+    },
+    {
+      "name": "Lantus",
+      "dose": "12 units",
+      "route": "subcutaneously",
+      "frequency": "h.s",
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "Lantus insulin 12 units subcutaneously h.s."
+      ]
+    },
+    {
+      "name": "Simvastatin",
+      "dose": "10 mg",
+      "route": "p.o",
+      "frequency": "daily",
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "simvastatin 10 mg p.o. daily"
+      ]
+    },
+    {
+      "name": "AyrGel",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "AyrGel to both nostrils twice daily"
+      ]
+    },
+    {
+      "name": "Senna S",
+      "dose": "2 tablets",
+      "route": "p.o",
+      "frequency": "twice daily",
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "Senna S 2 tablets twice daily"
+      ]
+    },
+    {
+      "name": "Timoptic",
+      "dose": "1 drop",
+      "route": "both eyes",
+      "frequency": "twice daily",
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "Timoptic 1 drop both eyes twice daily"
+      ]
+    },
+    {
+      "name": "Tylenol",
+      "dose": "1000 mg",
+      "route": "p.o",
+      "frequency": "3 times daily",
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "Tylenol 1000 mg 3 times daily"
+      ]
+    },
+    {
+      "name": "Xalatan",
+      "dose": "0.005%",
+      "route": "both eyes",
+      "frequency": "1 drop",
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "Xalatan 0.005% drops 1 drop both eyes at bedtime"
+      ]
+    },
+    {
+      "name": "Tucks",
+      "dose": null,
+      "route": "rectum",
+      "frequency": "post BMs",
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "Tucks to rectum post BMs"
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "with whom",
+      "when": "when",
+      "why": "why",
+      "urgency": "routine",
+      "confidence": "low",
+      "evidence_spans": [
+        "History of atrial fibrillation. The patient has been in sinus rhythm as of late. The patient is not anticoagulated due to fall risk."
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "The patient has had multiple strokes and dementia. She is also dealing with hypertension, depression, and other health issues. She is not taking anticoagulants due to a fall risk. She is being treated for hemorrhoids and constipation. Her blood sugars are being monitored. She is being discharged with palliative care orders in place. She is not in distress and is doing reasonably well.",
+  "missing_info": [
+    {
+      "item": "Anticoagulation",
+      "why_required": "Patient is at risk for falls and is not anticoagulated.",
+      "severity": "important"
+    },
+    {
+      "item": "Medication reconciliation",
+      "why_required": "To ensure patient is taking the correct medications at the correct doses.",
+      "severity": "important"
+    },
+    {
+      "item": "Social support",
+      "why_required": "To ensure patient has adequate support at home.",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "Advance directives",
+      "why_required": "To ensure patient's wishes are known.",
+      "severity": "important"
+    }
+  ],
+  "notes": [
+    "The patient is not anticoagulated due to fall risk. The patient declines nasal steroids.\u4e4f\u529b"
+  ]
+}

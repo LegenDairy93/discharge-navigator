@@ -1,0 +1,136 @@
+{
+  "diagnoses": [
+    {
+      "label": "Hypertension",
+      "icd10": "I10",
+      "confidence": "high",
+      "evidence_spans": [
+        "She has a history of hypertension and shortness of breath."
+      ]
+    },
+    {
+      "label": "Obesity",
+      "icd10": "E66.9",
+      "confidence": "high",
+      "evidence_spans": [
+        "This is a 34-year-old female with a BMI of 43 who is interested in surgical weight via the gastric bypass as opposed to Lap-Band."
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "Topamax",
+      "dose": "100 mg",
+      "route": "oral",
+      "frequency": "twice daily",
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "Include Topamax 100 mg twice daily"
+      ]
+    },
+    {
+      "name": "Zoloft",
+      "dose": "100 mg",
+      "route": "oral",
+      "frequency": "twice daily",
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "Include Zoloft 100 mg twice daily"
+      ]
+    },
+    {
+      "name": "Abilify",
+      "dose": "5 mg",
+      "route": "oral",
+      "frequency": "daily",
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "Include Abilify 5 mg daily"
+      ]
+    },
+    {
+      "name": "Motrin",
+      "dose": "800 mg",
+      "route": "oral",
+      "frequency": "daily",
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "Include Motrin 800 mg daily"
+      ]
+    },
+    {
+      "name": "Multivitamin",
+      "dose": null,
+      "route": "oral",
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "Include a multivitamin"
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "nutritionist",
+      "when": "soon",
+      "why": "weight loss",
+      "urgency": "soon",
+      "confidence": "high",
+      "evidence_spans": [
+        "She will also see my nutritionist and social worker and have an upper endoscopy."
+      ]
+    },
+    {
+      "with_whom": "social worker",
+      "when": "soon",
+      "why": "weight loss",
+      "urgency": "soon",
+      "confidence": "high",
+      "evidence_spans": [
+        "She will also see my nutritionist and social worker and have an upper endoscopy."
+      ]
+    },
+    {
+      "with_whom": "Dr. XYZ",
+      "when": "soon",
+      "why": "letter of medical necessity",
+      "urgency": "soon",
+      "confidence": "high",
+      "evidence_spans": [
+        "ABC will be asking for a letter of medical necessity from Dr. XYZ."
+      ]
+    },
+    {
+      "with_whom": "insurance company",
+      "when": "soon",
+      "why": "approval",
+      "urgency": "soon",
+      "confidence": "high",
+      "evidence_spans": [
+        "Once this is completed, we will submit her to her insurance company for approval."
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "This is a 34-year-old female who is interested in surgery to help her lose weight. She needs to see a nutritionist, social worker, and has an upper endoscopy. She needs a letter of medical necessity from Dr. XYZ. She also needs approval from her insurance company.",
+  "missing_info": [
+    {
+      "item": "Upper Endoscopy",
+      "why_required": "To assess the patient's gastrointestinal health.",
+      "severity": "important"
+    }
+  ],
+  "notes": [
+    "The patient is interested in gastric bypass surgery. The plan includes seeing a nutritionist, social worker, and having an upper endoscopy. A letter of medical necessity is required from Dr. XYZ. Insurance approval is needed."
+  ]
+}

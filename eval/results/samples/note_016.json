@@ -1,0 +1,109 @@
+{
+  "diagnoses": [
+    {
+      "label": "Acute kidney injury",
+      "icd10": "N17.9",
+      "confidence": "high",
+      "evidence_spans": [
+        "Acute kidney injury of which etiology is unknown at this time, with progressive azotemia unresponsive to IV fluids."
+      ]
+    },
+    {
+      "label": "Hyperkalemia",
+      "icd10": "E78.0",
+      "confidence": "high",
+      "evidence_spans": [
+        "Hyperkalemia due to renal failure, slowly improving with Kayexalate."
+      ]
+    },
+    {
+      "label": "Nephrotic syndrome",
+      "icd10": "N13.3",
+      "confidence": "high",
+      "evidence_spans": [
+        "Microscopic hematuria with nephrotic range proteinuria, more consistent with a glomerulonephropathy nephritis."
+      ]
+    },
+    {
+      "label": "Hypertension",
+      "icd10": "I10",
+      "confidence": "high",
+      "evidence_spans": [
+        "Hypertension."
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "Kayexalate",
+      "dose": "15 gm",
+      "route": "p.o",
+      "frequency": "q.6h",
+      "duration": "2 more doses",
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "I will give him Kayexalate 15 gm p.o. q.6h. x 2 more doses since he is responding and his potassium is already down to 5.2."
+      ]
+    },
+    {
+      "name": "Zaroxolyn",
+      "dose": "10 mg",
+      "route": "p.o",
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "I will also give him 10 mg of Zaroxolyn p.o."
+      ]
+    },
+    {
+      "name": "Lasix",
+      "dose": "80 mg",
+      "route": "IV",
+      "frequency": null,
+      "duration": null,
+      "warnings": [],
+      "confidence": "medium",
+      "evidence_spans": [
+        "We will give him 10 mg of Zaroxolyn p.o.  Discontinue all IV fluids."
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "surgeon",
+      "when": "morning",
+      "why": "temporary hemodialysis catheter placement",
+      "urgency": "soon",
+      "confidence": "high",
+      "evidence_spans": [
+        "I will also recheck a urinalysis, consult the surgeon in the morning for temporary hemodialysis catheter placement"
+      ]
+    },
+    {
+      "with_whom": "case managers",
+      "when": "soon",
+      "why": "start work on a transfer to ABCD Center",
+      "urgency": "soon",
+      "confidence": "high",
+      "evidence_spans": [
+        "I will also consult case managers to start work on a transfer to ABCD Center per the patient and his wife's request, which will occur after his second dialysis treatment if he remains stable."
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "This 47-year-old man is having trouble with his kidneys. He has swelling in his ankles and can't pee much. His potassium is high, and his protein levels are very low. He needs a temporary dialysis catheter and is being transferred to a kidney center. He has a family history of kidney problems.",
+  "missing_info": [
+    {
+      "item": "primary care physician",
+      "why_required": "to provide ongoing care",
+      "severity": "important"
+    }
+  ],
+  "notes": [
+    "The patient is being transferred to a kidney center for dialysis. The cause of his kidney failure is unknown, but he has microscopic hematuria, nephrotic range proteinuria, and hypertension. He is being treated for hyperkalemia and edema. The patient and his wife want a kidney biopsy performed closer to home. The patient is a smoker and has a family history of kidney disease. The patient is concerned about his parents' dialysis due to diabetes.",
+    "Input truncated for edge inference; clinician should verify completeness."
+  ]
+}

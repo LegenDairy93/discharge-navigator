@@ -1,0 +1,95 @@
+{
+  "diagnoses": [
+    {
+      "label": "bilateral thalamic stroke",
+      "icd10": "G45.9",
+      "confidence": "high",
+      "evidence_spans": [
+        "MRI Brain revealed bilateral thalamic strokes"
+      ]
+    },
+    {
+      "label": "intraatrial septal aneurysm with right to left shunt",
+      "icd10": "I25.1",
+      "confidence": "high",
+      "evidence_spans": [
+        "Transthoracic echocardiogram (TTE) showed an intraatrial septal aneurysm with right to left shunt"
+      ]
+    },
+    {
+      "label": "supranuclear vertical gaze palsy OU",
+      "icd10": "R91.8",
+      "confidence": "high",
+      "evidence_spans": [
+        "Neuroophthalmologic evaluation revealed evidence of a supranuclear vertical gaze palsy OU"
+      ]
+    },
+    {
+      "label": "severe impairment of anterograde verbal and visual memory",
+      "icd10": "F01.9",
+      "confidence": "high",
+      "evidence_spans": [
+        "Neuropsychologic assessment 1/12-15/93 revealed severe impairment of anterograde verbal and visual memory, including acquisition and delayed recall and recognition"
+      ]
+    },
+    {
+      "label": "impaired verbal associative fluency",
+      "icd10": "F02.9",
+      "confidence": "high",
+      "evidence_spans": [
+        "Speech was effortful and hypophonic with very defective verbal associative fluency"
+      ]
+    },
+    {
+      "label": "impaired 2-D constructional praxis",
+      "icd10": "F03.9",
+      "confidence": "high",
+      "evidence_spans": [
+        "There was impairment of 2-D constructional praxis"
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "name": "aspirin",
+      "dose": "325 mg",
+      "route": "oral",
+      "frequency": "qd",
+      "duration": "ongoing",
+      "warnings": [],
+      "confidence": "high",
+      "evidence_spans": [
+        "She continues to take ASA 325 mg qd"
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "with_whom": "neurologist",
+      "when": "routine",
+      "why": "ongoing",
+      "urgency": "routine",
+      "confidence": "high",
+      "evidence_spans": [
+        "She was last seen on 5/2/95 and was speaking fluently and lucidly"
+      ]
+    }
+  ],
+  "red_flags": [],
+  "patient_summary": "This patient was admitted after experiencing sudden blindness, tongue numbness, and slurred speech. She was found to have bilateral thalamic strokes and an intraatrial septal aneurysm. She is currently taking aspirin and needs routine follow-up with a neurologist. She has some mild decreased vertical eye movements.",
+  "missing_info": [
+    {
+      "item": "vision",
+      "why_required": "to assess for improvement",
+      "severity": "nice_to_have"
+    },
+    {
+      "item": "cognitive function",
+      "why_required": "to assess for improvement",
+      "severity": "nice_to_have"
+    }
+  ],
+  "notes": [
+    "The patient's symptoms were significantly improved upon arrival at UIHC. The cause of the initial symptoms is not fully elucidated, but the MRI findings suggest bilateral thalamic strokes. The patient's cognitive function is impaired, but there has been some improvement since the initial assessment. The patient is currently taking aspirin for secondary prevention of stroke. The patient's vision is mildly decreased, but she is able to see and communicate. The patient's symptoms are being monitored closely. The patient's symptoms were significantly improved upon arrival at UIHC. The cause of the initial symptoms is not fully elucidated, but the MRI findings suggest bilateral thalamic strokes. The patient's cognitive function is impaired, but there has been some improvement since the initial assessment. The patient is currently taking aspirin for secondary prevention of stroke. The patient's vision is mildly decreased, but she is able to see and communicate. The patient's symptoms are being monitored closely."
+  ]
+}
