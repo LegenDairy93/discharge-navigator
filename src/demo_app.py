@@ -370,7 +370,7 @@ def build_failure_html():
 
     <div style="background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 100%); border-radius: 16px; padding: 32px; color: white !important; margin-bottom: 24px;">
         <h2 style="margin: 0 0 8px 0; font-size: 22px; font-weight: 700; color: white !important;">Failure Analysis</h2>
-        <p style="margin: 0; opacity: 0.9; font-size: 14px; color: #fecaca !important;">Showing failures builds trust. 4 out of 50 notes failed structured parsing.</p>
+        <p style="margin: 0; opacity: 0.9; font-size: 14px; color: #fecaca !important;">4 out of 50 notes failed structured parsing.</p>
     </div>
 
     <div style="background: white !important; border: 2px solid #fecaca; border-radius: 12px; padding: 24px; margin-bottom: 24px;">
