@@ -1,0 +1,1858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280, height=720">
+<title>Discharge Navigator — Product Demo</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: #0f172a;
+    color: #f8fafc;
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* ── Scene Container ── */
+  .scene {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    pointer-events: none;
+    padding: 40px 60px;
+  }
+  .scene.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  /* ── Progress bar ── */
+  #progress-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2563eb, #06b6d4);
+    transition: width 0.5s ease;
+    z-index: 100;
+  }
+
+  /* ── Scene counter ── */
+  #scene-counter {
+    position: fixed;
+    bottom: 8px;
+    right: 24px;
+    font-size: 11px;
+    color: #475569;
+    font-weight: 500;
+    z-index: 100;
+  }
+
+  /* ── Shared ── */
+  .tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .tag-blue   { background: #dbeafe; color: #1e40af; }
+  .tag-green  { background: #dcfce7; color: #166534; }
+  .tag-amber  { background: #fef3c7; color: #92400e; }
+  .tag-red    { background: #fee2e2; color: #991b1b; }
+  .tag-teal   { background: #ccfbf1; color: #0d9488; }
+
+  h1.hero { font-size: 52px; font-weight: 900; letter-spacing: -1.5px; line-height: 1.1; }
+  h2.section-title { font-size: 36px; font-weight: 800; letter-spacing: -1px; margin-bottom: 12px; }
+  p.subtitle { font-size: 18px; color: #94a3b8; line-height: 1.6; max-width: 700px; text-align: center; }
+
+  /* ── Animations ── */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 20px rgba(37,99,235,0.3); }
+    50% { box-shadow: 0 0 40px rgba(37,99,235,0.6); }
+  }
+  @keyframes countUp { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes highlightSweep {
+    from { background-position: -200% center; }
+    to { background-position: 200% center; }
+  }
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  @keyframes barFill {
+    from { width: 0; }
+  }
+  .anim-delay-1 { animation-delay: 0.2s; }
+  .anim-delay-2 { animation-delay: 0.4s; }
+  .anim-delay-3 { animation-delay: 0.6s; }
+  .anim-delay-4 { animation-delay: 0.8s; }
+  .anim-delay-5 { animation-delay: 1.0s; }
+  .anim-delay-6 { animation-delay: 1.2s; }
+  .anim-delay-7 { animation-delay: 1.4s; }
+
+  .stagger-child {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  /* ── Scene 1: Title ── */
+  #scene-1 .med-cross {
+    width: 64px; height: 64px;
+    background: #2563eb;
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+  #scene-1 .med-cross svg { width: 36px; height: 36px; }
+  #scene-1 .hero-gradient {
+    background: linear-gradient(135deg, #f8fafc 0%, #60a5fa 50%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  #scene-1 .badge-row {
+    display: flex; gap: 12px; margin-top: 24px;
+  }
+  #scene-1 .badge {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    background: rgba(37,99,235,0.15);
+    border: 1px solid rgba(37,99,235,0.3);
+    color: #93c5fd;
+  }
+
+  /* ── Scene 2: Problem ── */
+  #scene-2 .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+    width: 100%;
+  }
+  #scene-2 .note-block {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 24px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: #94a3b8;
+    line-height: 1.8;
+    max-height: 340px;
+    overflow: hidden;
+    position: relative;
+  }
+  #scene-2 .note-block::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 80px;
+    background: linear-gradient(transparent, #1e293b);
+  }
+  #scene-2 .problem-stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+  #scene-2 .stat-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-left: 4px solid #ef4444;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  #scene-2 .stat-card .num {
+    font-size: 36px; font-weight: 800; color: #ef4444;
+  }
+  #scene-2 .stat-card .desc {
+    font-size: 14px; color: #94a3b8; margin-top: 4px;
+  }
+
+  /* ── Scene 3: Pipeline ── */
+  #scene-3 .pipeline {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-top: 40px;
+    width: 100%;
+    justify-content: center;
+  }
+  .pipe-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    flex-shrink: 0;
+  }
+  .pipe-node.lit { opacity: 1; transition: opacity 0.5s ease; }
+  .pipe-circle {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; font-weight: 800;
+    color: white;
+    background: #334155;
+    transition: background 0.5s ease, box-shadow 0.5s ease;
+  }
+  .pipe-node.lit .pipe-circle {
+    background: #2563eb;
+    box-shadow: 0 0 20px rgba(37,99,235,0.5);
+  }
+  .pipe-node.lit.done .pipe-circle {
+    background: #16a34a;
+    box-shadow: 0 0 20px rgba(22,163,106,0.5);
+  }
+  .pipe-label {
+    font-size: 14px; font-weight: 700; margin-top: 10px;
+    color: #64748b;
+    transition: color 0.5s;
+  }
+  .pipe-node.lit .pipe-label { color: #f8fafc; }
+  .pipe-sub {
+    font-size: 11px; color: #475569; margin-top: 2px;
+    transition: color 0.5s;
+  }
+  .pipe-node.lit .pipe-sub { color: #94a3b8; }
+  .pipe-arrow {
+    width: 60px;
+    height: 2px;
+    background: #334155;
+    position: relative;
+    flex-shrink: 0;
+    margin: 0 4px;
+    margin-bottom: 34px;
+    transition: background 0.5s ease;
+  }
+  .pipe-arrow.lit { background: #2563eb; }
+  .pipe-arrow::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: -4px;
+    border: 5px solid transparent;
+    border-left: 6px solid #334155;
+    transition: border-color 0.5s;
+  }
+  .pipe-arrow.lit::after { border-left-color: #2563eb; }
+
+  /* ── Scene 4: Demo ── */
+  #scene-4 {
+    padding: 20px 30px;
+  }
+  .demo-container {
+    width: 100%;
+    background: #f8fafc;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+  }
+  .demo-header {
+    background: white;
+    padding: 16px 24px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .demo-header .demo-icon {
+    width: 32px; height: 32px;
+    background: #2563eb;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .demo-header h3 {
+    font-size: 16px; font-weight: 800; color: #0f172a;
+  }
+  .demo-header .demo-sub {
+    font-size: 12px; color: #64748b; font-weight: 500;
+  }
+  .demo-tabs {
+    display: flex;
+    background: white;
+    border-bottom: 2px solid #e2e8f0;
+    padding: 0 24px;
+  }
+  .demo-tab {
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+    border-bottom: 3px solid transparent;
+  }
+  .demo-tab.active {
+    color: #2563eb;
+    border-bottom-color: #2563eb;
+  }
+  .demo-body {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 0;
+    min-height: 400px;
+  }
+  .demo-note-panel {
+    padding: 16px;
+    border-right: 1px solid #e2e8f0;
+    overflow: hidden;
+  }
+  .demo-note-panel .filter-row {
+    display: flex; gap: 6px; margin-bottom: 12px;
+  }
+  .demo-note-panel .filter-btn {
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+  }
+  .demo-note-panel .filter-btn.active {
+    background: #6366f1;
+    color: white;
+    border-color: #6366f1;
+  }
+  .demo-note-text {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    line-height: 1.7;
+    color: #1e293b;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 14px;
+    max-height: 340px;
+    overflow: hidden;
+    white-space: pre-wrap;
+  }
+  .demo-note-text mark {
+    background: linear-gradient(120deg, #fde68a 0%, #fbbf24 100%);
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+    color: #1e293b;
+  }
+  .demo-cards-panel {
+    padding: 16px;
+    overflow: hidden;
+  }
+  .demo-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  .demo-card.visible {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  .demo-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+  }
+  .demo-card-header .card-left {
+    display: flex; align-items: center; gap: 6px;
+  }
+  .demo-card-detail {
+    font-size: 11px; color: #475569; margin-bottom: 6px;
+  }
+  .demo-card-grounding {
+    display: flex; align-items: center; gap: 6px; font-size: 10px; color: #64748b;
+  }
+  .grounding-bar {
+    width: 50px; height: 5px; border-radius: 3px; background: #e2e8f0; overflow: hidden;
+  }
+  .grounding-fill {
+    height: 100%; border-radius: 3px; width: 0;
+    transition: width 1s ease;
+  }
+
+  .demo-status {
+    background: white;
+    border-top: 1px solid #e2e8f0;
+    padding: 8px 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #475569;
+  }
+  .demo-status .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #16a34a;
+  }
+
+  /* ── Scene 5: Metrics ── */
+  #scene-5 .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+    width: 100%;
+  }
+  .metric-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 16px;
+    padding: 28px 20px;
+    text-align: center;
+    opacity: 0;
+  }
+  .metric-card.visible {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+  .metric-num {
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .metric-bar-outer {
+    width: 80%;
+    height: 6px;
+    border-radius: 3px;
+    background: #334155;
+    margin: 10px auto 0;
+    overflow: hidden;
+  }
+  .metric-bar-inner {
+    height: 100%;
+    border-radius: 3px;
+    width: 0;
+    transition: width 1.5s ease;
+  }
+  .metric-label {
+    font-size: 13px; font-weight: 700; margin-top: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #cbd5e1;
+  }
+  .metric-sub {
+    font-size: 12px; color: #64748b; margin-top: 4px;
+  }
+  .metric-pass {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    background: rgba(22,163,106,0.2);
+    color: #4ade80;
+    opacity: 0;
+    transition: opacity 0.5s ease 1.5s;
+  }
+  .metric-card.visible .metric-pass { opacity: 1; }
+
+  /* ── Scene 5b: Full Metrics Table ── */
+  #scene-5b {
+    padding: 40px 80px;
+  }
+  .metrics-table {
+    width: 100%;
+    margin-top: 24px;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .metrics-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .metrics-table th {
+    text-align: left;
+    padding: 14px 20px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: #0f172a;
+    border-bottom: 1px solid #334155;
+  }
+  .metrics-table td {
+    padding: 14px 20px;
+    font-size: 14px;
+    color: #e2e8f0;
+    border-bottom: 1px solid #1e293b;
+  }
+  .metrics-table tr:last-child td { border-bottom: none; }
+  .metrics-table .val {
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .tbl-bar {
+    display: inline-block;
+    width: 100px; height: 5px;
+    border-radius: 3px;
+    background: #334155;
+    overflow: hidden;
+    vertical-align: middle;
+    margin-left: 8px;
+  }
+  .tbl-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    width: 0;
+    transition: width 1.5s ease;
+  }
+
+  /* ── Scene 6: Safety ── */
+  #scene-6 .safety-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+    width: 100%;
+  }
+  .safety-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    opacity: 0;
+  }
+  .safety-card.visible {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+  .safety-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 22px;
+  }
+  .safety-card h4 {
+    font-size: 15px; font-weight: 700; color: #f8fafc; margin-bottom: 4px;
+  }
+  .safety-card p {
+    font-size: 13px; color: #94a3b8; line-height: 1.5;
+  }
+
+  /* ── Scene 7: Edge ── */
+  #scene-7 .edge-row {
+    display: flex;
+    gap: 24px;
+    margin-top: 36px;
+  }
+  .edge-chip {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 24px 28px;
+    text-align: center;
+    opacity: 0;
+  }
+  .edge-chip.visible {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+  .edge-chip .num {
+    font-size: 36px; font-weight: 900; color: #06b6d4;
+  }
+  .edge-chip .lbl {
+    font-size: 13px; color: #94a3b8; margin-top: 6px;
+  }
+
+  /* ── Scene 8: Closing ── */
+  #scene-8 .links {
+    display: flex; gap: 16px; margin-top: 24px;
+  }
+  #scene-8 .link-btn {
+    padding: 10px 24px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    background: #2563eb;
+  }
+  #scene-8 .link-btn.secondary {
+    background: transparent;
+    border: 1px solid #475569;
+    color: #94a3b8;
+  }
+  #scene-8 .disclaimer {
+    font-size: 12px;
+    color: #475569;
+    margin-top: 32px;
+    font-style: italic;
+  }
+
+  /* Controls overlay */
+  #controls {
+    position: fixed;
+    top: 14px;
+    right: 24px;
+    display: flex;
+    gap: 8px;
+    z-index: 100;
+    opacity: 0.3;
+    transition: opacity 0.3s;
+  }
+  #controls:hover { opacity: 1; }
+  #controls button {
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: #94a3b8;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+  }
+  #controls button:hover {
+    background: #334155;
+    color: white;
+  }
+
+  /* ── Deep-dive scenes shared ── */
+  .deepdive-container {
+    width: 100%;
+    background: #f8fafc;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+  }
+  .dd-header {
+    background: white;
+    padding: 12px 24px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .dd-header .dd-icon {
+    width: 28px; height: 28px; background: #2563eb; border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .dd-header h3 { font-size: 14px; font-weight: 800; color: #0f172a; }
+  .dd-header .dd-sub { font-size: 11px; color: #64748b; }
+  .dd-tabs {
+    display: flex; background: white; border-bottom: 2px solid #e2e8f0; padding: 0 24px;
+  }
+  .dd-tab {
+    padding: 8px 16px; font-size: 12px; font-weight: 600; color: #475569;
+    border-bottom: 3px solid transparent;
+  }
+  .dd-tab.active { color: #2563eb; border-bottom-color: #2563eb; }
+  .dd-scene-label {
+    position: absolute;
+    top: 8px;
+    left: 30px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .dd-body { padding: 16px 20px; }
+  .dd-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* Patient summary cards */
+  .ps-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 16px;
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  .ps-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .ps-card h4 {
+    font-size: 13px; font-weight: 700; margin-bottom: 8px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .ps-card p, .ps-card li {
+    font-size: 12px; color: #334155; line-height: 1.6;
+  }
+  .ps-card ul { padding-left: 16px; margin: 0; }
+
+  /* Filter demo panels */
+  .filter-demo-panel {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .filter-demo-note {
+    font-family: 'Courier New', monospace;
+    font-size: 11px; line-height: 1.7; color: #1e293b;
+    background: #f8fafc; border: 1px solid #e2e8f0;
+    border-radius: 8px; padding: 12px;
+    max-height: 280px; overflow: hidden;
+    white-space: pre-wrap;
+  }
+  .filter-demo-note mark.dx-mark {
+    background: linear-gradient(120deg, #bfdbfe 0%, #93c5fd 100%);
+    padding: 1px 4px; border-radius: 3px; font-weight: 600; color: #1e3a8a;
+  }
+  .filter-demo-note mark.med-mark {
+    background: linear-gradient(120deg, #bbf7d0 0%, #86efac 100%);
+    padding: 1px 4px; border-radius: 3px; font-weight: 600; color: #14532d;
+  }
+  .filter-demo-note mark.fu-mark {
+    background: linear-gradient(120deg, #fde68a 0%, #fbbf24 100%);
+    padding: 1px 4px; border-radius: 3px; font-weight: 600; color: #78350f;
+  }
+
+  /* Confidence explainer */
+  .conf-row {
+    display: flex; gap: 16px; margin-top: 16px;
+  }
+  .conf-box {
+    flex: 1;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+  }
+  .conf-box.visible {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+  .conf-box .conf-level {
+    font-size: 32px; font-weight: 900; line-height: 1;
+  }
+  .conf-box .conf-label {
+    font-size: 12px; font-weight: 700; margin-top: 8px; text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .conf-box .conf-desc {
+    font-size: 11px; color: #475569; margin-top: 6px; line-height: 1.5;
+  }
+  .conf-box .conf-badge {
+    display: inline-block; margin-top: 10px; padding: 3px 10px;
+    border-radius: 10px; font-size: 11px; font-weight: 700;
+  }
+
+  /* Grounding explainer */
+  .ground-visual {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 16px;
+  }
+  .ground-step {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f5f9;
+    opacity: 0;
+  }
+  .ground-step.visible {
+    opacity: 1;
+    transition: opacity 0.4s ease;
+  }
+  .ground-step:last-child { border-bottom: none; }
+  .ground-num {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: #2563eb; color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 800; flex-shrink: 0;
+  }
+  .ground-text {
+    font-size: 13px; color: #1e293b;
+  }
+  .ground-text strong { color: #2563eb; }
+
+  /* ── Caption Bar ── */
+  #caption-bar {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1000px;
+    width: 85%;
+    z-index: 200;
+    pointer-events: none;
+  }
+  #caption-text {
+    background: rgba(0, 0, 0, 0.82);
+    color: #f1f5f9;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.55;
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  #caption-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<div id="progress-bar" style="width: 0%;"></div>
+<div id="scene-counter">1 / 14</div>
+<div id="controls">
+  <button onclick="prevScene()">← Prev</button>
+  <button id="pause-btn" onclick="togglePause()">⏸ Pause</button>
+  <button onclick="nextScene()">Next →</button>
+</div>
+
+<div id="caption-bar">
+  <div id="caption-text"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SCENE 1: TITLE                                  -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="scene" id="scene-1">
+  <div class="med-cross">
+    <svg viewBox="0 0 36 36" fill="none"><path d="M15 6h6v24h-6z" fill="white"/><path d="M6 15h24v6H6z" fill="white"/></svg>
+  </div>
+  <h1 class="hero hero-gradient" style="text-align:center;">Discharge Navigator</h1>
+  <p class="subtitle" style="margin-top:16px;">
+    Offline structuring of clinical discharge notes using MedGemma 4B.<br>
+    Evidence-grounded. Schema-validated. Clinician-in-the-loop.
+  </p>
+  <div class="badge-row">
+    <span class="badge">MedGemma 4B</span>
+    <span class="badge">CPU-Only</span>
+    <span class="badge">No Internet</span>
+    <span class="badge">2.5 GB</span>
+  </div>
+  <p style="font-size:13px; color:#475569; margin-top:36px;">Kaggle MedGemma Impact Challenge 2025</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SCENE 2: THE PROBLEM                            -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="scene" id="scene-2">
+  <h2 class="section-title" style="text-align:center;">The Problem</h2>
+  <p class="subtitle">Clinical discharge notes are unstructured, dense, and error-prone to parse manually.</p>
+  <div class="problem-grid">
+    <div class="note-block">
+REASON FOR CONSULTATION: Abnormal cardiac enzyme profile.
+HISTORY OF PRESENT ILLNESS: The patient is a 66-year-old
+gentleman, was brought into emergency room with obtundation.
+The patient was mechanically ventilated originally. His
+initial diagnosis was septic shock. His labs showed elevated
+cardiac enzyme profile. This is a consultation for evaluation
+of the same.
+
+PAST MEDICAL HISTORY: Pulmonary fibrosis, on prednisone,
+oxygen-dependent cellulitis status post foot surgery with
+infection recuperating from the same.
+
+MEDICATIONS:
+1. Vitamin supplementation.
+2. Prednisone.
+3. Cyclobenzaprine.
+4. Losartan 50 mg daily.
+5. Nifedipine 90 mg daily.
+6. Lasix.
+7. Potassium supplementation.
+
+IMPRESSION:
+1. Pulmonary fibrosis, on prednisone, oxygen dependent
+   with respiratory acidosis.
+2. Septicemia, septic shock secondary to cellulitis.
+3. Acute renal shutdown.
+4. Elevated cardiac enzyme profile...
+    </div>
+    <div class="problem-stats">
+      <div class="stat-card stagger-child anim-delay-1">
+        <div class="num">48M</div>
+        <div class="desc">hospitalizations per year in India<br>with discharge notes to process</div>
+      </div>
+      <div class="stat-card stagger-child anim-delay-2">
+        <div class="num">1:11K</div>
+        <div class="desc">doctor-to-patient ratio in rural India —<br>no time for manual extraction</div>
+      </div>
+      <div class="stat-card stagger-child anim-delay-3" style="border-left-color: #f59e0b;">
+        <div class="num" style="color:#f59e0b;">0 GPU</div>
+        <div class="desc">Most rural clinics lack cloud access —<br>needs to run offline on any laptop</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SCENE 3: PIPELINE                               -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="scene" id="scene-3">
+  <h2 class="section-title" style="text-align:center;">The Pipeline</h2>
+  <p class="subtitle">Five steps from raw note to verified discharge packet.</p>
+  <div class="pipeline">
+    <div class="pipe-node" id="pipe-1">
+      <div class="pipe-circle">1</div>
+      <div class="pipe-label">Clinical Note</div>
+      <div class="pipe-sub">Input</div>
+    </div>
+    <div class="pipe-arrow" id="arrow-1"></div>
+    <div class="pipe-node" id="pipe-2">
+      <div class="pipe-circle">2</div>
+      <div class="pipe-label">Extract</div>
+      <div class="pipe-sub">MedGemma 4B</div>
+    </div>
+    <div class="pipe-arrow" id="arrow-2"></div>
+    <div class="pipe-node" id="pipe-3">
+      <div class="pipe-circle">3</div>
+      <div class="pipe-label">Ground</div>
+      <div class="pipe-sub">Evidence Spans</div>
+    </div>
+    <div class="pipe-arrow" id="arrow-3"></div>
+    <div class="pipe-node" id="pipe-4">
+      <div class="pipe-circle">4</div>
+      <div class="pipe-label">Validate</div>
+      <div class="pipe-sub">Pydantic Schema</div>
+    </div>
+    <div class="pipe-arrow" id="arrow-4"></div>
+    <div class="pipe-node done" id="pipe-5">
+      <div class="pipe-circle">✓</div>
+      <div class="pipe-label">Review</div>
+      <div class="pipe-sub">Clinician</div>
+    </div>
+  </div>
+  <div style="margin-top:36px; display:flex; gap:16px;">
+    <span class="tag tag-teal">3-attempt retry with prompt A/B variants</span>
+    <span class="tag tag-teal">Schema gate rejects malformed output</span>
+    <span class="tag tag-teal">No output auto-applied</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SCENE 4: LIVE DEMO                              -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="scene" id="scene-4">
+  <div class="demo-container">
+    <div class="demo-header">
+      <div class="demo-icon">
+        <svg width="18" height="18" viewBox="0 0 36 36" fill="none"><path d="M15 6h6v24h-6z" fill="white"/><path d="M6 15h24v6H6z" fill="white"/></svg>
+      </div>
+      <div>
+        <h3>Discharge Navigator</h3>
+        <span class="demo-sub">MedGemma 4B · Offline · Clinician-in-the-Loop</span>
+      </div>
+    </div>
+    <div class="demo-tabs">
+      <div class="demo-tab active">Evidence Explorer</div>
+      <div class="demo-tab">Performance Dashboard</div>
+      <div class="demo-tab">Edge Cases</div>
+      <div class="demo-tab">How It Works</div>
+    </div>
+    <div class="demo-body">
+      <div class="demo-note-panel">
+        <div class="filter-row">
+          <span class="filter-btn active">All</span>
+          <span class="filter-btn" style="border-left:3px solid #3B82F6;">Diagnoses</span>
+          <span class="filter-btn" style="border-left:3px solid #10B981;">Medications</span>
+          <span class="filter-btn" style="border-left:3px solid #F59E0B;">Follow-ups</span>
+        </div>
+        <div class="demo-note-text" id="demo-note-content">
+REASON FOR CONSULTATION: Abnormal cardiac enzyme profile.
+
+HISTORY OF PRESENT ILLNESS: The patient is a 66-year-old gentleman, was brought into emergency room with obtundation. The patient was mechanically ventilated. His initial diagnosis was <mark>septic shock</mark>. His labs showed <mark>Elevated cardiac enzyme profile</mark>.
+
+PAST MEDICAL HISTORY: <mark>Pulmonary fibrosis</mark>, on <mark>prednisone</mark>, <mark>oxygen-dependent cellulitis status post foot surgery with infection recuperating from the same</mark>.
+
+MEDICATIONS:
+1. <mark>Vitamin supplementation</mark>.
+2. <mark>Prednisone</mark>.
+3. <mark>Cyclobenzaprine</mark>.
+4. <mark>Losartan 50 mg daily</mark>.
+5. <mark>Nifedipine 90 mg daily</mark>.
+6. <mark>Lasix</mark>.
+7. <mark>Potassium supplementation</mark>.
+
+IMPRESSION:
+1. <mark>Pulmonary fibrosis</mark>, on prednisone, oxygen dependent with respiratory acidosis.
+2. <mark>Septicemia</mark>, <mark>septic shock</mark> secondary to cellulitis.
+3. <mark>Acute renal shutdown</mark>.
+4. <mark>Elevated cardiac enzyme profile</mark> without prior cardiac history <mark>possibly due to sepsis and also acute renal failure</mark>.
+
+RECOMMENDATIONS:
+1. Echocardiogram to assess LV function.
+2. Aggressive medical management including dialysis.
+3. Conservative treatment at this juncture.
+        </div>
+      </div>
+      <div class="demo-cards-panel">
+        <!-- Diagnosis cards -->
+        <div class="demo-card" id="dc-1" style="border-left: 4px solid #2563eb;">
+          <div class="demo-card-header">
+            <div class="card-left">
+              <span class="tag tag-blue">DIAGNOSIS</span>
+              <span style="font-size:12px; font-weight:600; color:#0f172a;">Pulmonary fibrosis</span>
+            </div>
+            <span class="tag tag-green" style="font-size:10px;">HIGH</span>
+          </div>
+          <div class="demo-card-detail">ICD-10: J84.10 | 3 evidence spans</div>
+          <div class="demo-card-grounding">
+            <svg width="14" height="14" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7.5" fill="#16a34a"/><path d="M5 8l2.5 2.5L11 6" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            3/3 grounded
+            <div class="grounding-bar"><div class="grounding-fill" style="background:#16a34a;" data-width="100%"></div></div>
+          </div>
+        </div>
+        <div class="demo-card" id="dc-2" style="border-left: 4px solid #2563eb;">
+          <div class="demo-card-header">
+            <div class="card-left">
+              <span class="tag tag-blue">DIAGNOSIS</span>
+              <span style="font-size:12px; font-weight:600; color:#0f172a;">Septic shock</span>
+            </div>
+            <span class="tag tag-green" style="font-size:10px;">HIGH</span>
+          </div>
+          <div class="demo-card-detail">ICD-10: R65.21 | 1 evidence span</div>
+          <div class="demo-card-grounding">
+            <svg width="14" height="14" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7.5" fill="#16a34a"/><path d="M5 8l2.5 2.5L11 6" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            1/1 grounded
+            <div class="grounding-bar"><div class="grounding-fill" style="background:#16a34a;" data-width="100%"></div></div>
+          </div>
+        </div>
+        <div class="demo-card" id="dc-3" style="border-left: 4px solid #2563eb;">
+          <div class="demo-card-header">
+            <div class="card-left">
+              <span class="tag tag-blue">DIAGNOSIS</span>
+              <span style="font-size:12px; font-weight:600; color:#0f172a;">Acute renal failure</span>
+            </div>
+            <span class="tag tag-green" style="font-size:10px;">HIGH</span>
+          </div>
+          <div class="demo-card-detail">ICD-10: N17.9 | 1 evidence span</div>
+          <div class="demo-card-grounding">
+            <svg width="14" height="14" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7.5" fill="#16a34a"/><path d="M5 8l2.5 2.5L11 6" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            1/1 grounded
+            <div class="grounding-bar"><div class="grounding-fill" style="background:#16a34a;" data-width="100%"></div></div>
+          </div>
+        </div>
+        <div class="demo-card" id="dc-4" style="border-left: 4px solid #16a34a;">
+          <div class="demo-card-header">
+            <div class="card-left">
+              <span class="tag tag-green">MEDICATION</span>
+              <span style="font-size:12px; font-weight:600; color:#0f172a;">Losartan 50 mg</span>
+            </div>
+            <span class="tag tag-green" style="font-size:10px;">HIGH</span>
+          </div>
+          <div class="demo-card-detail">oral · daily | 1 evidence span</div>
+          <div class="demo-card-grounding">
+            <svg width="14" height="14" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7.5" fill="#16a34a"/><path d="M5 8l2.5 2.5L11 6" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            1/1 grounded
+            <div class="grounding-bar"><div class="grounding-fill" style="background:#16a34a;" data-width="100%"></div></div>
+          </div>
+        </div>
+        <div class="demo-card" id="dc-5" style="border-left: 4px solid #16a34a;">
+          <div class="demo-card-header">
+            <div class="card-left">
+              <span class="tag tag-green">MEDICATION</span>
+              <span style="font-size:12px; font-weight:600; color:#0f172a;">Nifedipine 90 mg</span>
+            </div>
+            <span class="tag tag-green" style="font-size:10px;">HIGH</span>
+          </div>
+          <div class="demo-card-detail">oral · daily | 1 evidence span</div>
+          <div class="demo-card-grounding">
+            <svg width="14" height="14" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7.5" fill="#16a34a"/><path d="M5 8l2.5 2.5L11 6" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            1/1 grounded
+            <div class="grounding-bar"><div class="grounding-fill" style="background:#16a34a;" data-width="100%"></div></div>
+          </div>
+        </div>
+        <div class="demo-card" id="dc-6" style="border-left: 4px solid #f59e0b;">
+          <div class="demo-card-header">
+            <div class="card-left">
+              <span class="tag tag-amber">FOLLOW-UP</span>
+              <span style="font-size:12px; font-weight:600; color:#0f172a;">Physician in Utah</span>
+            </div>
+            <span class="tag" style="background:#fee2e2; color:#991b1b; font-size:10px;">LOW</span>
+          </div>
+          <div class="demo-card-detail">Urgency: routine</div>
+          <div class="demo-card-grounding">
+            <svg width="14" height="14" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7.5" fill="#f59e0b"/><path d="M8 5v4M8 11v.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+            1/2 grounded
+            <div class="grounding-bar"><div class="grounding-fill" style="background:#f59e0b;" data-width="50%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="demo-status">
+      <div class="dot"></div>
+      <span id="demo-status-text">Loaded note_002: 13 extractions, 18/19 spans grounded (94.7%)</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SCENE 4a: PATIENT SUMMARY DEEP-DIVE             -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="scene" id="scene-4a">
+  <div class="dd-scene-label">Evidence Explorer — Patient Summary</div>
+  <div class="deepdive-container">
+    <div class="dd-header">
+      <div class="dd-icon"><svg width="16" height="16" viewBox="0 0 36 36" fill="none"><path d="M15 6h6v24h-6z" fill="white"/><path d="M6 15h24v6H6z" fill="white"/></svg></div>
+      <div><h3>Discharge Navigator</h3><span class="dd-sub">note_002 — Consult · Elevated Cardiac Enzymes</span></div>
+    </div>
+    <div class="dd-tabs">
+      <div class="dd-tab active">Evidence Explorer</div>
+      <div class="dd-tab">Performance</div>
+      <div class="dd-tab">Edge Cases</div>
+      <div class="dd-tab">How It Works</div>
+    </div>
+    <div class="dd-body">
+      <div style="font-size:13px; font-weight:700; color:#0f172a; margin-bottom:12px;">When a note loads, the system generates a structured patient overview:</div>
+      <div class="dd-two-col">
+        <!-- Left: Patient Summary -->
+        <div>
+          <div class="ps-card" id="ps-summary" style="border-left:4px solid #0d9488;">
+            <h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2" stroke="#0d9488" stroke-width="1.5"/><rect x="8" y="2" width="8" height="4" rx="1" stroke="#0d9488" stroke-width="1.5" fill="#ccfbf1"/></svg> <span style="color:#0d9488;">Patient Summary</span></h4>
+            <p>The patient is a 66-year-old man brought to the ER with obtundation and mechanically ventilated. Initial diagnosis: septic shock. Labs showed elevated cardiac enzymes. History of pulmonary fibrosis, on prednisone, oxygen-dependent. Acute renal failure and elevated cardiac enzymes — family is aware of critical condition.</p>
+          </div>
+        </div>
+        <!-- Right: Red Flags + Missing Info -->
+        <div>
+          <div class="ps-card" id="ps-redflags" style="border-left:4px solid #dc2626; margin-bottom:12px;">
+            <h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" stroke="#dc2626" stroke-width="1.5" fill="#fee2e2"/><line x1="4" y1="22" x2="4" y2="15" stroke="#dc2626" stroke-width="1.5"/></svg> <span style="color:#dc2626;">Red Flags</span></h4>
+            <p style="font-size:12px; color:#64748b; font-style:italic;">No red flags detected for this note.<br>When present, these flag urgent signals like allergy-drug interactions or abnormal vitals that need immediate attention.</p>
+          </div>
+          <div class="ps-card" id="ps-missing" style="border-left:4px solid #9333ea;">
+            <h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#9333ea" stroke-width="1.5" fill="#f3e8ff"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="#9333ea" stroke-width="1.5" stroke-linecap="round"/></svg> <span style="color:#9333ea;">Missing Information</span></h4>
+            <ul>
+              <li><strong>Echocardiogram</strong> <span class="tag tag-amber" style="font-size:9px; padding:1px 6px;">IMPORTANT</span><br><span style="font-size:11px; color:#64748b;">To assess LV function and rule out cardiac valvular involvement</span></li>
+              <li style="margin-top:6px;"><strong>EKG</strong> <span class="tag" style="background:#f1f5f9; color:#475569; font-size:9px; padding:1px 6px;">NICE TO HAVE</span><br><span style="font-size:11px; color:#64748b;">Additional cardiac workup for completeness</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SCENE 4b: DIAGNOSIS FILTER VIEW                 -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="scene" id="scene-4b">
+  <div class="dd-scene-label">Evidence Explorer — Diagnosis Filter</div>
+  <div class="deepdive-container">
+    <div class="dd-header">
+      <div class="dd-icon"><svg width="16" height="16" viewBox="0 0 36 36" fill="none"><path d="M15 6h6v24h-6z" fill="white"/><path d="M6 15h24v6H6z" fill="white"/></svg></div>
+      <div><h3>Discharge Navigator</h3><span class="dd-sub">Filtering: Diagnoses only</span></div>
+    </div>
+    <div class="dd-tabs">
+      <div class="dd-tab active">Evidence Explorer</div>
+      <div class="dd-tab">Performance</div>
+      <div class="dd-tab">Edge Cases</div>
+      <div class="dd-tab">How It Works</div>
+    </div>
+    <div class="dd-body">
+      <div style="display:flex; gap:6px; margin-bottom:12px;">
+        <span class="filter-btn" style="background:#f1f5f9; color:#475569; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; border:1px solid #e2e8f0;">All</span>
+        <span class="filter-btn" style="background:#3B82F6; color:white; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; border:1px solid #3B82F6;">Diagnoses</span>
+        <span class="filter-btn" style="background:#f1f5f9; color:#475569; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; border:1px solid #e2e8f0;">Medications</span>
+        <span class="filter-btn" style="background:#f1f5f9; color:#475569; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; border:1px solid #e2e8f0;">Follow-ups</span>
+      </div>
+      <div class="dd-two-col">
+        <div class="filter-demo-panel">
+          <div style="font-size:11px; font-weight:700; color:#1e40af; margin-bottom:8px;">CLINICAL NOTE — Only diagnosis spans highlighted</div>
+          <div class="filter-demo-note">REASON FOR CONSULTATION: Abnormal cardiac enzyme profile.
+
+HISTORY OF PRESENT ILLNESS: The patient is a 66-year-old gentleman, was brought into emergency room with obtundation. His initial diagnosis was <mark class="dx-mark">septic shock</mark>. His labs showed <mark class="dx-mark">Elevated cardiac enzyme profile</mark>.
+
+PAST MEDICAL HISTORY: <mark class="dx-mark">Pulmonary fibrosis</mark>, on prednisone, <mark class="dx-mark">oxygen-dependent cellulitis status post foot surgery with infection recuperating from the same</mark>.
+
+IMPRESSION:
+1. <mark class="dx-mark">Pulmonary fibrosis</mark>, on prednisone, oxygen dependent.
+2. <mark class="dx-mark">Septicemia</mark>, <mark class="dx-mark">septic shock</mark> secondary to cellulitis.
+3. <mark class="dx-mark">Acute renal shutdown</mark>.
+4. <mark class="dx-mark">Elevated cardiac enzyme profile</mark> without prior cardiac history.</div>
+        </div>
+        <div>
+          <div style="font-size:11px; font-weight:700; color:#1e40af; margin-bottom:8px;">EXTRACTED DIAGNOSES — 5 found</div>
+          <div class="demo-card visible" style="border-left:4px solid #2563eb; opacity:1; transform:none;">
+            <div class="demo-card-header"><div class="card-left"><span class="tag tag-blue">DIAGNOSIS</span><span style="font-size:12px; font-weight:600; color:#0f172a;">Pulmonary fibrosis</span></div><span class="tag tag-green" style="font-size:10px;">HIGH</span></div>
+            <div class="demo-card-detail">ICD-10: J84.10 · 3 evidence spans · All grounded</div>
+          </div>
+          <div class="demo-card visible" style="border-left:4px solid #2563eb; opacity:1; transform:none;">
+            <div class="demo-card-header"><div class="card-left"><span class="tag tag-blue">DIAGNOSIS</span><span style="font-size:12px; font-weight:600; color:#0f172a;">Septicemia</span></div><span class="tag tag-green" style="font-size:10px;">HIGH</span></div>
+            <div class="demo-card-detail">ICD-10: A41.9 · 2 evidence spans · All grounded</div>
+          </div>
+          <div class="demo-card visible" style="border-left:4px solid #2563eb; opacity:1; transform:none;">
+            <div class="demo-card-header"><div class="card-left"><span class="tag tag-blue">DIAGNOSIS</span><span style="font-size:12px; font-weight:600; color:#0f172a;">Septic shock</span></div><span class="tag tag-green" style="font-size:10px;">HIGH</span></div>
+            <div class="demo-card-detail">ICD-10: R65.21 · 1 evidence span · Grounded</div>
+          </div>
+          <div class="demo-card visible" style="border-left:4px solid #2563eb; opacity:1; transform:none;">
+            <div class="demo-card-header"><div class="card-left"><span class="tag tag-blue">DIAGNOSIS</span><span style="font-size:12px; font-weight:600; color:#0f172a;">Acute renal failure</span></div><span class="tag tag-green" style="font-size:10px;">HIGH</span></div>
+            <div class="demo-card-detail">ICD-10: N17.9 · 1 evidence span · Grounded</div>
+          </div>
+          <div class="demo-card visible" style="border-left:4px solid #2563eb; opacity:1; transform:none;">
+            <div class="demo-card-header"><div class="card-left"><span class="tag tag-blue">DIAGNOSIS</span><span style="font-size:12px; font-weight:600; color:#0f172a;">Elevated cardiac enzymes</span></div><span class="tag tag-green" style="font-size:10px;">HIGH</span></div>
+            <div class="demo-card-detail">ICD-10: I42.9 · 3 evidence spans · All grounded</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SCENE 4c: MEDICATIONS FILTER VIEW               -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="scene" id="scene-4c">
+  <div class="dd-scene-label">Evidence Explorer — Medication Filter</div>
+  <div class="deepdive-container">
+    <div class="dd-header">
+      <div class="dd-icon"><svg width="16" height="16" viewBox="0 0 36 36" fill="none"><path d="M15 6h6v24h-6z" fill="white"/><path d="M6 15h24v6H6z" fill="white"/></svg></div>
+      <div><h3>Discharge Navigator</h3><span class="dd-sub">Filtering: Medications only</span></div>
+    </div>
+    <div class="dd-tabs">
+      <div class="dd-tab active">Evidence Explorer</div>
+      <div class="dd-tab">Performance</div>
+      <div class="dd-tab">Edge Cases</div>
+      <div class="dd-tab">How It Works</div>
+    </div>
+    <div class="dd-body">
+      <div style="display:flex; gap:6px; margin-bottom:12px;">
+        <span class="filter-btn" style="background:#f1f5f9; color:#475569; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; border:1px solid #e2e8f0;">All</span>
+        <span class="filter-btn" style="background:#f1f5f9; color:#475569; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; border:1px solid #e2e8f0;">Diagnoses</span>
+        <span class="filter-btn" style="background:#10B981; color:white; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; border:1px solid #10B981;">Medications</span>
+        <span class="filter-btn" style="background:#f1f5f9; color:#475569; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; border:1px solid #e2e8f0;">Follow-ups</span>
+      </div>
+      <div class="dd-two-col">
+        <div class="filter-demo-panel">
+          <div style="font-size:11px; font-weight:700; color:#166534; margin-bottom:8px;">CLINICAL NOTE — Only medication spans highlighted</div>
+          <div class="filter-demo-note">MEDICATIONS:
+1. <mark class="med-mark">Vitamin supplementation</mark>.
+2. <mark class="med-mark">Prednisone</mark>.
+3. <mark class="med-mark">Cyclobenzaprine</mark>.
+4. <mark class="med-mark">Losartan 50 mg daily</mark>.
+5. <mark class="med-mark">Nifedipine 90 mg daily</mark>.
+6. <mark class="med-mark">Lasix</mark>.
+7. <mark class="med-mark">Potassium supplementation</mark>.
+
+ALLERGIES: SULFA.
+
+The system extracts each medication with structured fields: name, dose, route, frequency, and duration — when available in the note.
+
+Medications without dosing info are flagged as LOW confidence to alert the reviewing clinician.</div>
+        </div>
+        <div>
+          <div style="font-size:11px; font-weight:700; color:#166534; margin-bottom:8px;">EXTRACTED MEDICATIONS — 7 found</div>
+          <div class="demo-card visible" style="border-left:4px solid #16a34a; opacity:1; transform:none;">
+            <div class="demo-card-header"><div class="card-left"><span class="tag tag-green">MEDICATION</span><span style="font-size:12px; font-weight:600; color:#0f172a;">Losartan</span></div><span class="tag tag-green" style="font-size:10px;">HIGH</span></div>
+            <div class="demo-card-detail">50 mg · oral · daily — Full dosing extracted</div>
+          </div>
+          <div class="demo-card visible" style="border-left:4px solid #16a34a; opacity:1; transform:none;">
+            <div class="demo-card-header"><div class="card-left"><span class="tag tag-green">MEDICATION</span><span style="font-size:12px; font-weight:600; color:#0f172a;">Nifedipine</span></div><span class="tag tag-green" style="font-size:10px;">HIGH</span></div>
+            <div class="demo-card-detail">90 mg · oral · daily — Full dosing extracted</div>
+          </div>
+          <div class="demo-card visible" style="border-left:4px solid #16a34a; opacity:1; transform:none;">
+            <div class="demo-card-header"><div class="card-left"><span class="tag tag-green">MEDICATION</span><span style="font-size:12px; font-weight:600; color:#0f172a;">Prednisone</span></div><span class="tag tag-red" style="font-size:10px;">LOW</span></div>
+            <div class="demo-card-detail">No dosing info in note — Flagged for clinician review</div>
+          </div>
+          <div class="demo-card visible" style="border-left:4px solid #16a34a; opacity:1; transform:none;">
+            <div class="demo-card-header"><div class="card-left"><span class="tag tag-green">MEDICATION</span><span style="font-size:12px; font-weight:600; color:#0f172a;">Lasix</span></div><span class="tag tag-red" style="font-size:10px;">LOW</span></div>
+            <div class="demo-card-detail">No dosing info in note — Flagged for clinician review</div>
+          </div>
+          <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px; padding:12px; margin-top:10px;">
+            <div style="font-size:12px; font-weight:700; color:#166534; margin-bottom:4px;">Why LOW confidence matters</div>
+            <div style="font-size:11px; color:#334155; line-height:1.6;">When the note doesn't specify dose, route, or frequency, the system marks that medication as LOW confidence. This surfaces uncertainty — the clinician knows to verify dosing before including it in discharge instructions.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SCENE 4d: FOLLOW-UPS + MISSING INFO             -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="scene" id="scene-4d">
+  <div class="dd-scene-label">Evidence Explorer — Follow-ups & Gaps</div>
+  <div class="deepdive-container">
+    <div class="dd-header">
+      <div class="dd-icon"><svg width="16" height="16" viewBox="0 0 36 36" fill="none"><path d="M15 6h6v24h-6z" fill="white"/><path d="M6 15h24v6H6z" fill="white"/></svg></div>
+      <div><h3>Discharge Navigator</h3><span class="dd-sub">Follow-ups, Red Flags & Missing Information</span></div>
+    </div>
+    <div class="dd-tabs">
+      <div class="dd-tab active">Evidence Explorer</div>
+      <div class="dd-tab">Performance</div>
+      <div class="dd-tab">Edge Cases</div>
+      <div class="dd-tab">How It Works</div>
+    </div>
+    <div class="dd-body">
+      <div class="dd-two-col">
+        <!-- Left: Follow-ups -->
+        <div>
+          <div style="font-size:13px; font-weight:700; color:#92400e; margin-bottom:10px; display:flex; align-items:center; gap:8px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#f59e0b" stroke-width="1.5" fill="#fef3c7"/><path d="M12 6v6l4 2" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Follow-up Instructions
+          </div>
+          <div class="ps-card visible" style="border-left:4px solid #f59e0b; opacity:1; transform:none;">
+            <h4 style="color:#92400e;">Physician back in Utah — Routine</h4>
+            <p><strong>Who:</strong> Primary care physician in Utah<br><strong>When:</strong> Routine follow-up<br><strong>Urgency:</strong> <span class="tag tag-amber" style="font-size:9px; padding:1px 6px;">ROUTINE</span><br><strong>Confidence:</strong> <span class="tag tag-red" style="font-size:9px; padding:1px 6px;">LOW</span> — vague timeframe</p>
+            <div style="margin-top:8px; font-size:11px; color:#64748b;">
+              <strong>Evidence:</strong> "followed by a physician back in Utah" · 1/2 spans grounded
+            </div>
+          </div>
+          <div style="background:#fefce8; border:1px solid #fde68a; border-radius:8px; padding:12px; margin-top:12px;">
+            <div style="font-size:12px; font-weight:700; color:#92400e; margin-bottom:4px;">Follow-up extraction includes:</div>
+            <div style="font-size:11px; color:#334155; line-height:1.7;">
+              <strong>with_whom</strong> — which provider/specialist<br>
+              <strong>when</strong> — timeframe (e.g. "2 weeks", "routine")<br>
+              <strong>why</strong> — reason for follow-up<br>
+              <strong>urgency</strong> — routine / urgent / emergent
+            </div>
+          </div>
+        </div>
+        <!-- Right: Missing Info + Red Flags -->
+        <div>
+          <div style="font-size:13px; font-weight:700; color:#9333ea; margin-bottom:10px; display:flex; align-items:center; gap:8px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#9333ea" stroke-width="1.5" fill="#f3e8ff"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="#9333ea" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Missing Information Detection
+          </div>
+          <div class="ps-card visible" style="border-left:4px solid #9333ea; opacity:1; transform:none; margin-bottom:10px;">
+            <h4 style="color:#9333ea;">What's absent but needed for safe discharge?</h4>
+            <ul>
+              <li><strong>Echocardiogram</strong> <span class="tag tag-amber" style="font-size:9px; padding:1px 6px;">IMPORTANT</span><br><span style="font-size:11px; color:#64748b;">To assess LV function — recommended in note but not performed</span></li>
+              <li style="margin-top:8px;"><strong>EKG</strong> <span class="tag" style="background:#f1f5f9; color:#475569; font-size:9px; padding:1px 6px;">NICE TO HAVE</span><br><span style="font-size:11px; color:#64748b;">Standard cardiac workup not documented</span></li>
+            </ul>
+          </div>
+          <div style="background:#faf5ff; border:1px solid #e9d5ff; border-radius:8px; padding:12px;">
+            <div style="font-size:12px; font-weight:700; color:#9333ea; margin-bottom:4px;">Severity Tiers</div>
+            <div style="font-size:11px; color:#334155; line-height:1.7;">
+              <span class="tag tag-red" style="font-size:9px; padding:1px 6px;">CRITICAL</span> — Cannot safely discharge without this<br>
+              <span class="tag tag-amber" style="font-size:9px; padding:1px 6px;">IMPORTANT</span> — Should be addressed before discharge<br>
+              <span class="tag" style="background:#f1f5f9; color:#475569; font-size:9px; padding:1px 6px;">NICE TO HAVE</span> — Improves completeness
+            </div>
+          </div>
+          <div style="font-size:13px; font-weight:700; color:#dc2626; margin:16px 0 10px 0; display:flex; align-items:center; gap:8px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" stroke="#dc2626" stroke-width="1.5" fill="#fee2e2"/><line x1="4" y1="22" x2="4" y2="15" stroke="#dc2626" stroke-width="1.5"/></svg>
+            Red Flags
+          </div>
+          <div class="ps-card visible" style="border-left:4px solid #dc2626; opacity:1; transform:none;">
+            <p style="font-size:12px; color:#64748b;">None detected for this note. Red flags surface urgent clinical signals: allergy-drug interactions, abnormal vitals, critical lab values that need immediate action before discharge.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SCENE 4e: CONFIDENCE + GROUNDING DEEP-DIVE     -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="scene" id="scene-4e">
+  <div class="dd-scene-label">Trust Surface — Confidence & Grounding</div>
+  <div class="deepdive-container">
+    <div class="dd-header">
+      <div class="dd-icon"><svg width="16" height="16" viewBox="0 0 36 36" fill="none"><path d="M15 6h6v24h-6z" fill="white"/><path d="M6 15h24v6H6z" fill="white"/></svg></div>
+      <div><h3>How Trust Is Measured</h3><span class="dd-sub">Confidence levels + Evidence grounding verification</span></div>
+    </div>
+    <div class="dd-body" style="padding:20px;">
+      <!-- Confidence levels -->
+      <div style="font-size:13px; font-weight:700; color:#0f172a; margin-bottom:12px;">Confidence Levels — How certain is the model?</div>
+      <div class="conf-row">
+        <div class="conf-box" id="cb-1" style="border-top:4px solid #16a34a;">
+          <div class="conf-level" style="color:#16a34a;">HIGH</div>
+          <div class="conf-label" style="color:#166534;">≥ 80% certain</div>
+          <div class="conf-desc">Full dosing info found. All evidence spans verified. Clear clinical language.</div>
+          <div class="conf-badge" style="background:#dcfce7; color:#166534;">Losartan 50mg oral daily</div>
+        </div>
+        <div class="conf-box" id="cb-2" style="border-top:4px solid #f59e0b;">
+          <div class="conf-level" style="color:#f59e0b;">MEDIUM</div>
+          <div class="conf-label" style="color:#92400e;">50–80% certain</div>
+          <div class="conf-desc">Partial info extracted. Some spans found. Ambiguous phrasing in note.</div>
+          <div class="conf-badge" style="background:#fef3c7; color:#92400e;">Review recommended</div>
+        </div>
+        <div class="conf-box" id="cb-3" style="border-top:4px solid #dc2626;">
+          <div class="conf-level" style="color:#dc2626;">LOW</div>
+          <div class="conf-label" style="color:#991b1b;">< 50% certain</div>
+          <div class="conf-desc">Missing dosing. Vague reference. Partial span match. Needs clinician verification.</div>
+          <div class="conf-badge" style="background:#fee2e2; color:#991b1b;">Prednisone — no dose</div>
+        </div>
+      </div>
+      <!-- Grounding process -->
+      <div style="font-size:13px; font-weight:700; color:#0f172a; margin:20px 0 10px 0;">Evidence Grounding — How is each claim verified?</div>
+      <div class="ground-visual">
+        <div class="ground-step" id="gs-1">
+          <div class="ground-num">1</div>
+          <div class="ground-text">Model extracts a claim: <strong>"Pulmonary fibrosis"</strong> with evidence_spans</div>
+        </div>
+        <div class="ground-step" id="gs-2">
+          <div class="ground-num">2</div>
+          <div class="ground-text">Grounding engine searches for each span as an <strong>exact substring</strong> in the source note</div>
+        </div>
+        <div class="ground-step" id="gs-3">
+          <div class="ground-num">3</div>
+          <div class="ground-text">Found: <strong>3/3 spans grounded</strong> → <span style="color:#16a34a; font-weight:700;">100% grounded</span> → green bar, checkmark</div>
+        </div>
+        <div class="ground-step" id="gs-4">
+          <div class="ground-num" style="background:#f59e0b;">!</div>
+          <div class="ground-text">If 1/2 spans found → <span style="color:#f59e0b; font-weight:700;">50% grounded</span> → amber bar, warning icon → clinician reviews</div>
+        </div>
+        <div class="ground-step" id="gs-5">
+          <div class="ground-num" style="background:#dc2626;">✗</div>
+          <div class="ground-text">If 0 spans found → <span style="color:#dc2626; font-weight:700;">0% grounded</span> → red bar → <strong>potential hallucination flagged</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SCENE 5: KEY METRICS                            -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="scene" id="scene-5">
+  <h2 class="section-title" style="text-align:center;">50-Note Evaluation</h2>
+  <p class="subtitle">MTSamples (CC0) · MedGemma 4B Q4_K_M · CPU-only · No internet</p>
+  <div class="metrics-grid">
+    <div class="metric-card" id="mc-1">
+      <div class="metric-num" style="color:#16a34a;" id="mn-1">92%</div>
+      <div class="metric-bar-outer"><div class="metric-bar-inner" style="background:#16a34a;" data-width="92%"></div></div>
+      <div class="metric-label">Notes Parsed</div>
+      <div class="metric-sub">46 of 50 valid JSON</div>
+      <div class="metric-pass">✓ PASS</div>
+    </div>
+    <div class="metric-card" id="mc-2">
+      <div class="metric-num" style="color:#06b6d4;" id="mn-2">34s</div>
+      <div class="metric-bar-outer" style="visibility:hidden;"></div>
+      <div class="metric-label">Median Latency</div>
+      <div class="metric-sub">P95: 201s · Mean: 70s</div>
+      <div class="metric-pass">✓ PASS</div>
+    </div>
+    <div class="metric-card" id="mc-3">
+      <div class="metric-num" style="color:#2563eb;" id="mn-3">94%</div>
+      <div class="metric-bar-outer"><div class="metric-bar-inner" style="background:#2563eb;" data-width="94%"></div></div>
+      <div class="metric-label">Dx Grounded</div>
+      <div class="metric-sub">Diagnosis evidence verified</div>
+      <div class="metric-pass">✓ PASS</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SCENE 5b: FULL METRICS TABLE                    -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="scene" id="scene-5b">
+  <h2 class="section-title" style="text-align:center;">Full Metrics Breakdown</h2>
+  <div class="metrics-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Value</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Diagnosis grounding</td>
+          <td><span class="val">94.4%</span> <div class="tbl-bar"><div class="tbl-bar-fill" style="background:#16a34a;" data-width="94.4%"></div></div></td>
+          <td><span class="tag tag-green">PASS</span></td>
+        </tr>
+        <tr>
+          <td>Medication grounding</td>
+          <td><span class="val">94.5%</span> <div class="tbl-bar"><div class="tbl-bar-fill" style="background:#16a34a;" data-width="94.5%"></div></div></td>
+          <td><span class="tag tag-green">PASS</span></td>
+        </tr>
+        <tr>
+          <td>Overall grounding</td>
+          <td><span class="val">87.5%</span> <div class="tbl-bar"><div class="tbl-bar-fill" style="background:#2563eb;" data-width="87.5%"></div></div></td>
+          <td><span class="tag tag-green">PASS</span></td>
+        </tr>
+        <tr>
+          <td>Follow-up grounding</td>
+          <td><span class="val">76.1%</span> <div class="tbl-bar"><div class="tbl-bar-fill" style="background:#f59e0b;" data-width="76.1%"></div></div></td>
+          <td><span class="tag tag-amber">IMPROVING</span></td>
+        </tr>
+        <tr>
+          <td>Parse failures</td>
+          <td><span class="val">4 / 50</span></td>
+          <td><span class="tag tag-green">ALL CAUGHT</span></td>
+        </tr>
+        <tr>
+          <td>Failure modes</td>
+          <td><span class="val">Token truncation (3) · Missing field (1)</span></td>
+          <td><span class="tag tag-green">DOCUMENTED</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SCENE 6: SAFETY                                 -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="scene" id="scene-6">
+  <h2 class="section-title" style="text-align:center;">Fail Safely, Not Silently</h2>
+  <p class="subtitle">Every failure is caught before reaching the clinician. Zero data leaks.</p>
+  <div class="safety-grid">
+    <div class="safety-card" id="sc-1">
+      <div class="safety-icon" style="background:rgba(22,163,106,0.15);">🛡️</div>
+      <div>
+        <h4>Schema Validation Gate</h4>
+        <p>Pydantic rejects any output missing required fields or malformed JSON. 4/50 failures caught before any consumer.</p>
+      </div>
+    </div>
+    <div class="safety-card" id="sc-2">
+      <div class="safety-icon" style="background:rgba(37,99,235,0.15);">🔗</div>
+      <div>
+        <h4>Every Claim Traced to Source</h4>
+        <p>Evidence spans verified as exact substrings in the original note. 94% of diagnoses fully grounded.</p>
+      </div>
+    </div>
+    <div class="safety-card" id="sc-3">
+      <div class="safety-icon" style="background:rgba(245,158,11,0.15);">🔄</div>
+      <div>
+        <h4>3-Attempt Retry with A/B Variants</h4>
+        <p>Failed extractions retry with temperature escalation, then switch to strict prompt variant before declaring failure.</p>
+      </div>
+    </div>
+    <div class="safety-card" id="sc-4">
+      <div class="safety-icon" style="background:rgba(220,38,38,0.15);">👨‍⚕️</div>
+      <div>
+        <h4>Clinician-in-the-Loop</h4>
+        <p>Assistive system, not autonomous. No output is ever auto-applied. Original note always available.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SCENE 7: EDGE DEPLOYMENT                        -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="scene" id="scene-7">
+  <h2 class="section-title" style="text-align:center;">Runs Anywhere</h2>
+  <p class="subtitle">No GPU. No internet. No cloud dependency. Just Ollama + a laptop.</p>
+  <div class="edge-row">
+    <div class="edge-chip" id="ec-1">
+      <div class="num">2.5 GB</div>
+      <div class="lbl">Model Size (GGUF Q4_K_M)</div>
+    </div>
+    <div class="edge-chip" id="ec-2">
+      <div class="num">CPU</div>
+      <div class="lbl">No GPU Required</div>
+    </div>
+    <div class="edge-chip" id="ec-3">
+      <div class="num">0</div>
+      <div class="lbl">Internet Requests</div>
+    </div>
+    <div class="edge-chip" id="ec-4">
+      <div class="num">34s</div>
+      <div class="lbl">Median Per Note</div>
+    </div>
+  </div>
+  <div style="margin-top:40px; display:flex; gap:32px;">
+    <div style="text-align:center;">
+      <div style="font-size:14px; font-weight:700; color:#cbd5e1; margin-bottom:8px;">Backends</div>
+      <div style="display:flex; gap:12px;">
+        <span class="tag" style="background:rgba(6,182,212,0.15); color:#06b6d4; border:1px solid rgba(6,182,212,0.3);">Ollama (GGUF) — Local/Edge</span>
+        <span class="tag" style="background:rgba(6,182,212,0.15); color:#06b6d4; border:1px solid rgba(6,182,212,0.3);">HuggingFace — Kaggle T4</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SCENE 8: CLOSING                                -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="scene" id="scene-8">
+  <div class="med-cross" style="width:56px; height:56px; background:#2563eb; border-radius:14px; display:flex; align-items:center; justify-content:center; margin-bottom:20px; animation:pulseGlow 2s ease-in-out infinite;">
+    <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><path d="M15 6h6v24h-6z" fill="white"/><path d="M6 15h24v6H6z" fill="white"/></svg>
+  </div>
+  <h1 class="hero hero-gradient" style="font-size:44px; text-align:center;">Discharge Navigator</h1>
+  <p class="subtitle" style="margin-top:12px;">
+    Clinical-grade extraction for safer discharges.
+  </p>
+  <div style="display:flex; gap:32px; margin-top:30px;">
+    <div style="text-align:center;">
+      <div style="font-size:32px; font-weight:900; color:#16a34a;">92%</div>
+      <div style="font-size:11px; color:#64748b;">Parse Rate</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="font-size:32px; font-weight:900; color:#2563eb;">94%</div>
+      <div style="font-size:11px; color:#64748b;">Dx Grounded</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="font-size:32px; font-weight:900; color:#06b6d4;">34s</div>
+      <div style="font-size:11px; color:#64748b;">Median CPU</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="font-size:32px; font-weight:900; color:#f59e0b;">2.5GB</div>
+      <div style="font-size:11px; color:#64748b;">Model Size</div>
+    </div>
+  </div>
+  <div class="links">
+    <a class="link-btn" href="https://github.com/LegenDairy93/discharge-navigator" target="_blank">github.com/LegenDairy93/discharge-navigator</a>
+    <a class="link-btn secondary" href="https://huggingface.co/google/medgemma-4b-it" target="_blank">Powered by Google MedGemma 4B</a>
+  </div>
+  <p class="disclaimer">Not a medical device. All outputs require clinician review before clinical use. License: CC BY 4.0</p>
+</div>
+
+<script>
+  // ── Scene management ──
+  const SCENES = ['scene-1','scene-2','scene-3','scene-4','scene-4a','scene-4b','scene-4c','scene-4d','scene-4e','scene-5','scene-5b','scene-6','scene-7','scene-8'];
+  const DURATIONS = [6000, 9000, 12000, 12000, 11000, 10000, 11000, 12000, 13000, 10000, 9000, 10000, 8000, 8000]; // ms per scene
+
+  const CAPTIONS = [
+    // Scene 1 — Title
+    "Discharge Navigator. Offline structuring of clinical discharge notes — powered by Google's MedGemma 4B.",
+    // Scene 2 — The Problem
+    "India sees 48 million hospitalizations a year. In rural areas, the doctor-to-patient ratio is 1:11,000. There's no time to manually parse dense clinical notes — and most clinics have no cloud access. We need extraction that runs offline, on any laptop.",
+    // Scene 3 — Pipeline
+    "Step 1: ingest a raw clinical note. Step 2: MedGemma extracts diagnoses, medications, and follow-ups. Step 3: every claim is grounded against the original text. Step 4: Pydantic schema validation rejects anything malformed. Step 5: a clinician reviews the output. Nothing is ever auto-applied.",
+    // Scene 4 — Demo Overview
+    "The Evidence Explorer. Left: the source clinical note with yellow highlights marking every evidence span the model cited. Right: structured extraction cards — each showing type, confidence badge, and a grounding bar showing how many spans were verified in the source text.",
+    // Scene 4a — Patient Summary
+    "When a note loads, the system generates a patient summary — a concise overview of the case. Red flags surface urgent clinical signals like allergy-drug interactions. Missing information flags data gaps — each with a severity tier so the clinician knows what to prioritize.",
+    // Scene 4b — Diagnosis Filter
+    "The Diagnoses filter isolates diagnosis extractions. The note re-highlights with only diagnosis spans in blue. Five diagnoses extracted — pulmonary fibrosis, septicemia, septic shock, acute renal failure, and elevated cardiac enzymes — each with an ICD-10 code, all evidence spans grounded.",
+    // Scene 4c — Medication Filter
+    "Medications filter: seven medications found. Losartan and Nifedipine have full dosing — marked HIGH confidence. But Prednisone and Lasix have no dosing info — flagged LOW confidence. The system doesn't guess. It surfaces uncertainty so the clinician knows what needs verification.",
+    // Scene 4d — Follow-ups & Gaps
+    "Follow-up extraction captures who the patient should see, when, and how urgently. Missing information detects what's absent but needed for safe discharge. Severity tiers — critical, important, nice-to-have — help clinicians triage what to address first.",
+    // Scene 4e — Confidence & Grounding
+    "How trust is measured. HIGH: complete, unambiguous information. MEDIUM: partial data or ambiguous phrasing. LOW: key details missing — clinician must verify. For grounding, each evidence span is searched as an exact substring in the source note. Full match = grounded. Zero matches = potential hallucination flagged.",
+    // Scene 5 — Key Metrics
+    "50-note evaluation on MTSamples. 92% parse rate — 46 of 50 notes produced valid structured JSON. 34-second median latency on CPU, no GPU required. 94% of diagnoses fully evidence-grounded. All three success criteria passed.",
+    // Scene 5b — Full Metrics
+    "Medication grounding: 94.5%. Overall grounding: 87.5%. Follow-up grounding: 76.1% — an area we're actively improving. Four parse failures — all caught by the schema gate, all documented transparently.",
+    // Scene 6 — Safety
+    "Design principle: fail safely, not silently. Every output goes through Pydantic schema validation. Every claim traces back to source text. Failed extractions retry with prompt A/B variants. The clinician always has final say — this is an assistive tool, not an autonomous one.",
+    // Scene 7 — Edge Deployment
+    "2.5 GB model via Ollama. CPU-only. Zero internet requests. 34-second median per note. Two backends — Ollama GGUF for local edge devices, HuggingFace Transformers for Kaggle T4. The notebook auto-detects the environment.",
+    // Scene 8 — Closing
+    "Discharge Navigator. Clinical-grade extraction for safer discharges. Thank you."
+  ];
+
+  let current = 0;
+  let paused = false;
+  let timer = null;
+
+  function showScene(idx) {
+    SCENES.forEach((id, i) => {
+      const el = document.getElementById(id);
+      if (i === idx) el.classList.add('active');
+      else el.classList.remove('active');
+    });
+    current = idx;
+    document.getElementById('progress-bar').style.width = ((idx + 1) / SCENES.length * 100) + '%';
+    document.getElementById('scene-counter').textContent = (idx + 1) + ' / ' + SCENES.length;
+
+    // Update caption
+    const captionEl = document.getElementById('caption-text');
+    captionEl.classList.remove('visible');
+    setTimeout(() => {
+      captionEl.textContent = CAPTIONS[idx] || '';
+      captionEl.classList.add('visible');
+    }, 400);
+
+    // Trigger scene-specific animations
+    const sceneId = SCENES[idx];
+    if (sceneId === 'scene-3') animatePipeline();
+    if (sceneId === 'scene-4') animateDemo();
+    if (sceneId === 'scene-4a') animatePatientSummary();
+    if (sceneId === 'scene-4e') animateConfidence();
+    if (sceneId === 'scene-5') animateMetrics();
+    if (sceneId === 'scene-5b') animateTable();
+    if (sceneId === 'scene-6') animateSafety();
+    if (sceneId === 'scene-7') animateEdge();
+  }
+
+  function nextScene() {
+    if (current < SCENES.length - 1) {
+      showScene(current + 1);
+      scheduleNext();
+    }
+  }
+
+  function prevScene() {
+    if (current > 0) {
+      showScene(current - 1);
+      scheduleNext();
+    }
+  }
+
+  function togglePause() {
+    paused = !paused;
+    document.getElementById('pause-btn').textContent = paused ? '▶ Play' : '⏸ Pause';
+    if (!paused) scheduleNext();
+    else clearTimeout(timer);
+  }
+
+  function scheduleNext() {
+    clearTimeout(timer);
+    if (!paused && current < SCENES.length - 1) {
+      timer = setTimeout(nextScene, DURATIONS[current]);
+    }
+  }
+
+  // ── Pipeline animation ──
+  function animatePipeline() {
+    const nodes = [1,2,3,4,5];
+    const arrows = [1,2,3,4];
+    nodes.forEach(i => { document.getElementById('pipe-' + i).classList.remove('lit'); });
+    arrows.forEach(i => { document.getElementById('arrow-' + i).classList.remove('lit'); });
+
+    nodes.forEach((n, i) => {
+      setTimeout(() => {
+        document.getElementById('pipe-' + n).classList.add('lit');
+        if (i > 0) document.getElementById('arrow-' + i).classList.add('lit');
+      }, i * 600);
+    });
+  }
+
+  // ── Demo animation ──
+  function animateDemo() {
+    const cards = document.querySelectorAll('.demo-card');
+    cards.forEach(c => c.classList.remove('visible'));
+
+    cards.forEach((card, i) => {
+      setTimeout(() => {
+        card.classList.add('visible');
+        // Animate grounding bars
+        const fill = card.querySelector('.grounding-fill');
+        if (fill) {
+          setTimeout(() => {
+            fill.style.width = fill.getAttribute('data-width');
+          }, 200);
+        }
+      }, 800 + i * 500);
+    });
+  }
+
+  // ── Metrics animation ──
+  function animateMetrics() {
+    ['mc-1','mc-2','mc-3'].forEach((id, i) => {
+      const el = document.getElementById(id);
+      el.classList.remove('visible');
+      setTimeout(() => {
+        el.classList.add('visible');
+        const bar = el.querySelector('.metric-bar-inner');
+        if (bar) {
+          setTimeout(() => { bar.style.width = bar.getAttribute('data-width'); }, 300);
+        }
+      }, i * 400);
+    });
+  }
+
+  // ── Table animation ──
+  function animateTable() {
+    document.querySelectorAll('.tbl-bar-fill').forEach((fill, i) => {
+      fill.style.width = '0';
+      setTimeout(() => {
+        fill.style.width = fill.getAttribute('data-width');
+      }, 500 + i * 200);
+    });
+  }
+
+  // ── Safety animation ──
+  function animateSafety() {
+    ['sc-1','sc-2','sc-3','sc-4'].forEach((id, i) => {
+      const el = document.getElementById(id);
+      el.classList.remove('visible');
+      setTimeout(() => el.classList.add('visible'), i * 300);
+    });
+  }
+
+  // ── Edge animation ──
+  function animateEdge() {
+    ['ec-1','ec-2','ec-3','ec-4'].forEach((id, i) => {
+      const el = document.getElementById(id);
+      el.classList.remove('visible');
+      setTimeout(() => el.classList.add('visible'), i * 300);
+    });
+  }
+
+  // ── Patient Summary animation ──
+  function animatePatientSummary() {
+    ['ps-summary','ps-redflags','ps-missing'].forEach((id, i) => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.classList.remove('visible');
+        setTimeout(() => el.classList.add('visible'), 400 + i * 500);
+      }
+    });
+  }
+
+  // ── Confidence & Grounding animation ──
+  function animateConfidence() {
+    ['cb-1','cb-2','cb-3'].forEach((id, i) => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.classList.remove('visible');
+        setTimeout(() => el.classList.add('visible'), 300 + i * 400);
+      }
+    });
+    ['gs-1','gs-2','gs-3','gs-4','gs-5'].forEach((id, i) => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.classList.remove('visible');
+        setTimeout(() => el.classList.add('visible'), 1800 + i * 500);
+      }
+    });
+  }
+
+  // ── Keyboard controls ──
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextScene(); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); prevScene(); }
+    if (e.key === 'p') togglePause();
+  });
+
+  // ── Start ──
+  window.addEventListener('load', () => {
+    showScene(0);
+    scheduleNext();
+  });
+</script>
+</body>
+</html>

@@ -9,7 +9,7 @@ RULES:
 - Output ONLY valid JSON. No markdown, no explanations, no trailing text.
 - Only include facts explicitly grounded in the source note.
 - All ICD-10 codes are CANDIDATE codes for clinician review, not ground truth.
-- evidence_spans must be EXACT text copied from the note, max 20 words each.
+- evidence_spans must be EXACT text copied from the note, max 20 words each, max 5 spans per item.
 - If you cannot find evidence spans for a claim, set confidence to "low" and use an empty list [].
 - If information is missing but clinically expected, add it to missing_info.
 - If unsure about any extraction, set confidence to "low" and add a note.
@@ -30,7 +30,7 @@ Return JSON with these exact keys:
 - notes: [string] (any model caveats or uncertainties)
 
 IMPORTANT: All list fields (evidence_spans, warnings, notes) MUST be JSON arrays [], never strings.
-IMPORTANT: evidence_spans must be EXACT substrings copied from the note, max 20 words each.
+IMPORTANT: evidence_spans must be EXACT substrings copied from the note, max 20 words each, max 5 per item.
 
 Confidence levels: "low", "medium", "high"
 Urgency levels: "routine", "soon", "urgent"
@@ -48,7 +48,7 @@ CLINICAL NOTE:
 
 SYSTEM_PROMPT_STRICT = """You are Discharge Navigator. Extract discharge info from clinical notes.
 Output ONLY valid JSON. DO NOT GUESS. If information is absent, use empty lists and null.
-Keep output SHORT and CORRECT. Every evidence_span must be an exact substring of the note."""
+Keep output SHORT and CORRECT. Every evidence_span must be an exact substring of the note. Max 5 spans per item, max 20 words each."""
 
 USER_PROMPT_STRICT = """Extract discharge info as JSON. Be conservative — only extract what is explicitly stated.
 

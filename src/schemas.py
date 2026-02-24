@@ -33,6 +33,19 @@ def _coerce_severity(v):
     return "nice_to_have"
 
 
+MAX_SPANS_PER_ITEM = 5
+MAX_WORDS_PER_SPAN = 20
+
+def _cap_evidence_spans(v):
+    """Coerce to list, then cap span count and word length (token budget defense)."""
+    spans = _coerce_list(v)
+    capped = []
+    for s in spans[:MAX_SPANS_PER_ITEM]:
+        words = str(s).split()
+        capped.append(" ".join(words[:MAX_WORDS_PER_SPAN]))
+    return capped
+
+
 # ─── Schema classes ───
 
 class CandidateICD(BaseModel):
@@ -50,7 +63,7 @@ class CandidateICD(BaseModel):
     def fix_conf(cls, v): return _coerce_confidence(v)
     @field_validator("evidence_spans", mode="before")
     @classmethod
-    def coerce_list(cls, v): return _coerce_list(v)
+    def cap_spans(cls, v): return _cap_evidence_spans(v)
 
 
 class Medication(BaseModel):
@@ -70,9 +83,12 @@ class Medication(BaseModel):
     @field_validator("confidence", mode="before")
     @classmethod
     def fix_conf(cls, v): return _coerce_confidence(v)
-    @field_validator("warnings", "evidence_spans", mode="before")
+    @field_validator("warnings", mode="before")
     @classmethod
-    def coerce_list(cls, v): return _coerce_list(v)
+    def coerce_warnings(cls, v): return _coerce_list(v)
+    @field_validator("evidence_spans", mode="before")
+    @classmethod
+    def cap_spans(cls, v): return _cap_evidence_spans(v)
 
 
 class FollowUp(BaseModel):
@@ -95,7 +111,7 @@ class FollowUp(BaseModel):
     def fix_urg(cls, v): return _coerce_urgency(v)
     @field_validator("evidence_spans", mode="before")
     @classmethod
-    def coerce_list(cls, v): return _coerce_list(v)
+    def cap_spans(cls, v): return _cap_evidence_spans(v)
 
 
 class RedFlag(BaseModel):

@@ -83,7 +83,7 @@ GLOBAL_CSS = """
 .gradio-container label, .gradio-container .label-wrap span {
     color: #334155 !important;
 }
-/* Tab bar — always light */
+/* Tab bar styling */
 .tabs > .tab-nav {
     background: white !important;
     border-bottom: 2px solid #e2e8f0 !important;
@@ -99,6 +99,8 @@ GLOBAL_CSS = """
     color: #2563eb !important;
     border-bottom: 3px solid #2563eb !important;
 }
+/* Gradio footer */
+footer { color: #64748b !important; }
 /* Tab content — prevent scaling jumps */
 .tabitem > div {
     min-height: 500px !important;
@@ -112,7 +114,7 @@ GLOBAL_CSS = """
     background-color: #f8fafc !important;
     color: #334155 !important;
 }
-/* Highlight marks */
+/* Highlight marks — default yellow (All view) */
 mark {
     background: linear-gradient(120deg, #fde68a 0%, #fbbf24 100%) !important;
     padding: 2px 5px !important;
@@ -120,25 +122,19 @@ mark {
     font-weight: 600 !important;
     color: #1e293b !important;
 }
-/* Filter buttons */
-.filter-btn-dx button {
-    background: #dbeafe !important;
-    color: #1e40af !important;
-    border: 1px solid #93c5fd !important;
-}
-.filter-btn-dx button:hover { background: #bfdbfe !important; }
-.filter-btn-med button {
-    background: #dcfce7 !important;
-    color: #166534 !important;
-    border: 1px solid #86efac !important;
-}
-.filter-btn-med button:hover { background: #bbf7d0 !important; }
-.filter-btn-fu button {
-    background: #fef3c7 !important;
-    color: #92400e !important;
-    border: 1px solid #fcd34d !important;
-}
-.filter-btn-fu button:hover { background: #fde68a !important; }
+/* Per-type highlight colors (filter views) */
+mark.dx-mark  { background: linear-gradient(120deg, #bfdbfe 0%, #93c5fd 100%) !important; color: #1e3a8a !important; }
+mark.med-mark { background: linear-gradient(120deg, #bbf7d0 0%, #86efac 100%) !important; color: #14532d !important; }
+mark.fu-mark  { background: linear-gradient(120deg, #fde68a 0%, #fbbf24 100%) !important; color: #78350f !important; }
+/* Filter buttons — inactive: colored left border hint */
+#btn-dx button  { border-left: 3px solid #3B82F6 !important; }
+#btn-med button { border-left: 3px solid #10B981 !important; }
+#btn-fu button  { border-left: 3px solid #F59E0B !important; }
+/* Filter buttons — active state: full colored background */
+.filter-active-all button { background: #6366f1 !important; color: white !important; border-color: #6366f1 !important; }
+.filter-active-dx button  { background: #3B82F6 !important; color: white !important; border-color: #3B82F6 !important; }
+.filter-active-med button { background: #10B981 !important; color: white !important; border-color: #10B981 !important; }
+.filter-active-fu button  { background: #F59E0B !important; color: white !important; border-color: #F59E0B !important; }
 /* Dropdown */
 .gradio-container .dropdown-arrow { color: #475569 !important; }
 .gradio-container ul.options { background: white !important; border-color: #e2e8f0 !important; }
@@ -187,7 +183,7 @@ CONF_STYLES = {
 
 # ─── Highlight helpers ───
 
-def highlight_spans_in_note(note_text: str, spans: list[str]) -> str:
+def highlight_spans_in_note(note_text: str, spans: list[str], mark_class: str = "") -> str:
     if not spans:
         return note_text
 
@@ -248,7 +244,8 @@ def highlight_spans_in_note(note_text: str, spans: list[str]) -> str:
     last = 0
     for s, e in merged:
         parts.append(note_text[last:s])
-        parts.append(f'<mark>{note_text[s:e]}</mark>')
+        cls_attr = f' class="{mark_class}"' if mark_class else ""
+        parts.append(f'<mark{cls_attr}>{note_text[s:e]}</mark>')
         last = e
     parts.append(note_text[last:])
 
@@ -417,7 +414,7 @@ def build_tutorial_html() -> str:
     </div>"""
 
     return f"""
-    <div style="background:#f8fafc; border-radius:12px; padding:24px; border:1px solid #e2e8f0;">
+    <div style="background:white; border-radius:12px; padding:24px; border:1px solid #e2e8f0;">
     <div style="font-family:'Inter',system-ui,-apple-system,sans-serif; margin:0 auto;">
         {section_a}
         {section_b}
@@ -606,10 +603,35 @@ def highlight_by_type(choice: str, ext_type: str):
     for item in filtered:
         spans.extend(item["spans"])
 
-    highlighted = highlight_spans_in_note(note_text, spans)
+    mark_cls = {"Diagnosis": "dx-mark", "Medication": "med-mark", "Follow-up": "fu-mark"}.get(ext_type, "")
+    highlighted = highlight_spans_in_note(note_text, spans, mark_class=mark_cls)
     note_html = f'<div style="font-family: \'Courier New\', monospace; white-space:pre-wrap; line-height:1.8; padding:20px; background:#f8fafc; color:#1e293b; border:1px solid #e2e8f0; border-radius:10px; font-size:13px; max-height:600px; overflow-y:auto;">{highlighted}</div>'
 
     return note_html, build_status_html(f"Highlighting {len(spans)} spans for {len(filtered)} {ext_type.lower()}(s).")
+
+
+def filter_click(choice: str, filter_type: str):
+    """Handle filter button click: update highlights + toggle active button state."""
+    # Build button updates — active gets colored class, others get empty
+    class_map = {"All": "filter-active-all", "Diagnosis": "filter-active-dx",
+                 "Medication": "filter-active-med", "Follow-up": "filter-active-fu"}
+    btn_all_u = gr.update(variant="primary" if filter_type == "All" else "secondary",
+                          elem_classes=[class_map["All"]] if filter_type == "All" else [])
+    btn_dx_u = gr.update(variant="primary" if filter_type == "Diagnosis" else "secondary",
+                         elem_classes=[class_map["Diagnosis"]] if filter_type == "Diagnosis" else [])
+    btn_med_u = gr.update(variant="primary" if filter_type == "Medication" else "secondary",
+                          elem_classes=[class_map["Medication"]] if filter_type == "Medication" else [])
+    btn_fu_u = gr.update(variant="primary" if filter_type == "Follow-up" else "secondary",
+                         elem_classes=[class_map["Follow-up"]] if filter_type == "Follow-up" else [])
+
+    if filter_type == "All":
+        result = load_note(choice)  # returns 5 values
+        return (*result, btn_all_u, btn_dx_u, btn_med_u, btn_fu_u)
+    else:
+        note_html, status = highlight_by_type(choice, filter_type)
+        # gr.update() for unchanged outputs (summary, cards, json)
+        return (note_html, gr.update(), gr.update(), status, gr.update(),
+                btn_all_u, btn_dx_u, btn_med_u, btn_fu_u)
 
 
 # ─── Panel 2: Reliability Board ───
@@ -620,8 +642,8 @@ def build_reliability_html():
 
     def badge(passed):
         if passed:
-            return f'<span style="background:#dcfce7; color:#166534; padding:3px 10px; border-radius:12px; font-weight:700; font-size:12px;">{svg_icon("check_circle", 12)} PASS</span>'
-        return f'<span style="background:#fee2e2; color:#991b1b; padding:3px 10px; border-radius:12px; font-weight:700; font-size:12px;">{svg_icon("x_circle", 12)} FAIL</span>'
+            return f'<span style="background:#dcfce7; color:#166534; padding:3px 10px; border-radius:12px; font-weight:700; font-size:12px; white-space:nowrap; display:inline-block;">{svg_icon("check_circle", 12)} PASS</span>'
+        return f'<span style="background:#fee2e2; color:#991b1b; padding:3px 10px; border-radius:12px; font-weight:700; font-size:12px; white-space:nowrap; display:inline-block;">{svg_icon("x_circle", 12)} FAIL</span>'
 
     def progress_bar(pct, color="#2563eb", width="80%"):
         return f'<div style="width:{width}; height:6px; border-radius:3px; background:#e2e8f0; overflow:hidden; margin:8px auto 0 auto;"><div style="width:{int(pct)}%; height:100%; border-radius:3px; background:{color};"></div></div>'
@@ -875,7 +897,7 @@ def build_header_html():
                 <p style="margin:0; font-size:13px; color:#475569; letter-spacing:0.3px; font-weight:500;">MedGemma 4B &middot; Offline-Capable &middot; Clinician-in-the-Loop</p>
             </div>
         </div>
-        <div style="display:flex; align-items:center; max-width:650px; margin:20px auto 0 auto; padding:0 20px;">
+        <div style="display:flex; align-items:center; margin:20px auto 0 auto; padding:0 20px;">
             {pipeline_html}
         </div>
     </div>
@@ -901,10 +923,14 @@ def build_app():
                         choices=note_choices, label="Select Clinical Note",
                         scale=4,
                     )
-                    btn_all = gr.Button("All", variant="primary", size="sm", scale=1)
-                    btn_dx = gr.Button("Diagnoses", size="sm", scale=1, elem_classes=["filter-btn-dx"])
-                    btn_med = gr.Button("Medications", size="sm", scale=1, elem_classes=["filter-btn-med"])
-                    btn_fu = gr.Button("Follow-ups", size="sm", scale=1, elem_classes=["filter-btn-fu"])
+                    btn_all = gr.Button("All", variant="primary", size="sm", scale=1,
+                                        elem_id="btn-all", elem_classes=["filter-active-all"])
+                    btn_dx = gr.Button("Diagnoses", size="sm", scale=1,
+                                       elem_id="btn-dx", elem_classes=[])
+                    btn_med = gr.Button("Medications", size="sm", scale=1,
+                                        elem_id="btn-med", elem_classes=[])
+                    btn_fu = gr.Button("Follow-ups", size="sm", scale=1,
+                                       elem_id="btn-fu", elem_classes=[])
 
                 summary_panel = gr.HTML(value="")
 
@@ -919,31 +945,30 @@ def build_app():
                 with gr.Accordion("Raw Extraction Packet (JSON)", open=False):
                     json_output = gr.Code(value="", language="json", label="")
 
-                # Events
+                # Events — unified filter handler toggles highlights + button active state
+                filter_outputs = [note_display, summary_panel, extraction_display,
+                                  status_bar, json_output,
+                                  btn_all, btn_dx, btn_med, btn_fu]
+
                 note_dropdown.change(
-                    fn=load_note,
-                    inputs=[note_dropdown],
-                    outputs=[note_display, summary_panel, extraction_display, status_bar, json_output],
+                    fn=lambda c: filter_click(c, "All"),
+                    inputs=[note_dropdown], outputs=filter_outputs,
                 )
                 btn_all.click(
-                    fn=load_note,
-                    inputs=[note_dropdown],
-                    outputs=[note_display, summary_panel, extraction_display, status_bar, json_output],
+                    fn=lambda c: filter_click(c, "All"),
+                    inputs=[note_dropdown], outputs=filter_outputs,
                 )
                 btn_dx.click(
-                    fn=lambda c: highlight_by_type(c, "Diagnosis"),
-                    inputs=[note_dropdown],
-                    outputs=[note_display, status_bar],
+                    fn=lambda c: filter_click(c, "Diagnosis"),
+                    inputs=[note_dropdown], outputs=filter_outputs,
                 )
                 btn_med.click(
-                    fn=lambda c: highlight_by_type(c, "Medication"),
-                    inputs=[note_dropdown],
-                    outputs=[note_display, status_bar],
+                    fn=lambda c: filter_click(c, "Medication"),
+                    inputs=[note_dropdown], outputs=filter_outputs,
                 )
                 btn_fu.click(
-                    fn=lambda c: highlight_by_type(c, "Follow-up"),
-                    inputs=[note_dropdown],
-                    outputs=[note_display, status_bar],
+                    fn=lambda c: filter_click(c, "Follow-up"),
+                    inputs=[note_dropdown], outputs=filter_outputs,
                 )
 
             # Tab 2: Performance Dashboard
@@ -963,7 +988,22 @@ def build_app():
     return app
 
 
-LAUNCH_KWARGS = dict(theme=gr.themes.Soft(), css=GLOBAL_CSS)
+# ─── Force-Light Theme ───
+# Override every *_dark property to match its light counterpart
+# so Gradio renders identically regardless of system theme.
+def _build_forced_light_theme():
+    theme = gr.themes.Soft()
+    dark_overrides = {}
+    for attr in dir(theme):
+        if attr.endswith("_dark") and not attr.startswith("_"):
+            light_attr = attr[: -len("_dark")]
+            light_val = getattr(theme, light_attr, None)
+            if light_val is not None:
+                dark_overrides[attr] = light_val
+    return theme.set(**dark_overrides)
+
+
+LAUNCH_KWARGS = dict(theme=_build_forced_light_theme(), css=GLOBAL_CSS)
 
 
 if __name__ == "__main__":
