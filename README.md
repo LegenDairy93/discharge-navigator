@@ -18,7 +18,7 @@ Discharge Navigator runs entirely offline on a consumer laptop — a 2.5 GB quan
 |----------|------|
 | **Interactive Demo** | [huggingface.co/spaces/haguman/discharge-navigator-demo](https://huggingface.co/spaces/haguman/discharge-navigator-demo) |
 | **Model Card** | [huggingface.co/haguman/discharge-navigator-medgemma](https://huggingface.co/haguman/discharge-navigator-medgemma) |
-| **Video** | [TBD] |
+| **Video** | https://youtu.be/GjRunxRwvak?si=9fZaKzf6FeVHWAUU |
 
 ---
 

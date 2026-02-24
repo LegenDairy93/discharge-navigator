@@ -910,6 +910,8 @@ def build_header_html():
 def build_app():
     with gr.Blocks(
         title="Discharge Navigator",
+        theme=_build_forced_light_theme(),
+        css=GLOBAL_CSS,
     ) as app:
 
         gr.HTML(build_header_html())
@@ -1003,12 +1005,9 @@ def _build_forced_light_theme():
     return theme.set(**dark_overrides)
 
 
-LAUNCH_KWARGS = dict(theme=_build_forced_light_theme(), css=GLOBAL_CSS)
+LAUNCH_KWARGS = {}  # theme & css now in gr.Blocks() for cross-version compat
 
 
 if __name__ == "__main__":
     app = build_app()
-    app.launch(
-        share=False, server_name="127.0.0.1", server_port=7860,
-        **LAUNCH_KWARGS,
-    )
+    app.launch(share=False, server_name="127.0.0.1", server_port=7860)

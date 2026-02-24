@@ -50,9 +50,16 @@ def hf_chat(
         {"role": "user", "content": user},
     ]
 
-    input_ids = tokenizer.apply_chat_template(
-        messages, return_tensors="pt", add_generation_prompt=True
-    ).to(model.device)
+    try:
+        input_ids = tokenizer.apply_chat_template(
+            messages, return_tensors="pt", add_generation_prompt=True
+        ).to(model.device)
+    except Exception:
+        # Some models don't support system role -- merge into user
+        messages = [{"role": "user", "content": f"{system}\n\n{user}"}]
+        input_ids = tokenizer.apply_chat_template(
+            messages, return_tensors="pt", add_generation_prompt=True
+        ).to(model.device)
 
     do_sample = temperature > 0
     gen_kwargs = dict(

@@ -9,6 +9,16 @@
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
+  html {
+    background: #000;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
   body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background: #0f172a;
@@ -17,6 +27,7 @@
     height: 720px;
     overflow: hidden;
     position: relative;
+    transform-origin: center center;
   }
 
   /* ── Scene Container ── */
@@ -31,7 +42,7 @@
     transform: translateY(20px);
     transition: opacity 0.8s ease, transform 0.8s ease;
     pointer-events: none;
-    padding: 40px 60px;
+    padding: 30px 40px 80px 40px;
   }
   .scene.active {
     opacity: 1;
@@ -41,7 +52,7 @@
 
   /* ── Progress bar ── */
   #progress-bar {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     height: 4px;
@@ -52,13 +63,14 @@
 
   /* ── Scene counter ── */
   #scene-counter {
-    position: fixed;
+    position: absolute;
     bottom: 8px;
-    right: 24px;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 11px;
     color: #475569;
     font-weight: 500;
-    z-index: 100;
+    z-index: 250;
   }
 
   /* ── Shared ── */
@@ -77,7 +89,7 @@
   .tag-teal   { background: #ccfbf1; color: #0d9488; }
 
   h1.hero { font-size: 52px; font-weight: 900; letter-spacing: -1.5px; line-height: 1.1; }
-  h2.section-title { font-size: 36px; font-weight: 800; letter-spacing: -1px; margin-bottom: 12px; }
+  h2.section-title { font-size: 36px; font-weight: 800; letter-spacing: -1px; margin-bottom: 12px; text-align: center; width: 100%; }
   p.subtitle { font-size: 18px; color: #94a3b8; line-height: 1.6; max-width: 700px; text-align: center; }
 
   /* ── Animations ── */
@@ -267,11 +279,13 @@
   .pipe-arrow.lit::after { border-left-color: #2563eb; }
 
   /* ── Scene 4: Demo ── */
-  #scene-4 {
-    padding: 20px 30px;
+  #scene-4, #scene-4a, #scene-4b, #scene-4c, #scene-4d, #scene-4e {
+    padding: 20px 24px 70px 24px;
+    align-items: stretch;
   }
   .demo-container {
     width: 100%;
+    align-self: stretch;
     background: #f8fafc;
     border-radius: 12px;
     overflow: hidden;
@@ -577,6 +591,8 @@
     display: flex;
     gap: 24px;
     margin-top: 36px;
+    justify-content: center;
+    width: 100%;
   }
   .edge-chip {
     background: #1e293b;
@@ -599,7 +615,7 @@
 
   /* ── Scene 8: Closing ── */
   #scene-8 .links {
-    display: flex; gap: 16px; margin-top: 24px;
+    display: flex; gap: 16px; margin-top: 24px; justify-content: center;
   }
   #scene-8 .link-btn {
     padding: 10px 24px;
@@ -624,7 +640,7 @@
 
   /* Controls overlay */
   #controls {
-    position: fixed;
+    position: absolute;
     top: 14px;
     right: 24px;
     display: flex;
@@ -653,6 +669,7 @@
   /* ── Deep-dive scenes shared ── */
   .deepdive-container {
     width: 100%;
+    align-self: stretch;
     background: #f8fafc;
     border-radius: 12px;
     overflow: hidden;
@@ -680,8 +697,10 @@
   .dd-tab.active { color: #2563eb; border-bottom-color: #2563eb; }
   .dd-scene-label {
     position: absolute;
-    top: 8px;
-    left: 30px;
+    top: 6px;
+    left: 0;
+    right: 0;
+    text-align: center;
     font-size: 11px;
     font-weight: 700;
     color: #475569;
@@ -810,23 +829,23 @@
 
   /* ── Caption Bar ── */
   #caption-bar {
-    position: fixed;
-    bottom: 28px;
+    position: absolute;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    max-width: 1000px;
-    width: 85%;
+    max-width: 960px;
+    width: 80%;
     z-index: 200;
     pointer-events: none;
   }
   #caption-text {
-    background: rgba(0, 0, 0, 0.82);
+    background: rgba(0, 0, 0, 0.85);
     color: #f1f5f9;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
-    line-height: 1.55;
-    padding: 12px 24px;
-    border-radius: 10px;
+    line-height: 1.5;
+    padding: 10px 20px;
+    border-radius: 8px;
     text-align: center;
     letter-spacing: 0.01em;
     opacity: 0;
@@ -915,12 +934,12 @@ IMPRESSION:
     </div>
     <div class="problem-stats">
       <div class="stat-card stagger-child anim-delay-1">
-        <div class="num">48M</div>
-        <div class="desc">hospitalizations per year in India<br>with discharge notes to process</div>
+        <div class="num">50M+</div>
+        <div class="desc">estimated hospitalizations per year<br>in India — each needs a discharge note</div>
       </div>
       <div class="stat-card stagger-child anim-delay-2">
-        <div class="num">1:11K</div>
-        <div class="desc">doctor-to-patient ratio in rural India —<br>no time for manual extraction</div>
+        <div class="num">74%</div>
+        <div class="desc">of India's doctors work in urban areas —<br>rural clinics are critically understaffed</div>
       </div>
       <div class="stat-card stagger-child anim-delay-3" style="border-left-color: #f59e0b;">
         <div class="num" style="color:#f59e0b;">0 GPU</div>
@@ -1638,6 +1657,16 @@ Medications without dosing info are flagged as LOW confidence to alert the revie
 </div>
 
 <script>
+  // ── Auto-scale to fit viewport ──
+  function autoScale() {
+    const scaleX = window.innerWidth / 1280;
+    const scaleY = window.innerHeight / 720;
+    const scale = Math.min(scaleX, scaleY);
+    document.body.style.transform = 'scale(' + scale + ')';
+  }
+  autoScale();
+  window.addEventListener('resize', autoScale);
+
   // ── Scene management ──
   const SCENES = ['scene-1','scene-2','scene-3','scene-4','scene-4a','scene-4b','scene-4c','scene-4d','scene-4e','scene-5','scene-5b','scene-6','scene-7','scene-8'];
   const DURATIONS = [6000, 9000, 12000, 12000, 11000, 10000, 11000, 12000, 13000, 10000, 9000, 10000, 8000, 8000]; // ms per scene
@@ -1646,7 +1675,7 @@ Medications without dosing info are flagged as LOW confidence to alert the revie
     // Scene 1 — Title
     "Discharge Navigator. Offline structuring of clinical discharge notes — powered by Google's MedGemma 4B.",
     // Scene 2 — The Problem
-    "India sees 48 million hospitalizations a year. In rural areas, the doctor-to-patient ratio is 1:11,000. There's no time to manually parse dense clinical notes — and most clinics have no cloud access. We need extraction that runs offline, on any laptop.",
+    "India sees over 50 million hospitalizations a year. 74% of doctors work in urban areas — rural clinics are critically understaffed. There's no time to manually parse dense clinical notes, and most clinics have no cloud access. We need extraction that runs offline, on any laptop.",
     // Scene 3 — Pipeline
     "Step 1: ingest a raw clinical note. Step 2: MedGemma extracts diagnoses, medications, and follow-ups. Step 3: every claim is grounded against the original text. Step 4: Pydantic schema validation rejects anything malformed. Step 5: a clinician reviews the output. Nothing is ever auto-applied.",
     // Scene 4 — Demo Overview

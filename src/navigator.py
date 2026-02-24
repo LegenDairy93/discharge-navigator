@@ -183,7 +183,8 @@ def generate_packet_hf(
                           temperature=temp)
         except Exception as e:
             last_err = e
-            last_raw = f"HF_ERROR: {e}"
+            last_raw = f"HF_ERROR: {type(e).__name__}: {e}"
+            import traceback; traceback.print_exc()
             if attempt < retries:
                 print(f"  Attempt {attempt+1} HF error, retrying...")
             continue
