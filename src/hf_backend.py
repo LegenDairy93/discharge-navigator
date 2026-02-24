@@ -36,6 +36,21 @@ def load_medgemma(model_id: str = DEFAULT_HF_MODEL):
     return model, tokenizer
 
 
+def _to_tensor(result, device) -> torch.Tensor:
+    """Extract input_ids tensor from apply_chat_template result.
+
+    Depending on the transformers version, apply_chat_template returns
+    either a raw tensor or a BatchEncoding dict. This handles both.
+    """
+    if isinstance(result, torch.Tensor):
+        return result.to(device)
+    if hasattr(result, "input_ids"):
+        # BatchEncoding -- extract the input_ids tensor
+        return result["input_ids"].to(device)
+    # Plain list of token ids
+    return torch.tensor([result], dtype=torch.long).to(device)
+
+
 def hf_chat(
     model,
     tokenizer,
@@ -51,15 +66,17 @@ def hf_chat(
     ]
 
     try:
-        input_ids = tokenizer.apply_chat_template(
+        result = tokenizer.apply_chat_template(
             messages, return_tensors="pt", add_generation_prompt=True
-        ).to(model.device)
+        )
+        input_ids = _to_tensor(result, model.device)
     except Exception:
         # Some models don't support system role -- merge into user
         messages = [{"role": "user", "content": f"{system}\n\n{user}"}]
-        input_ids = tokenizer.apply_chat_template(
+        result = tokenizer.apply_chat_template(
             messages, return_tensors="pt", add_generation_prompt=True
-        ).to(model.device)
+        )
+        input_ids = _to_tensor(result, model.device)
 
     do_sample = temperature > 0
     gen_kwargs = dict(
